@@ -1,0 +1,317 @@
+# ==========================================================
+# ROADMAP MODERN C++ (C++17/C++20)
+# Robotics Software Engineer
+# ==========================================================
+
+Status
+[ ] Not Started
+[~] In Progress
+[x] Completed
+
+==========================================================
+PHASE 1 — C++ FUNDAMENTALS
+==========================================================
+
+Program Structure
+[x] main()
+[x] #include
+[x] namespace
+[x] Compilation Process
+[x] Header Files
+
+Variables & Data Types
+[x] int
+[x] float
+[x] double
+[x] bool
+[x] char
+[x] std::string
+[x] auto
+[x] const
+[x] constexpr
+
+Input & Output
+[x] std::cout
+[x] std::cin
+[x] std::endl
+
+Operators
+[x] Arithmetic
+[x] Assignment
+[x] Comparison
+[x] Logical
+[x] Increment / Decrement
+[x] Ternary Operator
+
+Memory Fundamentals
+[x] Variable Memory Layout
+[x] Address Operator (&)
+[x] Pointer Declaration
+[x] Pointer Dereference (*)
+[x] Memory Visualization
+[~] Reference (&)
+[ ] Const Reference
+
+Control Flow
+[ ] if
+[x] switch
+[x] while
+[ ] for
+[ ] range-based for
+
+Functions
+[x] Function Declaration
+[x] Function Definition
+[x] Return Value
+[~] Function Parameter
+[ ] Function Overloading
+[ ] Default Parameters
+
+==========================================================
+PHASE 2 — OBJECT ORIENTED PROGRAMMING
+==========================================================
+
+Classes
+[ ] Class
+[ ] Object
+[ ] Constructor
+[ ] Destructor
+
+Access Control
+[ ] public
+[ ] private
+[ ] protected
+
+Encapsulation
+[ ] Getter
+[ ] Setter
+
+Composition
+[ ] Class contains another class
+
+Inheritance
+[ ] Base Class
+[ ] Derived Class
+
+Polymorphism
+[ ] Virtual Function
+[ ] Override
+[ ] Abstract Class
+
+==========================================================
+PHASE 3 — MODERN C++
+==========================================================
+
+Modern Syntax
+[x] auto
+[x] constexpr
+[ ] nullptr
+[ ] enum class
+[ ] using
+[ ] Structured Binding
+[ ] inline
+
+Memory Management
+[x] Stack Memory
+[ ] Heap Memory
+[ ] new
+[ ] delete
+
+Smart Pointer
+[ ] unique_ptr
+[ ] shared_ptr
+[ ] weak_ptr
+
+Move Semantics
+[ ] Move Constructor
+[ ] Move Assignment
+
+Lambda Expression
+[ ] Basic Lambda
+[ ] Capture
+[ ] Callback
+
+Templates
+[ ] Function Template
+[ ] Class Template
+
+Exception Handling
+[ ] try
+[ ] throw
+[ ] catch
+
+==========================================================
+PHASE 4 — STL (Standard Template Library)
+==========================================================
+
+Containers
+[ ] std::vector
+[ ] std::array
+[ ] std::list
+[ ] std::deque
+
+Associative Containers
+[ ] std::map
+[ ] std::unordered_map
+[ ] std::set
+[ ] std::unordered_set
+
+Container Adapter
+[ ] std::queue
+[ ] std::stack
+[ ] std::priority_queue
+
+Algorithms
+[ ] sort
+[ ] find
+[ ] count
+[ ] for_each
+[ ] transform
+
+Utilities
+[ ] std::pair
+[ ] std::tuple
+[ ] std::optional
+
+==========================================================
+PHASE 5 — PROJECT STRUCTURE
+==========================================================
+
+Project Organization
+[ ] Header (.hpp)
+[ ] Source (.cpp)
+[ ] Include Guard
+[ ] #pragma once
+[ ] Namespace
+
+Coding Style
+[x] Naming Convention
+[x] Function Design
+[ ] Class Design
+[ ] Separation of Interface & Implementation
+
+==========================================================
+PHASE 6 — BUILD SYSTEM
+==========================================================
+
+Compiler
+[x] g++
+[x] Basic Compiler Flags (-std, -Wall, -Wextra)
+
+CMake
+[ ] CMakeLists.txt
+[ ] Build Directory
+[ ] Configure
+[ ] Build
+
+Library
+[ ] Static Library
+[ ] Shared Library
+
+==========================================================
+PHASE 7 — MULTITHREADING
+==========================================================
+
+Thread
+[ ] std::thread
+
+Synchronization
+[ ] mutex
+[ ] lock_guard
+[ ] unique_lock
+
+Communication
+[ ] condition_variable
+[ ] future
+[ ] async
+
+==========================================================
+PHASE 8 — DESIGN PATTERN
+==========================================================
+
+Fundamental
+[ ] SOLID Principles
+[ ] High Cohesion
+[ ] Low Coupling
+
+Patterns
+[ ] Factory Pattern
+[ ] Strategy Pattern
+[ ] Observer Pattern
+[ ] State Pattern
+[ ] Singleton (Understand Only)
+
+==========================================================
+PHASE 9 — DEBUGGING & TESTING
+==========================================================
+
+Debugging
+[ ] gdb
+[ ] VS Code Debugger
+
+Testing
+[ ] GoogleTest
+[ ] Unit Testing
+
+Profiling
+[ ] Performance Analysis
+
+==========================================================
+PHASE 10 — BEST PRACTICES
+==========================================================
+
+Code Quality
+[ ] RAII
+[ ] const correctness
+[ ] Exception Safety
+[ ] Clean Code
+
+Performance
+[ ] Copy vs Move
+[ ] Memory Optimization
+
+Documentation
+[ ] Doxygen (Introduction)
+
+==========================================================
+PHASE 11 — C++ FOR ROBOTICS
+==========================================================
+
+Modern Robotics Architecture
+[ ] Robot Class Design
+[ ] Hardware Abstraction Layer (HAL)
+[ ] Sensor Interface
+[ ] Actuator Interface
+[ ] State Machine
+
+Communication
+[ ] Serial (UART)
+[ ] TCP/IP
+[ ] UDP
+[ ] CAN Bus (Introduction)
+
+Math
+[ ] Vector
+[ ] Matrix
+[ ] Coordinate Transform
+[ ] Quaternion (Introduction)
+
+ROS 2 Preparation
+[ ] rclcpp Coding Style
+[ ] Shared Pointer Usage
+[ ] Callback Design
+[ ] Lifecycle Concept
+
+Real-Time Programming
+[ ] Deterministic Programming
+[ ] Memory Allocation Strategy
+[ ] Thread-safe Design
+
+==========================================================
+TARGET
+==========================================================
+
+[ ] Dapat membaca project C++ skala besar
+[ ] Dapat membuat project C++ modular
+[ ] Menguasai Modern C++ (C++17/C++20)
+[ ] Siap mempelajari ROS 2 menggunakan rclcpp
