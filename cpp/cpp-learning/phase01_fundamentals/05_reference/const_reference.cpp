@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-void printName(const std::string& name)
+void printName(const std::string &name) // pass by const reference
 {
     std::cout << "Alamat di fungsi : " << &name << '\n';
     std::cout << "Isi di fungsi    : " << name << '\n';
