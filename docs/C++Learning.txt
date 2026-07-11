@@ -49,11 +49,11 @@ Memory Fundamentals
 [x] Pointer Declaration
 [x] Pointer Dereference (*)
 [x] Memory Visualization
-[~] Reference (&)
-[ ] Const Reference
+[x] Reference (&)
+[~] Const Reference
 
 Control Flow
-[ ] if
+[x] if
 [x] switch
 [x] while
 [ ] for
@@ -63,7 +63,7 @@ Functions
 [x] Function Declaration
 [x] Function Definition
 [x] Return Value
-[~] Function Parameter
+[x] Function Parameter (Value, Pointer, Reference)
 [ ] Function Overloading
 [ ] Default Parameters
 
@@ -267,6 +267,7 @@ Code Quality
 [ ] Clean Code
 
 Performance
+[~] Copy vs Reference
 [ ] Copy vs Move
 [ ] Memory Optimization
 
