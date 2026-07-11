@@ -50,7 +50,7 @@ Memory Fundamentals
 [x] Pointer Dereference (*)
 [x] Memory Visualization
 [x] Reference (&)
-[~] Const Reference
+[x] Const Reference
 
 Control Flow
 [x] if
@@ -63,7 +63,7 @@ Functions
 [x] Function Declaration
 [x] Function Definition
 [x] Return Value
-[x] Function Parameter (Value, Pointer, Reference)
+[x] Function Parameter (Value, Pointer, Reference, Const Reference)
 [ ] Function Overloading
 [ ] Default Parameters
 
@@ -262,12 +262,12 @@ PHASE 10 — BEST PRACTICES
 
 Code Quality
 [ ] RAII
-[ ] const correctness
+[~] const correctness
 [ ] Exception Safety
 [ ] Clean Code
 
 Performance
-[~] Copy vs Reference
+[x] Copy vs Reference
 [ ] Copy vs Move
 [ ] Memory Optimization
 
