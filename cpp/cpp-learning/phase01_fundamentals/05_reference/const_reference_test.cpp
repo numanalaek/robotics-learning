@@ -6,7 +6,7 @@
 
 void printName(const std::string &name)
 {
-    name = "TEST";
+    name = "TEST"; // error: assignment of read-only reference 'name'
 }
 
 int main()
