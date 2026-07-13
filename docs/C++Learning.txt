@@ -56,7 +56,7 @@ Control Flow
 [x] if
 [x] switch
 [x] while
-[ ] for
+[x] for
 [ ] range-based for
 
 Functions
@@ -145,8 +145,8 @@ PHASE 4 — STL (Standard Template Library)
 ==========================================================
 
 Containers
-[ ] std::vector
 [ ] std::array
+[ ] std::vector
 [ ] std::list
 [ ] std::deque
 
@@ -182,11 +182,12 @@ Project Organization
 [ ] Source (.cpp)
 [ ] Include Guard
 [ ] #pragma once
-[ ] Namespace
+[ ] Namespace Organization
 
 Coding Style
 [x] Naming Convention
 [x] Function Design
+[x] Magic Number Avoidance (constexpr)
 [ ] Class Design
 [ ] Separation of Interface & Implementation
 
@@ -198,11 +199,18 @@ Compiler
 [x] g++
 [x] Basic Compiler Flags (-std, -Wall, -Wextra)
 
+Build Workflow
+[x] Build Folder Concept
+[x] Executable Cleanup
+[ ] Debug Build
+[ ] Release Build
+
 CMake
 [ ] CMakeLists.txt
 [ ] Build Directory
 [ ] Configure
 [ ] Build
+[ ] Install
 
 Library
 [ ] Static Library
@@ -261,13 +269,14 @@ PHASE 10 — BEST PRACTICES
 ==========================================================
 
 Code Quality
-[ ] RAII
 [~] const correctness
+[ ] RAII
 [ ] Exception Safety
 [ ] Clean Code
 
 Performance
 [x] Copy vs Reference
+[~] Efficient Loop Design
 [ ] Copy vs Move
 [ ] Memory Optimization
 
@@ -307,6 +316,24 @@ Real-Time Programming
 [ ] Deterministic Programming
 [ ] Memory Allocation Strategy
 [ ] Thread-safe Design
+
+==========================================================
+PROGRESS
+==========================================================
+
+Phase 1  : 100%
+Phase 2  : 0%
+Phase 3  : ~15%
+Phase 4  : 0%
+Phase 5  : ~35%
+Phase 6  : ~20%
+Phase 7  : 0%
+Phase 8  : 0%
+Phase 9  : 0%
+Phase 10 : ~30%
+Phase 11 : 0%
+
+Overall Progress : ~25%
 
 ==========================================================
 TARGET
