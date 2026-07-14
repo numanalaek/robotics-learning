@@ -64,8 +64,8 @@ Functions
 [x] Function Definition
 [x] Return Value
 [x] Function Parameter (Value, Pointer, Reference, Const Reference)
-[ ] Function Overloading
-[ ] Default Parameters
+[x] Function Overloading
+[x] Default Parameters
 
 ==========================================================
 PHASE 2 — OBJECT ORIENTED PROGRAMMING
