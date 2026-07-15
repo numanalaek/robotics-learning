@@ -1,3 +1,13 @@
+// ============================================================
+// Program 07d: Range-based For - Copy vs Reference
+// Deskripsi : Membuktikan bahwa range-based for dengan
+//             "int sensor" membuat COPY, sehingga array asli
+//             tidak berubah meskipun di-set ke 0.
+// Konsep    : - int sensor : sensors => sensor adalah COPY
+//             - Mengubah sensor TIDAK mempengaruhi array asli
+//             - Untuk mengubah asli, pakai int &sensor
+// ============================================================
+
 #include <iostream>
 
 int main()
@@ -11,6 +21,7 @@ int main()
     }
     std::cout << '\n';
 
+    // sensor di sini adalah COPY, jadi array asli TIDAK berubah
     for (int sensor : sensors)
     {
         sensor = 0;

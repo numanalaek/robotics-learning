@@ -1,10 +1,21 @@
-// Reference adalah sebuah alias untuk sebuah variabel. Reference tidak dapat diubah untuk mereferensikan variabel lain setelah dideklarasikan. Reference harus diinisialisasi pada saat deklarasi. Reference tidak memiliki alamat memori sendiri, melainkan menggunakan alamat memori dari variabel yang direferensikan. Reference digunakan untuk menghindari penyalinan data yang besar dan untuk memungkinkan fungsi mengubah nilai dari argumen yang diteruskan.
+// ============================================================
+// Program 05b: Pass by Value (Efisien dengan const Reference)
+// Deskripsi : Menggunakan const reference agar data besar tidak
+//             di-copy, tetapi juga tidak bisa dimodifikasi.
+// Konsep    : - const std::string &name = reference read-only
+//             - Tidak ada penyalinan data (lebih cepat)
+//             - Data asli terlindungi (const)
+//             - Ini adalah cara terbaik untuk parameter baca-saja
+// ============================================================
+
 #include <iostream>
 #include <string>
 
+// const reference: baca data tanpa copy, tanpa bisa ubah asli
 void printName(const std::string &name)
 {
     std::cout << "Robot : " << name << '\n';
+    // name = "xxx"; // ERROR: const reference tidak bisa diubah
 }
 
 int main()

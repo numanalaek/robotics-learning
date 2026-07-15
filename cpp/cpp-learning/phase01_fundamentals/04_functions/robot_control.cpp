@@ -1,5 +1,18 @@
+// ============================================================
+// Program 04: Fungsi dan Robot Control (Simulasi)
+// Deskripsi : Simulasi kontrol robot sederhana dengan fungsi.
+//             Robot bisa maju, mundur, belok kiri/kanan.
+// Konsep    : - Fungsi: memecah program menjadi bagian kecil
+//             - Pass by reference (&): fungsi bisa mengubah
+//               variabel asli (x, y, dir, battery)
+//             - Pass by value (tanpa &): fungsi hanya terima salinan
+//             - switch-case untuk menangani perintah
+//             - while loop untuk program interaktif
+// ============================================================
+
 #include <iostream>
 
+// Cetak header program
 void printHeader()
 {
     std::cout << "==============================\n";
@@ -7,6 +20,7 @@ void printHeader()
     std::cout << "==============================\n";
 }
 
+// Tampilkan posisi, arah, dan baterai robot
 void printStatus(int x, int y, int dir, int battery)
 {
     const char *arah[] = {"Utara", "Timur", "Selatan", "Barat"};
@@ -16,6 +30,7 @@ void printStatus(int x, int y, int dir, int battery)
     std::cout << "------------------------------\n";
 }
 
+// Kurangi baterai 1% (pass by reference agar nilai asli berubah)
 void consumeBattery(int &battery)
 {
     if (battery > 0)
@@ -26,6 +41,7 @@ void consumeBattery(int &battery)
     }
 }
 
+// Gerak maju sesuai arah
 void moveForward(int &x, int &y, int dir, int &battery)
 {
     if (battery <= 0)
@@ -35,25 +51,17 @@ void moveForward(int &x, int &y, int dir, int &battery)
     }
     switch (dir)
     {
-    case 0:
-        y++;
-        break;
-    case 1:
-        x++;
-        break;
-    case 2:
-        y--;
-        break;
-    case 3:
-        x--;
-        break;
+    case 0: y++; break; // Utara: Y + 1
+    case 1: x++; break; // Timur: X + 1
+    case 2: y--; break; // Selatan: Y - 1
+    case 3: x--; break; // Barat: X - 1
     }
     consumeBattery(battery);
-    std::cout << "[OK] Maju ke ";
     const char *arah[] = {"Utara", "Timur", "Selatan", "Barat"};
-    std::cout << arah[dir] << " | Baterai: " << battery << "%\n";
+    std::cout << "[OK] Maju ke " << arah[dir] << " | Baterai: " << battery << "%\n";
 }
 
+// Belok kiri (berputar 90 derajat)
 void turnLeft(int &dir, int &battery)
 {
     if (battery <= 0)
@@ -61,11 +69,12 @@ void turnLeft(int &dir, int &battery)
         std::cout << "[GAGAL] Baterai habis!\n";
         return;
     }
-    dir = (dir + 3) % 4;
+    dir = (dir + 3) % 4; // Geser arah ke kiri
     consumeBattery(battery);
     std::cout << "[OK] Belok kiri | Baterai: " << battery << "%\n";
 }
 
+// Belok kanan (berputar -90 derajat)
 void turnRight(int &dir, int &battery)
 {
     if (battery <= 0)
@@ -73,11 +82,12 @@ void turnRight(int &dir, int &battery)
         std::cout << "[GAGAL] Baterai habis!\n";
         return;
     }
-    dir = (dir + 1) % 4;
+    dir = (dir + 1) % 4; // Geser arah ke kanan
     consumeBattery(battery);
     std::cout << "[OK] Belok kanan | Baterai: " << battery << "%\n";
 }
 
+// Gerak mundur (kebalikan dari maju)
 void moveBackward(int &x, int &y, int dir, int &battery)
 {
     if (battery <= 0)
@@ -87,18 +97,10 @@ void moveBackward(int &x, int &y, int dir, int &battery)
     }
     switch (dir)
     {
-    case 0:
-        y--;
-        break;
-    case 1:
-        x--;
-        break;
-    case 2:
-        y++;
-        break;
-    case 3:
-        x++;
-        break;
+    case 0: y--; break;
+    case 1: x--; break;
+    case 2: y++; break;
+    case 3: x++; break;
     }
     consumeBattery(battery);
     std::cout << "[OK] Mundur | Baterai: " << battery << "%\n";
@@ -106,9 +108,9 @@ void moveBackward(int &x, int &y, int dir, int &battery)
 
 int main()
 {
-    int x = 0, y = 0;
-    int dir = 0;
-    int battery = 100;
+    int x = 0, y = 0;  // Posisi robot
+    int dir = 0;        // Arah: 0=Utara, 1=Timur, 2=Selatan, 3=Barat
+    int battery = 100;  // Baterai awal 100%
 
     printHeader();
     printStatus(x, y, dir, battery);
@@ -121,18 +123,10 @@ int main()
 
         switch (cmd)
         {
-        case 'w':
-            moveForward(x, y, dir, battery);
-            break;
-        case 's':
-            moveBackward(x, y, dir, battery);
-            break;
-        case 'a':
-            turnLeft(dir, battery);
-            break;
-        case 'd':
-            turnRight(dir, battery);
-            break;
+        case 'w': moveForward(x, y, dir, battery); break;
+        case 's': moveBackward(x, y, dir, battery); break;
+        case 'a': turnLeft(dir, battery); break;
+        case 'd': turnRight(dir, battery); break;
         case 'q':
             std::cout << "Program selesai.\n";
             return 0;

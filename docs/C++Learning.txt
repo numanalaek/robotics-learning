@@ -8,6 +8,7 @@ Status
 [~] In Progress
 [x] Completed
 
+
 ==========================================================
 PHASE 1 — C++ FUNDAMENTALS
 ==========================================================
@@ -34,6 +35,10 @@ Input & Output
 [x] std::cout
 [x] std::cin
 [x] std::endl
+[x] Stream Manipulators
+[x] std::fixed
+[x] std::setprecision
+[x] std::setw
 
 Operators
 [x] Arithmetic
@@ -51,9 +56,15 @@ Memory Fundamentals
 [x] Memory Visualization
 [x] Reference (&)
 [x] Const Reference
+[x] Pass by Value
+[x] Pass by Pointer
+[x] Pass by Reference
+[x] Pass by Const Reference
 
 Control Flow
 [x] if
+[x] else if
+[x] else
 [x] switch
 [x] while
 [x] for
@@ -63,19 +74,40 @@ Functions
 [x] Function Declaration
 [x] Function Definition
 [x] Return Value
-[x] Function Parameter (Value, Pointer, Reference, Const Reference)
+[x] Function Parameters
 [x] Function Overloading
 [x] Default Parameters
+
+Scope & Lifetime
+[x] Global Scope
+[x] Local Scope
+[x] Block Scope
+[x] Scope Visibility
+[x] Variable Lifetime
+[x] Object Lifetime
+[x] Construction Order
+[x] Destruction Order
+[x] LIFO Lifetime Behavior
+
 
 ==========================================================
 PHASE 2 — OBJECT ORIENTED PROGRAMMING
 ==========================================================
 
-Classes
+Class & Object
 [ ] Class
 [ ] Object
+[ ] Data Members
+[ ] Member Functions
+[ ] struct vs class
+
+Constructor & Destructor
 [ ] Constructor
 [ ] Destructor
+[ ] Member Initializer List
+[ ] Constructor Overloading
+[ ] Default Constructor
+[ ] Parameterized Constructor
 
 Access Control
 [ ] public
@@ -85,21 +117,36 @@ Access Control
 Encapsulation
 [ ] Getter
 [ ] Setter
+[ ] Invariant
+[ ] const Member Function
+
+Object Copying
+[ ] Copy Constructor
+[ ] Copy Assignment Operator
+[ ] Shallow Copy
+[ ] Deep Copy
 
 Composition
 [ ] Class contains another class
+[ ] Has-a Relationship
 
 Inheritance
 [ ] Base Class
 [ ] Derived Class
+[ ] is-a Relationship
+[ ] Protected Members
 
 Polymorphism
 [ ] Virtual Function
-[ ] Override
+[ ] override
+[ ] virtual Destructor
 [ ] Abstract Class
+[ ] Pure Virtual Function
+[ ] Interface Design
+
 
 ==========================================================
-PHASE 3 — MODERN C++
+PHASE 3 — MODERN C++ LANGUAGE
 ==========================================================
 
 Modern Syntax
@@ -111,40 +158,65 @@ Modern Syntax
 [ ] Structured Binding
 [ ] inline
 
+References
+[x] Reference (&)
+[x] Const Reference
+[ ] Rvalue Reference (&&)
+
 Memory Management
 [x] Stack Memory
 [ ] Heap Memory
 [ ] new
 [ ] delete
+[ ] Memory Ownership
 
 Smart Pointer
-[ ] unique_ptr
-[ ] shared_ptr
-[ ] weak_ptr
+[ ] std::unique_ptr
+[ ] std::shared_ptr
+[ ] std::weak_ptr
+[ ] Ownership Concept
 
 Move Semantics
+[ ] std::move
 [ ] Move Constructor
 [ ] Move Assignment
+[ ] Rule of 3
+[ ] Rule of 5
+[ ] Rule of 0
+
+Modern String & Array Views
+[ ] std::string_view
+[ ] std::span
 
 Lambda Expression
 [ ] Basic Lambda
-[ ] Capture
+[ ] Lambda Parameters
+[ ] Capture by Value
+[ ] Capture by Reference
+[ ] Generic Lambda
 [ ] Callback
 
 Templates
 [ ] Function Template
 [ ] Class Template
+[ ] Template Parameters
 
 Exception Handling
 [ ] try
 [ ] throw
 [ ] catch
+[ ] noexcept
+
+Modern Error Handling
+[ ] std::optional
+[ ] std::variant
+
 
 ==========================================================
-PHASE 4 — STL (Standard Template Library)
+PHASE 4 — STL
 ==========================================================
 
-Containers
+Sequence Containers
 [ ] std::array
 [ ] std::vector
 [ ] std::list
@@ -156,22 +228,39 @@ Associative Containers
 [ ] std::set
 [ ] std::unordered_set
 
-Container Adapter
+Container Adapters
 [ ] std::queue
 [ ] std::stack
 [ ] std::priority_queue
 
 Algorithms
-[ ] sort
-[ ] find
-[ ] count
-[ ] for_each
-[ ] transform
+[ ] std::sort
+[ ] std::find
+[ ] std::count
+[ ] std::for_each
+[ ] std::transform
+[ ] std::min_element
+[ ] std::max_element
+[ ] std::accumulate
 
 Utilities
 [ ] std::pair
 [ ] std::tuple
 [ ] std::optional
+[ ] std::variant
+
+Time
+[ ] std::chrono
+[ ] Duration
+[ ] Time Point
+[ ] Time Measurement
+
+Iterators
+[ ] Iterator Concept
+[ ] begin()
+[ ] end()
+[ ] const_iterator
+
 
 ==========================================================
 PHASE 5 — PROJECT STRUCTURE
@@ -183,13 +272,23 @@ Project Organization
 [ ] Include Guard
 [ ] #pragma once
 [ ] Namespace Organization
+[ ] Directory Structure
+[ ] Dependency Management
+
+Interface & Implementation
+[ ] Declaration vs Definition
+[ ] Separation of Interface
+[ ] Separation of Implementation
+[ ] Translation Unit
 
 Coding Style
 [x] Naming Convention
 [x] Function Design
-[x] Magic Number Avoidance (constexpr)
+[x] Magic Number Avoidance
 [ ] Class Design
-[ ] Separation of Interface & Implementation
+[ ] API Design
+[ ] Const Correctness
+
 
 ==========================================================
 PHASE 6 — BUILD SYSTEM
@@ -197,57 +296,79 @@ PHASE 6 — BUILD SYSTEM
 
 Compiler
 [x] g++
-[x] Basic Compiler Flags (-std, -Wall, -Wextra)
+[x] C++ Standard Flag
+[x] -Wall
+[x] -Wextra
 
 Build Workflow
 [x] Build Folder Concept
 [x] Executable Cleanup
 [ ] Debug Build
 [ ] Release Build
+[ ] Debug Symbols
 
 CMake
 [ ] CMakeLists.txt
+[ ] Project Definition
 [ ] Build Directory
 [ ] Configure
 [ ] Build
 [ ] Install
+[ ] Target Management
 
-Library
+Libraries
 [ ] Static Library
 [ ] Shared Library
+[ ] Linking
+[ ] Include Directories
+
 
 ==========================================================
-PHASE 7 — MULTITHREADING
+PHASE 7 — MULTITHREADING & CONCURRENCY
 ==========================================================
 
 Thread
 [ ] std::thread
 
 Synchronization
-[ ] mutex
-[ ] lock_guard
-[ ] unique_lock
+[ ] std::mutex
+[ ] std::lock_guard
+[ ] std::unique_lock
 
 Communication
-[ ] condition_variable
-[ ] future
-[ ] async
+[ ] std::condition_variable
+[ ] std::future
+[ ] std::async
+
+Atomic
+[ ] std::atomic
+
+Concurrency Design
+[ ] Data Race
+[ ] Race Condition
+[ ] Thread Safety
+[ ] Producer-Consumer
+
 
 ==========================================================
-PHASE 8 — DESIGN PATTERN
+PHASE 8 — DESIGN PRINCIPLES & PATTERNS
 ==========================================================
 
-Fundamental
-[ ] SOLID Principles
+Design Principles
+[ ] SOLID
 [ ] High Cohesion
 [ ] Low Coupling
+[ ] Dependency Inversion
+[ ] Composition over Inheritance
 
 Patterns
 [ ] Factory Pattern
 [ ] Strategy Pattern
 [ ] Observer Pattern
 [ ] State Pattern
+[ ] Adapter Pattern
 [ ] Singleton (Understand Only)
+
 
 ==========================================================
 PHASE 9 — DEBUGGING & TESTING
@@ -255,67 +376,128 @@ PHASE 9 — DEBUGGING & TESTING
 
 Debugging
 [ ] gdb
+[ ] Breakpoint
+[ ] Step Execution
+[ ] Watch Variable
+[ ] Stack Trace
 [ ] VS Code Debugger
 
 Testing
-[ ] GoogleTest
 [ ] Unit Testing
+[ ] GoogleTest
+[ ] Test Fixture
+[ ] Assertion
+
+Memory Debugging
+[ ] AddressSanitizer
+[ ] UndefinedBehaviorSanitizer
+[ ] Memory Leak Detection
 
 Profiling
 [ ] Performance Analysis
+[ ] CPU Profiling
+[ ] Memory Profiling
+
 
 ==========================================================
 PHASE 10 — BEST PRACTICES
 ==========================================================
 
 Code Quality
-[~] const correctness
+[~] const Correctness
 [ ] RAII
 [ ] Exception Safety
 [ ] Clean Code
+[ ] Defensive Programming
+
+Memory & Ownership
+[x] Copy vs Reference
+[ ] Copy vs Move
+[ ] Ownership
+[ ] Lifetime Management
 
 Performance
-[x] Copy vs Reference
 [~] Efficient Loop Design
-[ ] Copy vs Move
 [ ] Memory Optimization
+[ ] Avoid Unnecessary Copy
+[ ] Cache Awareness
 
 Documentation
-[ ] Doxygen (Introduction)
+[ ] README
+[ ] API Documentation
+[ ] Doxygen
+
 
 ==========================================================
 PHASE 11 — C++ FOR ROBOTICS
 ==========================================================
 
-Modern Robotics Architecture
+Robot Software Architecture
 [ ] Robot Class Design
 [ ] Hardware Abstraction Layer (HAL)
 [ ] Sensor Interface
 [ ] Actuator Interface
 [ ] State Machine
+[ ] Command Architecture
+
+Sensor & Actuator
+[ ] Sensor Data Model
+[ ] Sensor Polling
+[ ] Actuator Control
+[ ] Safety Limit
 
 Communication
-[ ] Serial (UART)
+[ ] Serial / UART
 [ ] TCP/IP
 [ ] UDP
-[ ] CAN Bus (Introduction)
+[ ] CAN Bus
 
-Math
+Timing
+[ ] Control Loop
+[ ] Sampling Rate
+[ ] Timeout
+[ ] Watchdog
+
+Mathematics
 [ ] Vector
 [ ] Matrix
 [ ] Coordinate Transform
-[ ] Quaternion (Introduction)
-
-ROS 2 Preparation
-[ ] rclcpp Coding Style
-[ ] Shared Pointer Usage
-[ ] Callback Design
-[ ] Lifecycle Concept
+[ ] Quaternion
 
 Real-Time Programming
 [ ] Deterministic Programming
 [ ] Memory Allocation Strategy
-[ ] Thread-safe Design
+[ ] Thread-Safe Design
+[ ] Real-Time Constraints
+
+
+==========================================================
+PHASE 12 — ROS 2 PREPARATION
+==========================================================
+
+ROS 2 C++ Concepts
+[ ] rclcpp Coding Style
+[ ] Node Architecture
+[ ] Publisher
+[ ] Subscriber
+[ ] Service
+[ ] Action
+
+Callbacks
+[ ] Callback Design
+[ ] Timer Callback
+[ ] Subscription Callback
+
+Memory
+[ ] Shared Pointer Usage
+[ ] Ownership in ROS 2
+
+Architecture
+[ ] Node Composition
+[ ] Lifecycle Node
+[ ] Executor
+[ ] Callback Groups
+
 
 ==========================================================
 PROGRESS
@@ -324,7 +506,7 @@ PROGRESS
 Phase 1  : 100%
 Phase 2  : 0%
 Phase 3  : ~15%
-Phase 4  : 0%
+Phase 4  : ~0%
 Phase 5  : ~35%
 Phase 6  : ~20%
 Phase 7  : 0%
@@ -332,8 +514,10 @@ Phase 8  : 0%
 Phase 9  : 0%
 Phase 10 : ~30%
 Phase 11 : 0%
+Phase 12 : 0%
 
-Overall Progress : ~25%
+Overall Progress : ~20–25%
+
 
 ==========================================================
 TARGET
@@ -341,5 +525,7 @@ TARGET
 
 [ ] Dapat membaca project C++ skala besar
 [ ] Dapat membuat project C++ modular
+[ ] Memahami memory, ownership, dan lifetime
 [ ] Menguasai Modern C++ (C++17/C++20)
+[ ] Mampu membuat architecture software robot
 [ ] Siap mempelajari ROS 2 menggunakan rclcpp

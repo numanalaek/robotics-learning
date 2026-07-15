@@ -1,25 +1,48 @@
+// ============================================================
+// Program 02: Variabel dan Tipe Data
+// Deskripsi : Mendeklarasikan dan menampilkan berbagai tipe data
+//             yang umum digunakan dalam pemrograman robot.
+// Konsep    : - Berbagai tipe data: int, double, float, bool,
+//               char, std::string
+//             - constexpr untuk konstanta waktu kompilasi
+//             - auto untuk deduksi tipe otomatis
+//             - std::setw untuk merapikan tampilan
+//             - Ternary operator (?:) untuk kondisi sederhana
+// ============================================================
+
 #include <iostream>
 #include <string>
 #include <iomanip>
+
 int main()
 {
-    std::string robot_name = "NUIN-AMR-01";
-    int robot_id = 1;
-    int battery = 100;
-    double voltage = 24.6;
-    float speed = 1.25f;
-    bool obstacle = false;
-    char command = 'W';
+    // ----- DEKLARASI VARIABEL DENGAN BERBAGAI TIPE DATA -----
+    std::string robot_name = "NUIN-AMR-01";  // string: teks
+    int robot_id = 1;                         // int: bilangan bulat
+    int battery = 100;                        // int: persentase baterai
+    double voltage = 24.6;                    // double: desimal presisi ganda
+    float speed = 1.25f;                      // float: desimal presisi tunggal
+    bool obstacle = false;                    // bool: true/false
+    char command = 'W';                       // char: satu karakter
+
+    // constexpr: nilai tetap yang sudah diketahui saat kompilasi
     constexpr int wheel_count = 2;
     constexpr double MAX_PAYLOAD = 500.0;
+
+    // auto: compiler menentukan tipe secara otomatis
     const auto software_version = std::string("v1.0.0");
+
+    // Ternary operator: if singkat dalam satu baris
     auto obstacle_str = obstacle ? "Yes" : "No";
 
+    // ----- CETAK INFORMASI ROBOT -----
     std::cout << "==============================" << '\n';
     std::cout << "NUIN Autonomous Mobile Robot" << '\n';
     std::cout << "==============================" << '\n';
     std::cout << '\n';
 
+    // std::left: rata kiri, std::fixed: format desimal tetap
+    // std::setw(18): atur lebar kolom 18 karakter
     std::cout << std::left;
     std::cout << std::fixed;
     std::cout << std::setw(18) << "Robot Name" << ": " << robot_name << '\n';

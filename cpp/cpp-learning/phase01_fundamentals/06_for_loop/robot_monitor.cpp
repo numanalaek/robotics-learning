@@ -1,3 +1,12 @@
+// ============================================================
+// Program 06f: For Loop - Robot Monitor
+// Deskripsi : Memonitor 8 sensor, memberi peringatan jika
+//             ada sensor yang mendeteksi jarak < 50 cm.
+// Konsep    : - For loop dengan counter
+//             - Akumulasi total warning dengan ++
+//             - Menampilkan ringkasan setelah loop
+// ============================================================
+
 #include <iostream>
 
 int main()
