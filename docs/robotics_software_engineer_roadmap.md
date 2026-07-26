@@ -1,42 +1,41 @@
 # ROADMAP ROBOTICS SOFTWARE ENGINEER
-=========================================
 
-## OVERVIEW
-===========
 Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu membangun robot komersial dari nol hingga produksi.
 
-┌─────────────────────────────────────────────────────────────────┐
-│                     ROBOTICS SOFTWARE ENGINEER                  │
-├──────────────┬──────────────┬──────────────────────────────────┤
-│  Modern C++  │ Modern Python │   Software Engineering         │
-│  (Roadmap 1) │  (Roadmap 2)  │      (Roadmap 3)                │
-└──────┬───────┴───────┬───────┴──────────────┬─────────────────┘
-       │               │                      │
-       └───────────────┴──────────────────────┘
-                           │
-                           ▼
-                  ┌─────────────────┐
-                  │  Robotics Core  │  ◄── Core Fundamental (Roadmap 4)
-                  └────────┬────────┘
-                           │
-                           ▼
-                  ┌─────────────────┐
-                  │  ROS2 Professional │ ◄── Framework (Roadmap 5)
-                  └────────┬────────┘
-                           │
-                           ▼
-                  ┌─────────────────┐
-                  │ Production      │  ◄── Production Ready (Roadmap 6)
-                  │   Robotics      │
-                  └─────────────────┘
+```
+                        ROBOTICS SOFTWARE ENGINEER
+               ┌──────────────────┬──────────────────┐
+               │                  │                  │
+               ▼                  ▼                  ▼
+          Modern C++         Modern Python     Software Engineering
+          (Roadmap 1)        (Roadmap 2)        (Roadmap 3)
+               │                  │                  │
+               └──────────────────┴──────────────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │  Robotics Core  │  ◄ Core Fundamental (Roadmap 4)
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │ ROS2 Professional│ ◄ Framework (Roadmap 5)
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │   Production    │  ◄ Production Ready (Roadmap 6)
+                    │   Robotics      │
+                    └─────────────────┘
+```
 
 ---
 
 ## ROADMAP 1: MODERN C++
-=========================
+
 **Target:** Menjadi C++ Engineer yang mampu membangun software robot berperforma tinggi.
 
-### TOPICS
+### Topik
 - Modern C++17/20
 - STL (Standard Template Library)
 - Memory Management (manual & smart pointers)
@@ -47,7 +46,7 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - Debugging (GDB, Valgrind, AddressSanitizer)
 - Performance Optimization (Profiling, Cache Optimization, SIMD)
 
-### OUTPUT TARGET
+### Output Target
 - [ ] Mampu membuat library C++ reusable
 - [ ] Mampu membaca & memahami project C++ besar (ROS2, MoveIt, dll)
 - [ ] Siap menggunakan **rclcpp** (ROS2 C++ client library)
@@ -55,10 +54,10 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 ---
 
 ## ROADMAP 2: MODERN PYTHON
-===========================
+
 **Target:** Menjadi Python Engineer yang mampu membangun software robot modular & maintainable.
 
-### TOPICS
+### Topik
 - Modern Python (3.10+): Type Hints, Dataclasses, Pattern Matching
 - OOP & Clean Architecture
 - Package Management (pip, poetry, uv)
@@ -68,23 +67,23 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - Clean Architecture (Layered, Hexagonal)
 - Linting & Formatting (ruff, black, mypy)
 
-### OUTPUT TARGET
+### Output Target
 - [ ] Mampu membuat package Python yang *publishable* ke PyPI
 - [ ] Siap menggunakan **rclpy** (ROS2 Python client library)
 
 ---
 
 ## ROADMAP 3: SOFTWARE ENGINEERING (Language-Agnostic)
-=======================================================
+
 **Target:** Mampu mendesain software skala industri (Enterprise-grade).
 
-### ARCHITECTURE PATTERNS
+### Architecture Patterns
 - Layered Architecture
 - Clean Architecture
 - Hexagonal Architecture (Ports & Adapters)
 - Onion Architecture
 
-### OOP & DESIGN PRINCIPLES
+### OOP & Design Principles
 - SOLID Principles
 - Composition over Inheritance
 - Interface Design & Dependency Injection
@@ -93,40 +92,40 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
   - Behavioral: Strategy, Observer, State, Command
   - Structural: Adapter, Decorator, Facade
 
-### CLEAN CODE PRACTICES
+### Clean Code Practices
 - Naming Conventions
 - Function & Class Design
 - Error Handling & Result Types
 - Logging & Observability
 
-### TESTING STRATEGY
+### Testing Strategy
 - Unit Testing (TDD)
 - Integration Testing
 - Regression Testing
 - Property-Based Testing
 
-### DEBUGGING & PERFORMANCE
+### Debugging & Performance
 - Debugging Techniques
 - Logging & Structured Logging
 - Profiling (CPU, Memory)
 - Performance Analysis
 
-### DEVOPS & TOOLING
+### DevOps & Tooling
 - Git (Branching Strategy, Conventional Commits)
 - Docker & Containerization
 - CI/CD (GitHub Actions, GitLab CI)
 - Static Analysis & Security Scanning
 
-### OUTPUT TARGET
+### Output Target
 - [ ] Mampu mendesain arsitektur software enterprise-grade
 
 ---
 
 ## ROADMAP 4: ROBOTICS CORE (FUNDAMENTAL)
-=========================================
+
 > **Paling Penting** — Konsep di sini berlaku universal untuk C++ maupun Python.
 
-### ROBOT ARCHITECTURE
+### Robot Architecture
 - Robot Class Design
 - Hardware Abstraction Layer (HAL)
 - Driver Development
@@ -134,26 +133,26 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - Controller Layer
 - Safety Layer (Emergency Stop, Watchdog)
 
-### ROBOT MATHEMATICS
+### Robot Mathematics
 - Linear Algebra: Vector, Matrix, Eigen/NumPy
 - Coordinate Frames & Transformations
 - Quaternion & Rotation Representations
 - Lie Groups & Lie Algebra (SE(3), SO(3))
 
-### MOTION & KINEMATICS
+### Motion & Kinematics
 - Forward Kinematics (FK)
 - Inverse Kinematics (IK) — Analytical & Numerical
 - Velocity Kinematics (Jacobian)
 - Acceleration & Dynamics
 - Trajectory Generation (Polynomial, Spline, S-curve)
 
-### CONTROL THEORY
+### Control Theory
 - PID Control & Tuning
 - State Machine (Finite State Machine)
 - Behavior Trees (BT)
 - Model Predictive Control (MPC) — *Advanced*
 
-### MOTION PLANNING & NAVIGATION
+### Motion Planning & Navigation
 - Graph Search: A*, Dijkstra, D*
 - Sampling-Based: RRT, RRT*, PRM
 - Optimization-Based: CHOMP, TrajOpt
@@ -161,35 +160,35 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - SLAM (EKF, GraphSLAM, LiDAR SLAM, Visual SLAM)
 - Localization (AMCL, Particle Filter)
 
-### PERCEPTION
+### Perception
 - Camera Models & Calibration (Intrinsic/Extrinsic)
 - LiDAR Processing (Point Cloud, PCL)
 - IMU & Sensor Fusion (EKF, UKF, Factor Graphs)
 - Encoder & Odometry
 
-### COMMUNICATION PROTOCOLS
+### Communication Protocols
 - Serial: UART, SPI, I2C
 - Fieldbus: CAN (CANopen, J1939), EtherCAT
 - Network: TCP/IP, UDP, ROS2 DDS
 - IoT/Industrial: MQTT, OPC-UA, Modbus
 
-### EMBEDDED SYSTEMS
+### Embedded Systems
 - MCU: STM32 (HAL/LL), ESP32 (FreeRTOS/ESP-IDF)
 - ARM Cortex-M Architecture
 - RTOS: FreeRTOS, Zephyr, ThreadX
 - Embedded Linux: Yocto, Buildroot
 - Bare Metal vs RTOS vs Linux
 
-### OUTPUT TARGET
+### Output Target
 - [ ] Mampu mendesain arsitektur robot dari nol (Hardware → Software)
 
 ---
 
 ## ROADMAP 5: ROS 2 PROFESSIONAL
-================================
+
 > Semua ilmu sebelumnya berkumpul di sini.
 
-### ROS 2 CORE CONCEPTS
+### ROS 2 Core Concepts
 - Workspace & Package Structure (ament_cmake, ament_python)
 - Node Lifecycle & Composition
 - Communication: Topic, Service, Action
@@ -197,19 +196,19 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - DDS Implementation (Fast DDS, Cyclone DDS, Zenoh)
 - Discovery & Domain Partitions
 
-### EXECUTION MODEL
+### Execution Model
 - Executors (Single-threaded, Multi-threaded, Static)
 - Callback Groups (Mutually Exclusive, Reentrant)
 - Timers & Rate Control
 - Lifecycle Nodes (Managed Nodes)
 
-### ROBOT DESCRIPTION & SIMULATION
+### Robot Description & Simulation
 - TF2 (Transform Tree, Static/Dynamic Broadcaster)
 - URDF / xacro / SRDF
 - Launch System (Launch Files, Substitutions, Conditions)
 - Parameter System (YAML, Dynamic Reconfigure)
 
-### NAVIGATION & MANIPULATION
+### Navigation & Manipulation
 - **Nav2**: Behavior Trees, Plugins (Planner, Controller, Recovery)
 - SLAM (slam_toolbox, Cartographer)
 - Localization (AMCL, Nav2 Localization)
@@ -217,63 +216,62 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - Simulation: Gazebo (Ignition/Garden/Harmonic), Isaac Sim
 - Visualization: RViz2, Foxglove
 
-### OUTPUT TARGET
+### Output Target
 - [ ] Mampu membangun robot lengkap menggunakan ROS 2 (Simulasi → Real Robot)
 
 ---
 
 ## ROADMAP 6: PRODUCTION ROBOTICS
-=================================
+
 > **Rarely Taught** — Skill untuk robot komersial di *production environment*.
 
-### LINUX & SYSTEM ADMIN
+### Linux & System Admin
 - Ubuntu Server / Debian Hardening
 - systemd (Service, Socket, Timer, Watchdog)
 - Networking (Netplan, iptables, WireGuard, Tailscale)
 - Permissions, udev rules, Real-time Kernel (PREEMPT_RT)
 
-### CONTAINERIZATION & DEPLOYMENT
+### Containerization & Deployment
 - Docker (Multi-stage Build, BuildKit)
 - Docker Compose (Development & Production)
 - Cross-compilation (arm64/armhf)
 - OTA / OTA Updates (RAUC, SWUpdate, Mender)
 
-### OBSERVABILITY & RELIABILITY
+### Observability & Reliability
 - Structured Logging (JSON, OpenTelemetry)
 - Metrics (Prometheus, Grafana)
 - Health Checks & Readiness Probes
 - Distributed Tracing (Jaeger, Zipkin)
 - Alerting & On-call
 
-### FLEET MANAGEMENT
+### Fleet Management
 - Fleet Orchestration
 - Remote Access & Debugging
 - Configuration Management (Ansible, SaltStack)
 - Multi-Robot Coordination
 
-### SECURITY
+### Security
 - TLS/mTLS (DDS Security, Zenoh)
 - Authentication & Authorization (OAuth2, OIDC, SPIFFE)
 - Secure Boot & TPM
 - SBOM & Vulnerability Scanning (Syft, Grype, Trivy)
 
-### AI / PERCEPTION (Production Grade)
+### AI / Perception (Production Grade)
 - OpenCV & Classical CV
 - ONNX Runtime / TensorRT / OpenVINO
 - Model Optimization (Quantization, Pruning, Distillation)
 - Dataset Management & Annotation (CVAT, Label Studio)
 - MLOps for Robotics (MLflow, DVC, ClearML)
 
-### OUTPUT TARGET
+### Output Target
 - [ ] Siap membangun & mendeploy robot komersial ke *production fleet*
 
 ---
 
 ## LEARNING PATH RECOMMENDATION (12 BULAN)
-==========================================
 
 | Bulan | Fokus Utama                    | Output Target                    |
-|-------|--------------------------------|----------------------------------|
+|-------|-------------------------------|----------------------------------|
 | 1-2   | Modern C++ + Modern Python     | Library C++ + Package Python     |
 | 3     | Software Engineering           | Clean Architecture Project       |
 | 4-5   | Robotics Core (Math + Motion)  | Robot Simulator Mini Project     |
@@ -287,9 +285,8 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 ---
 
 ## RECOMMENDED RESOURCES
-=========================
 
-### BOOKS
+### Books
 - **C++**: *Effective Modern C++* (Meyers), *C++ Templates* (Vandevoorde)
 - **Python**: *Effective Python* (Slatkin), *Architecture Patterns with Python* (Percival)
 - **Software Arch**: *Clean Architecture* (Martin), *Software Architecture Patterns* (Richards)
@@ -298,13 +295,13 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - **ROS 2**: *ROS 2 Humble Documentation*, *ROS 2 Design Patterns* (Silva)
 - **Embedded**: *Real-Time C++* (Kormanyos), *Mastering STM32* (Carminen)
 
-### COURSES & CERTS
+### Courses & Certs
 - **ROS 2**: The Construct, Articulated Robotics (YouTube)
 - **Control**: Underactuated Robotics (MIT 6.832), Control Bootcamp (Data-Book)
 - **Planning**: Motion Planning (CMU 16-735), Robotic Manipulation (MIT 6.800)
 - **Embedded**: Embedded Linux (Chris Simmonds), FreeRTOS Tutorial
 
-### HANDS-ON PROJECTS
+### Hands-On Projects
 1. **C++ Library** → Math/Kinematics Library + Unit Test + CI
 2. **Python Package** → Robot Interface Package + PyPI Publish
 3. **Mini Robot Sim** → 2D Differential Drive + EKF SLAM (Python/C++)
@@ -316,31 +313,26 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 ---
 
 ## PROGRESS TRACKER
-===================
 
 | Roadmap                      | Status       | Progress | Target Date |
 |------------------------------|--------------|----------|-------------|
-| 1. Modern C++                | [ ] Not Started | [====    ] 40% | YYYY-MM-DD  |
-| 2. Modern Python             | [ ] Not Started | [===     ] 30% | YYYY-MM-DD  |
-| 3. Software Engineering      | [ ] Not Started | [==      ] 20% | YYYY-MM-DD  |
-| 4. Robotics Core             | [ ] Not Started | [=       ] 10% | YYYY-MM-DD  |
-| 5. ROS 2 Professional        | [ ] Not Started | [        ] 0%  | YYYY-MM-DD  |
-| 6. Production Robotics       | [ ] Not Started | [        ] 0%  | YYYY-MM-DD  |
+| 1. Modern C++                | [ ] Not Started | 40%      | YYYY-MM-DD  |
+| 2. Modern Python             | [ ] Not Started | 30%      | YYYY-MM-DD  |
+| 3. Software Engineering      | [ ] Not Started | 20%      | YYYY-MM-DD  |
+| 4. Robotics Core             | [ ] Not Started | 10%      | YYYY-MM-DD  |
+| 5. ROS 2 Professional        | [ ] Not Started | 0%       | YYYY-MM-DD  |
+| 6. Production Robotics       | [ ] Not Started | 0%       | YYYY-MM-DD  |
 
 ---
 
 ## NOTES & PERSONAL REFLECTION
-==============================
+
 > *Catatan pribadi, blockers, insights, link referensi penting, dll.*
 
 ```
 Tanggal: YYYY-MM-DD
 Catatan:
 - ...
-- ...
-
-Tanggal: YYYY-MM-DD
-Catatan:
 - ...
 ```
 
