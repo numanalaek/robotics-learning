@@ -1,3 +1,16 @@
+// ============================================================
+// Program 10d: Lifetime — Masa Hidup Objek
+// Deskripsi : Menunjukkan urutan pembuatan (constructor) dan
+//             penghancuran (destructor) objek Robot di berbagai
+//             scope: global, fungsi, dan block.
+// Konsep    : - Global -> dibuat pertama, dihancurkan terakhir
+//             - Block  -> dibuat saat { }, dihancurkan saat }
+//             - LIFO   -> objek yang dibuat terakhir akan
+//               dihancurkan pertama
+//             - Perhatikan urutan output "created" dan
+//               "destroyed" untuk memahami lifetime
+// ============================================================
+
 #include <iostream>
 
 struct Robot
