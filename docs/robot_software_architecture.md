@@ -1,51 +1,51 @@
 # ROBOT SOFTWARE ARCHITECTURE
-==============================
+
 Layered Architecture untuk Robot Komersial
 
 ## OVERVIEW
-===========
+
 Arsitektur software robot berlapis (*layered architecture*) — dari **Hardware** hingga **Enterprise/Cloud Layer**. Setiap lapisan memiliki tanggung jawab yang terpisah dan berkomunikasi melalui antarmuka yang terdefinisi.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                   ENTERPRISE / CLOUD LAYER                  │
 ├─────────────────────────────────────────────────────────────┤
-│  Dashboard  │  Fleet Mgmt  │  ERP  │  MES  │  Database     │
+│  Dashboard  │  Fleet Mgmt  │  ERP  │  MES  │  Database      │
 │  MQTT       │  OTA Update                                   │
 └─────────────────────────────────────────────────────────────┘
                            ▲
                            │
 ┌─────────────────────────────────────────────────────────────┐
-│                    APPLICATION LAYER                         │
+│                    APPLICATION LAYER                        │
 ├─────────────────────────────────────────────────────────────┤
 │  Mission Manager  │  Navigation  │  Perception              │
-│  Robot Management │  Manual Op                               │
+│  Robot Management │  Manual Op                              │
 └─────────────────────────────────────────────────────────────┘
                            ▲
                            │
 ┌─────────────────────────────────────────────────────────────┐
-│                   ROBOT MIDDLEWARE LAYER                     │
+│                   ROBOT MIDDLEWARE LAYER                    │
 ├─────────────────────────────────────────────────────────────┤
 │  ROS 2  │  DDS  │  TF2  │  Lifecycle  │  Component          │
 └─────────────────────────────────────────────────────────────┘
                            ▲
                            │
 ┌─────────────────────────────────────────────────────────────┐
-│                  HARDWARE INTERFACE LAYER                    │
+│                  HARDWARE INTERFACE LAYER                   │
 ├─────────────────────────────────────────────────────────────┤
-│  Device Drivers  │  Comm (EtherCAT, CAN, UART, SPI, I2C)   │
+│  Device Drivers  │  Comm (EtherCAT, CAN, UART, SPI, I2C)    │
 └─────────────────────────────────────────────────────────────┘
                            ▲
                            │
 ┌─────────────────────────────────────────────────────────────┐
-│                     FIRMWARE LAYER                           │
+│                     FIRMWARE LAYER                          │
 ├─────────────────────────────────────────────────────────────┤
-│  Motion Control  │  Safety  │  Actuator Control              │
+│  Motion Control  │  Safety  │  Actuator Control             │
 └─────────────────────────────────────────────────────────────┘
                            ▲
                            │
 ┌─────────────────────────────────────────────────────────────┐
-│                      HARDWARE LAYER                          │
+│                      HARDWARE LAYER                         │
 ├─────────────────────────────────────────────────────────────┤
 │  Main Controller  │  RT Controller  │  Actuators  │  Sensors│
 │  Power System                                               │
@@ -55,22 +55,25 @@ Arsitektur software robot berlapis (*layered architecture*) — dari **Hardware*
 ---
 
 ## LAYER 1 — HARDWARE LAYER
-============================
+
 Komponen fisik robot.
 
 ### Main Controller
+
 - NVIDIA Jetson (Orin, Xavier, Nano)
 - Intel / AMD Industrial PC
 - ARM SBC (Raspberry Pi, ODROID)
 - Embedded PC
 
 ### Real-Time Controller
+
 - STM32 (F4, H7, G4)
 - TI C2000 (Delfino, Piccolo)
 - NXP (i.MX RT, LPC)
 - Safety PLC (Optional)
 
 ### Actuators
+
 - Servo Motor
 - BLDC Motor
 - Servo Drive
@@ -78,6 +81,7 @@ Komponen fisik robot.
 - Brake System
 
 ### Sensors
+
 - LiDAR (2D, 3D)
 - Camera (RGB, Depth, Thermal)
 - IMU (Accelerometer, Gyroscope, Magnetometer)
@@ -87,6 +91,7 @@ Komponen fisik robot.
 - Battery Sensor
 
 ### Power System
+
 - LiFePO₄ Battery
 - BMS (Battery Management System)
 - Charging Dock
@@ -96,10 +101,11 @@ Komponen fisik robot.
 ---
 
 ## LAYER 2 — FIRMWARE LAYER
-============================
+
 Real-time control & safety yang berjalan di microcontroller.
 
 ### Motion Control
+
 - PID Controller
 - Differential Drive Controller
 - Velocity Controller
@@ -107,6 +113,7 @@ Real-time control & safety yang berjalan di microcontroller.
 - Odometry Calculation
 
 ### Safety Control
+
 - Emergency Stop
 - Safety Monitoring
 - Watchdog
@@ -114,6 +121,7 @@ Real-time control & safety yang berjalan di microcontroller.
 - Fault Detection
 
 ### Actuator Control
+
 - Lift Controller
 - Battery Charging Controller
 - Power Distribution
@@ -122,10 +130,11 @@ Real-time control & safety yang berjalan di microcontroller.
 ---
 
 ## LAYER 3 — HARDWARE INTERFACE LAYER
-======================================
+
 Abstraksi hardware — driver dan protokol komunikasi.
 
 ### Device Drivers
+
 - Motor Driver Interface
 - Encoder Driver
 - LiDAR Driver
@@ -138,6 +147,7 @@ Abstraksi hardware — driver dan protokol komunikasi.
 - IO Driver
 
 ### Hardware Communication
+
 - EtherCAT
 - CAN Bus (CANopen, J1939)
 - RS485 / Modbus
@@ -150,10 +160,11 @@ Abstraksi hardware — driver dan protokol komunikasi.
 ---
 
 ## LAYER 4 — ROBOT MIDDLEWARE LAYER
-====================================
+
 Framework komunikasi dan orchestration antar komponen software.
 
 ### ROS 2 Communication
+
 - Topics (Publish / Subscribe)
 - Services (Request / Response)
 - Actions (Goal / Result / Feedback)
@@ -166,16 +177,18 @@ Framework komunikasi dan orchestration antar komponen software.
 ---
 
 ## LAYER 5 — APPLICATION LAYER
-===============================
+
 Logika aplikasi dan intelligence robot.
 
 ### Mission Manager
+
 - Task Planner
 - Workflow Engine
 - Mission Scheduler
 - Charging Manager
 
 ### Navigation System
+
 - Localization (AMCL, EKF)
 - SLAM (slam_toolbox, Cartographer)
 - Mapping (Occupancy Grid, Costmap)
@@ -184,6 +197,7 @@ Logika aplikasi dan intelligence robot.
 - Obstacle Avoidance
 
 ### Perception System
+
 - LiDAR Processing (Point Cloud, PCL)
 - Camera Vision (OpenCV, Deep Learning)
 - Human Detection
@@ -191,6 +205,7 @@ Logika aplikasi dan intelligence robot.
 - Sensor Fusion
 
 ### Robot Management
+
 - Battery Management
 - Health Monitoring
 - Diagnostics
@@ -198,6 +213,7 @@ Logika aplikasi dan intelligence robot.
 - Safety Manager
 
 ### Manual Operation
+
 - Remote Control (Joystick, Keyboard)
 - Maintenance Mode
 - Manual Override
@@ -205,10 +221,11 @@ Logika aplikasi dan intelligence robot.
 ---
 
 ## LAYER 6 — ENTERPRISE / CLOUD LAYER
-======================================
+
 Fleet management, monitoring, dan integrasi enterprise.
 
 ### Components
+
 - Dashboard (Real-time Monitoring)
 - Fleet Management (Multi-robot)
 - ERP / MES Integration
@@ -217,6 +234,7 @@ Fleet management, monitoring, dan integrasi enterprise.
 - OTA Update (RAUC, Mender, SWUpdate)
 
 ### Communication
+
 - REST API
 - WebSocket
 - MQTT / OPC-UA
@@ -225,11 +243,12 @@ Fleet management, monitoring, dan integrasi enterprise.
 ---
 
 ## ALIRAN DATA (DATA FLOW)
-===========================
+
+### Sensor Data (Bottom → Top)
 
 ```
 Hardware Layer
-    ↓ (Sensor Data: LiDAR, Camera, IMU, Encoder)
+    ↓ (Raw Sensor Data)
 Firmware Layer
     ↓ (Filtered/Processed Data via UART/CAN)
 Hardware Interface Layer
@@ -241,7 +260,8 @@ Application Layer
 Enterprise / Cloud Layer
 ```
 
-### Arah Sebaliknya (Command/Control):
+### Command / Control (Top → Bottom)
+
 ```
 Enterprise / Cloud Layer
     ↓ (Mission Command, Goal, OTA Update)
@@ -259,7 +279,7 @@ Hardware Layer
 ---
 
 ## NOTES & PERSONAL REFLECTION
-===============================
+
 > *Catatan arsitektur, keputusan desain, blockers, dll.*
 
 ```
