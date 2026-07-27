@@ -72,21 +72,24 @@ Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Eng
 
 **Class & Object**
 - [x] Class, Object, Data Members
-- [ ] Member Functions
+- [x] Member Functions
 - [x] struct vs class
 
 **Constructor & Destructor**
-- [ ] Constructor, Destructor
-- [ ] Member Initializer List
+- [x] Constructor
+- [ ] Destructor
+- [x] Member Initializer List
 - [x] Constructor Overloading
 - [x] Default / Parameterized Constructor
 
 **Access Control**
-- [ ] public, private, protected
+- [x] public, private
+- [ ] protected
 
 **Encapsulation**
+- [x] Basic Encapsulation (private data)
 - [ ] Getter, Setter, Invariant
-- [ ] const Member Function
+- [x] const Member Function
 
 **Object Copying**
 - [ ] Copy Constructor, Copy Assignment
@@ -435,7 +438,7 @@ Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Eng
 | Pillar | Phase | Progress |
 |--------|-------|----------|
 | **Core C++** | 1. C++ Fundamentals | ██████████ 100% |
-| | 2. OOP | ██░░░░░░░░ ~20% |
+| | 2. OOP | ████░░░░░░ ~40% |
 | **Modern C++ & STL** | 3. Modern C++ Language | ██░░░░░░░░ ~15% |
 | | 4. STL | ░░░░░░░░░░ 0% |
 | **Engineering & Tooling** | 5. Project Structure | ████░░░░░░ ~35% |
