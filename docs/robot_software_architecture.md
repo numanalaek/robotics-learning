@@ -42,7 +42,7 @@ Arsitektur software robot berlapis (*layered architecture*) — dari **Hardware*
 ├─────────────────────────────────────────────────────────────┤
 │  Motion Control  │  Safety  │  Actuator Control             │
 └─────────────────────────────────────────────────────────────┘
-                           ▲
+          roboti                 ▲
                            │
 ┌─────────────────────────────────────────────────────────────┐
 │                      HARDWARE LAYER                         │
