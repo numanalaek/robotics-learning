@@ -672,29 +672,28 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 ---
 
 ## PROGRESS TRACKER
-
 ====================
 
-| Pillar | Phase | Status | Target Date |
-| -------- | ------- | -------- | ------------- |
-| **Core Fundamentals** | 1. Python Fundamentals | [ ] Not Started | YYYY-MM-DD |
-| | 2. Data Structures | [ ] Not Started | YYYY-MM-DD |
-| | 3. OOP | [ ] Not Started | YYYY-MM-DD |
-| | 4. Modern Python | [ ] Not Started | YYYY-MM-DD |
-| **Tooling & Infra** | 5. Standard Library | [ ] Not Started | YYYY-MM-DD |
-| | 6. Project Structure | [ ] Not Started | YYYY-MM-DD |
-| | 7. Debugging & Testing | [ ] Not Started | YYYY-MM-DD |
-| | 8. Concurrency | [ ] Not Started | YYYY-MM-DD |
-| | 9. Software Engineering | [ ] Not Started | YYYY-MM-DD |
-| **Robotics Integration** | 10. Python for Robotics | [ ] Not Started | YYYY-MM-DD |
-| | 11. ROS 2 Preparation | [ ] Not Started | YYYY-MM-DD |
-| | 12. Industry Tools | [ ] Not Started | YYYY-MM-DD |
-| **Advanced Robotics** | 13. Robotics Architecture | [ ] Not Started | YYYY-MM-DD |
-| | 14. Robotics Algorithms | [ ] Not Started | YYYY-MM-DD |
-| | 15. Communication | [ ] Not Started | YYYY-MM-DD |
-| | 16. System Engineering | [ ] Not Started | YYYY-MM-DD |
-| | 17. Production SE | [ ] Not Started | YYYY-MM-DD |
-| | 18. Advanced Robotics | [ ] Not Started | YYYY-MM-DD |
+| Pillar | Phase | Progress |
+|--------|-------|----------|
+| **Core Fundamentals** | 1. Python Fundamentals | ░░░░░░░░░░ 0% |
+| | 2. Data Structures | ░░░░░░░░░░ 0% |
+| | 3. OOP | ░░░░░░░░░░ 0% |
+| | 4. Modern Python | ░░░░░░░░░░ 0% |
+| **Tooling & Infra** | 5. Standard Library | ░░░░░░░░░░ 0% |
+| | 6. Project Structure | ░░░░░░░░░░ 0% |
+| | 7. Debugging & Testing | ░░░░░░░░░░ 0% |
+| | 8. Concurrency | ░░░░░░░░░░ 0% |
+| | 9. Software Engineering | ░░░░░░░░░░ 0% |
+| **Robotics Integration** | 10. Python for Robotics | ░░░░░░░░░░ 0% |
+| | 11. ROS 2 Preparation | ░░░░░░░░░░ 0% |
+| | 12. Industry Tools | ░░░░░░░░░░ 0% |
+| **Advanced Robotics** | 13. Robotics Architecture | ░░░░░░░░░░ 0% |
+| | 14. Robotics Algorithms | ░░░░░░░░░░ 0% |
+| | 15. Communication | ░░░░░░░░░░ 0% |
+| | 16. System Engineering | ░░░░░░░░░░ 0% |
+| | 17. Production SE | ░░░░░░░░░░ 0% |
+| | 18. Advanced Robotics | ░░░░░░░░░░ 0% |
 
 ---
 
