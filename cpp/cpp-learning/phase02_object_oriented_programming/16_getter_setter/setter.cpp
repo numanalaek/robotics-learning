@@ -37,7 +37,6 @@ public:
     }
 
     // --- Getter (by value — tipe kecil) -------------------------
-
     Battery getBattery() const
     {
         return battery_;
@@ -52,7 +51,7 @@ public:
 
     // Setter menerima struct utuh, bukan parameter individual.
     // Validasi dilakukan SEBELUM assignment.
-    void setBattery(const Battery& battery)
+    void setBattery(const Battery &battery)
     {
         // Validasi: percent 0–100
         if (battery.percent < 0 || battery.percent > 100)
@@ -64,10 +63,10 @@ public:
         {
             throw std::out_of_range{"Voltage must be > 0"};
         }
-        battery_ = battery;          // aman → simpan
+        battery_ = battery; // aman → simpan
     }
 
-    void setVelocity(const Velocity& velocity)
+    void setVelocity(const Velocity &velocity)
     {
         // Validasi: linear >= 0
         if (velocity.linear < 0.0)
@@ -105,9 +104,9 @@ int main()
 
     try
     {
-        robot.setBattery({150, 12.0});   // percent > 100 → throw
+        robot.setBattery({150, 12.0}); // percent > 100 → throw
     }
-    catch (const std::out_of_range& e)
+    catch (const std::out_of_range &e)
     {
         std::cout << "Validation OK : " << e.what() << "\n";
     }

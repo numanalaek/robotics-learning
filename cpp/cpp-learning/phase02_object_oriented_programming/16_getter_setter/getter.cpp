@@ -9,13 +9,13 @@
 
 // --- Data structs (small objects → return by value) ----------
 
-struct Battery                      // small: int + double
+struct Battery // small: int + double
 {
     int percent;
     double voltage;
 };
 
-struct Velocity                     // small: double + double
+struct Velocity // small: double + double
 {
     double linear;
     double angular;
@@ -26,8 +26,8 @@ struct Velocity                     // small: double + double
 class Robot
 {
 private:
-    Battery battery_;               // trailing underscore _
-    Velocity velocity_;             // membedakan member vs parameter
+    Battery battery_;   // trailing underscore _
+    Velocity velocity_; // membedakan member vs parameter
 
 public:
     Robot()
@@ -39,7 +39,7 @@ public:
     // const → fungsi tidak mengubah member class.
     Battery getBattery() const
     {
-        return battery_;            // copy kecil, sama efisien dg reference
+        return battery_; // copy kecil, sama efisien dg reference
     }
 
     Velocity getVelocity() const

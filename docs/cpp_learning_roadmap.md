@@ -88,7 +88,7 @@ Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Eng
 
 **Encapsulation**
 - [x] Basic Encapsulation (private data)
-- [ ] Getter, Setter, Invariant
+- [x] Getter, Setter, Invariant
 - [x] const Member Function
 
 **Object Copying**
@@ -438,7 +438,7 @@ Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Eng
 | Pillar | Phase | Progress |
 |--------|-------|----------|
 | **Core C++** | 1. C++ Fundamentals | ██████████ 100% |
-| | 2. OOP | ████░░░░░░ ~40% |
+| | 2. OOP | ████░░░░░░ ~48% |
 | **Modern C++ & STL** | 3. Modern C++ Language | ██░░░░░░░░ ~15% |
 | | 4. STL | ░░░░░░░░░░ 0% |
 | **Engineering & Tooling** | 5. Project Structure | ████░░░░░░ ~35% |
@@ -465,5 +465,5 @@ Catatan:
 
 ---
 
-*Last Updated: 2026-07-26*
+*Last Updated: 2026-07-28*
 *Version: 2.0 (Restructured for readability)*
