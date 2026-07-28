@@ -314,14 +314,14 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 
 ## PROGRESS TRACKER
 
-| Roadmap                      | Status       | Progress | Target Date |
-|------------------------------|--------------|----------|-------------|
-| 1. Modern C++                | [ ] Not Started | 40%      | YYYY-MM-DD  |
-| 2. Modern Python             | [ ] Not Started | 30%      | YYYY-MM-DD  |
-| 3. Software Engineering      | [ ] Not Started | 20%      | YYYY-MM-DD  |
-| 4. Robotics Core             | [ ] Not Started | 10%      | YYYY-MM-DD  |
-| 5. ROS 2 Professional        | [ ] Not Started | 0%       | YYYY-MM-DD  |
-| 6. Production Robotics       | [ ] Not Started | 0%       | YYYY-MM-DD  |
+| Roadmap                      | Progress |
+|------------------------------|----------|
+| 1. Modern C++                | ████░░░░░░ ~48% |
+| 2. Modern Python             | ░░░░░░░░░░ 0% |
+| 3. Software Engineering      | ░░░░░░░░░░ 0% |
+| 4. Robotics Core             | ░░░░░░░░░░ 0% |
+| 5. ROS 2 Professional        | ░░░░░░░░░░ 0% |
+| 6. Production Robotics       | ░░░░░░░░░░ 0% |
 
 ---
 
@@ -338,5 +338,5 @@ Catatan:
 
 ---
 
-*Last Updated: 2026-07-26*
+*Last Updated: 2026-07-28*
 *Version: 2.0 (Restructured for readability)*
