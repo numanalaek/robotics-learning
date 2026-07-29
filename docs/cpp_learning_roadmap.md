@@ -77,7 +77,7 @@ Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Eng
 
 **Constructor & Destructor**
 - [x] Constructor
-- [ ] Destructor
+- [x] Destructor
 - [x] Member Initializer List
 - [x] Constructor Overloading
 - [x] Default / Parameterized Constructor
@@ -438,7 +438,7 @@ Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Eng
 | Pillar | Phase | Progress |
 |--------|-------|----------|
 | **Core C++** | 1. C++ Fundamentals | ██████████ 100% |
-| | 2. OOP | ████░░░░░░ ~48% |
+| | 2. OOP | █████░░░░░ ~56% |
 | **Modern C++ & STL** | 3. Modern C++ Language | ██░░░░░░░░ ~15% |
 | | 4. STL | ░░░░░░░░░░ 0% |
 | **Engineering & Tooling** | 5. Project Structure | ████░░░░░░ ~35% |
