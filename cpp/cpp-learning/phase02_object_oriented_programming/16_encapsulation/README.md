@@ -1,4 +1,4 @@
-# 15. Encapsulation & Struct Composition
+# 16. Encapsulation & Struct Composition
 
 Data member class dibuat **private** agar tidak bisa diakses langsung dari luar class. Akses hanya melalui **public member function**. Data juga dikelompokkan dalam **struct** agar lebih terstruktur dan mendekati representasi robot nyata.
 

@@ -1,4 +1,4 @@
-# Constructor dalam C++
+# 13. Constructor dalam C++
 
 ## Empat Hal Penting tentang Constructor
 

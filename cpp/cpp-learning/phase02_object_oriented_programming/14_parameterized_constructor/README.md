@@ -1,4 +1,4 @@
-# 13. Parameterized Constructor
+# 14. Parameterized Constructor
 
 **Parameterized Constructor** adalah constructor yang menerima parameter sehingga nilai awal data member suatu objek dapat diinisialisasi secara langsung saat objek dibuat.
 

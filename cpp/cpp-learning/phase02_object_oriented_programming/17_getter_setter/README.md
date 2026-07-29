@@ -1,4 +1,4 @@
-# 16. Getter & Setter
+# 17. Getter & Setter
 
 Getter dan setter adalah public member function yang mengontrol akses ke data member private. Getter mengambil snapshot data, setter memvalidasi data sebelum menyimpannya.
 
