@@ -1,10 +1,10 @@
 # LEARNING STAGES OVERVIEW
 ===========================
-Robotics Software Engineer — Ringkasan Tahapan Belajar
+Robotics Software Engineer — Learning Stages Summary
 
 ## OVERVIEW
 ===========
-Ringkasan 9 tahap utama dalam perjalanan menjadi **Robotics Software Engineer**. Dari fondasi Linux/Git hingga Fleet Management & Cloud.
+Summary of the 9 main stages in the journey to becoming a **Robotics Software Engineer**. From Linux/Git foundations to Fleet Management & Cloud.
 
 ```
 Stage 1-2 : Foundation   →  Linux, Git, Python, C++, Software Architecture
@@ -16,23 +16,23 @@ Stage 9   : Production   →  Fleet Management, Cloud, OTA
 
 ---
 
-## TAHAPAN BELAJAR
+## LEARNING STAGES
 
 | Stage | Fokus | Status |
 |-------|-------|--------|
 | **1** | **Linux, Git, Python, C++** | ✅ Completed |
 | **2** | **Software Architecture & OOP** | ✅ Completed |
 | **3** | **ROS 2 Middleware** — Topic, Service, Action, TF2 | [ ] Not Started |
-| **4** | **Hardware Interface** — Driver, komunikasi perangkat | [ ] Not Started |
+| **4** | **Hardware Interface** — Drivers, device communication | [ ] Not Started |
 | **5** | **Navigation & Localization** | [ ] Not Started |
 | **6** | **Perception** — LiDAR, Camera, AI | [ ] Not Started |
 | **7** | **Firmware & Real-Time Control** | [ ] Not Started |
-| **8** | **Integrasi** — Jetson dan robot fisik | [ ] Not Started |
+| **8** | **Integration** — Jetson and physical robot | [ ] Not Started |
 | **9** | **Fleet Management & Cloud** | [ ] Not Started |
 
 ---
 
-## DETAIL TIAP STAGE
+## STAGE DETAILS
 
 ### STAGE 1: FOUNDATION ✅
 - [x] Linux (Ubuntu, command line, bash)
@@ -40,14 +40,14 @@ Stage 9   : Production   →  Fleet Management, Cloud, OTA
 - [x] Python (fundamental, OOP, package)
 - [x] C++ (fundamental, OOP, STL)
 
-**Output:** Mampu setup development environment dan version control.
+**Output:** Able to set up development environment and version control.
 
 ### STAGE 2: SOFTWARE ENGINEERING ✅
 - [x] Software Architecture (Layered, Clean, Hexagonal)
 - [x] OOP Design (SOLID, Design Patterns)
 - [x] Clean Code & Best Practices
 
-**Output:** Mampu mendesain software modular & maintainable.
+**Output:** Able to design modular & maintainable software.
 
 ### STAGE 3: ROS 2 MIDDLEWARE
 - [ ] ROS 2 Core (Node, Topic, Service, Action)
@@ -55,7 +55,7 @@ Stage 9   : Production   →  Fleet Management, Cloud, OTA
 - [ ] Launch System, Parameters
 - [ ] RViz Visualization
 
-**Output:** Mampu membuat node ROS 2 dan berkomunikasi.
+**Output:** Able to create ROS 2 nodes and communicate.
 
 ### STAGE 4: HARDWARE INTERFACE
 - [ ] Driver Development
@@ -63,7 +63,7 @@ Stage 9   : Production   →  Fleet Management, Cloud, OTA
 - [ ] Actuator Control (Motor, Servo)
 - [ ] Communication Protocols (Serial, CAN, TCP/UDP)
 
-**Output:** Mampu menghubungkan hardware ke ROS 2.
+**Output:** Able to connect hardware to ROS 2.
 
 ### STAGE 5: NAVIGATION & LOCALIZATION
 - [ ] SLAM (slam_toolbox, Cartographer)
@@ -71,7 +71,7 @@ Stage 9   : Production   →  Fleet Management, Cloud, OTA
 - [ ] Localization (AMCL, EKF)
 - [ ] Path Planning (A*, Dijkstra, RRT)
 
-**Output:** Robot mampu bernavigasi otonom.
+**Output:** Robot capable of autonomous navigation.
 
 ### STAGE 6: PERCEPTION
 - [ ] LiDAR Processing (Point Cloud, PCL)
@@ -79,7 +79,7 @@ Stage 9   : Production   →  Fleet Management, Cloud, OTA
 - [ ] Object Detection (Deep Learning)
 - [ ] Sensor Fusion
 
-**Output:** Robot mampu melihat dan mengenali lingkungan.
+**Output:** Robot capable of seeing and recognizing the environment.
 
 ### STAGE 7: FIRMWARE & REAL-TIME
 - [ ] STM32 / ESP32 Programming
@@ -87,7 +87,7 @@ Stage 9   : Production   →  Fleet Management, Cloud, OTA
 - [ ] PID Control, Motion Control
 - [ ] Safety Systems (Watchdog, E-Stop)
 
-**Output:** Firmware siap produksi untuk robot.
+**Output:** Production-ready firmware for the robot.
 
 ### STAGE 8: SYSTEM INTEGRATION
 - [ ] NVIDIA Jetson (CUDA, TensorRT)
@@ -95,7 +95,7 @@ Stage 9   : Production   →  Fleet Management, Cloud, OTA
 - [ ] Robot Assembly & Calibration
 - [ ] Field Testing
 
-**Output:** Robot fisik siap dioperasikan.
+**Output:** Physical robot ready for operation.
 
 ### STAGE 9: FLEET & CLOUD
 - [ ] Fleet Management System
@@ -103,7 +103,7 @@ Stage 9   : Production   →  Fleet Management, Cloud, OTA
 - [ ] Cloud Robot (MQTT, REST API)
 - [ ] Monitoring & Dashboard
 
-**Output:** Multi-robot deployment siap produksi.
+**Output:** Production-ready multi-robot deployment.
 
 ---
 
@@ -126,11 +126,11 @@ Stage 9   : Production   →  Fleet Management, Cloud, OTA
 
 ## NOTES & PERSONAL REFLECTION
 ===============================
-> *Catatan pribadi, blockers, insights, link referensi penting, dll.*
+> *Personal notes, blockers, insights, important reference links, etc.*
 
 ```
-Tanggal: YYYY-MM-DD
-Catatan:
+Date: YYYY-MM-DD
+Notes:
 - ...
 - ...
 ```

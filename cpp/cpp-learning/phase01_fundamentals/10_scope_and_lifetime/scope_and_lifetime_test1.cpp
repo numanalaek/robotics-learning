@@ -1,14 +1,14 @@
 // ============================================================
 // Program 10b: Scope — Global vs Function vs Main
-// Deskripsi : Membandingkan akses variabel dari scope berbeda.
-//             global_value bisa diakses dari main dan fungsi.
-//             function_value hanya di dalam testFunction().
-//             main_value hanya di dalam main().
-// Konsep    : - Global scope bisa diakses dari fungsi mana pun
-//             - Local scope terbatas pada fungsi tempat variabel
-//               dideklarasikan
-//             - main() dan testFunction() punya local scope
-//               masing-masing yang tidak saling terlihat
+// Description: Compares variable access from different scopes.
+//             global_value can be accessed from main and functions.
+//             function_value is only inside testFunction().
+//             main_value is only inside main().
+// Concepts  : - Global scope can be accessed from any function
+//             - Local scope is limited to the function where the
+//               variable is declared
+//             - main() and testFunction() each have their own
+//               local scope that are not visible to each other
 // ============================================================
 
 #include <iostream>

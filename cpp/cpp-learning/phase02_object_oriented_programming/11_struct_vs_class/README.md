@@ -1,38 +1,38 @@
 # 11 — Struct, Class & Object
 
-Memahami perbedaan struct dan class, serta konsep blueprint dan object dalam C++.
+Understanding the difference between struct and class, and the concept of blueprint and object in C++.
 
 ## Program
 
 ### `robot_struct.cpp`
-Struct `Robot` dengan 4 data member. Dua object (`robot1`, `robot2`) dengan data berbeda.
+Struct `Robot` with 4 data members. Two objects (`robot1`, `robot2`) with different data.
 
 ### `robot_class.cpp`
-Class `Robot` yang identik dengan struct, tetapi perlu `public:` eksplisit.
+Class `Robot` identical to struct, but needs explicit `public:`.
 
 ### `struct_test.cpp`
-Latihan dasar struct dengan 3 member dan satu object.
+Basic struct exercise with 3 members and one object.
 
 ### `class_vs_struct.cpp`
-Perbandingan langsung struct vs class secara berdampingan dalam satu program.
+Direct side-by-side comparison of struct vs class in one program.
 
 ### `class_test.cpp`
-Latihan class dengan 2 object dan demonstrasi bahwa tiap object punya data sendiri.
+Class exercise with 2 objects demonstrating that each object has its own data.
 
-## Konsep
+## Concepts
 
-- **Struct / Class** — blueprint atau tipe data yang mendefinisikan bentuk Robot
-- **Object** — instance nyata yang dibuat berdasarkan blueprint (`Robot robot1;`)
-- **Data member** — variabel milik object, diakses dengan titik (`robot1.battery`)
+- **Struct / Class** — blueprint or data type that defines the Robot's shape
+- **Object** — real instance created from the blueprint (`Robot robot1;`)
+- **Data member** — variable belonging to an object, accessed with dot (`robot1.battery`)
 - **Default access** — struct = `public`, class = `private`
-- Setiap object punya **salinan data sendiri** — mengubah object lain tidak memengaruhinya
+- Each object has **its own copy of data** — changing one object does not affect another
 
-## Kapan Pakai Struct vs Class (Rule of Thumb)
+## When to Use Struct vs Class (Rule of Thumb)
 
-**Gunakan `struct` untuk data murni (Plain Old Data / POD):**
-- Hanya membawa data, tidak punya perilaku (function/method)
-- Contoh robotik: `Pose`, `BatteryState`, `LidarScan`, `WheelEncoder`, `MotorCommand`, `RobotConfig`
-- Contoh ROS 2: `Header`, `Pose`, `Twist`, `Vector3`, `Point`, `Quaternion`, `ColorRGBA`
+**Use `struct` for pure data (Plain Old Data / POD):**
+- Only carries data, has no behavior (function/method)
+- Robotics examples: `Pose`, `BatteryState`, `LidarScan`, `WheelEncoder`, `MotorCommand`, `RobotConfig`
+- ROS 2 examples: `Header`, `Pose`, `Twist`, `Vector3`, `Point`, `Quaternion`, `ColorRGBA`
 
 ```cpp
 struct Pose
@@ -43,9 +43,9 @@ struct Pose
 };
 ```
 
-**Gunakan `class` untuk komponen yang "melakukan sesuatu" (punya state, aturan, perilaku):**
-- Punya member function, mengelola state internal, memvalidasi input
-- Contoh robotik: `Robot`, `MotorController`, `Navigation`, `Localization`, `LidarDriver`, `BatteryMonitor`, `RobotNode`
+**Use `class` for components that "do something" (have state, rules, behavior):**
+- Has member functions, manages internal state, validates input
+- Robotics examples: `Robot`, `MotorController`, `Navigation`, `Localization`, `LidarDriver`, `BatteryMonitor`, `RobotNode`
 
 ```cpp
 class MotorController
@@ -59,9 +59,9 @@ private:
 };
 ```
 
-### Pattern di ROS 2
+### Patterns in ROS 2
 
-| struct (Data) | class (Perilaku) |
+| struct (Data) | class (Behavior) |
 |---------------|------------------|
 | Header | Node |
 | Pose / Twist / Vector3 | Publisher / Subscription |
@@ -69,11 +69,11 @@ private:
 | ColorRGBA / BatteryState | LifecycleNode / Timer |
 | LaserScan / WheelEncoder | MotorController / Navigation |
 
-### Ringkasan untuk Robotics Engineer
+### Summary for Robotics Engineer
 
-| Kategori | Gunakan | Contoh |
-|----------|---------|--------|
-| Hanya data (POD) | `struct` | `Pose`, `BatteryState`, `LidarScan` |
-| Punya fungsi, state, logika | `class` | `Robot`, `MotorController`, `RobotNode` |
+| Category | Use | Examples |
+|----------|-----|---------|
+| Data only (POD) | `struct` | `Pose`, `BatteryState`, `LidarScan` |
+| Has functions, state, logic | `class` | `Robot`, `MotorController`, `RobotNode` |
 
-Kebiasaan ini selaras dengan proyek C++ modern dan mempermudah transisi ke ROS 2.
+This convention aligns with modern C++ projects and eases the transition to ROS 2.

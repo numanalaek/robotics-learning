@@ -1,15 +1,15 @@
 # 03 — Memory & Pointer
 
-Memahami alamat memori variabel dan penggunaan pointer dalam C++.
+Understanding variable memory addresses and pointer usage in C++.
 
-## Empat Hal Penting tentang Memori & Pointer
+## Four Important Things about Memory & Pointer
 
-| # | Konsep | Contoh |
+| # | Concept | Example |
 |---|--------|--------|
-| 1 | Setiap variabel punya **alamat unik** di memori | `&battery` → `0x7fff...` |
-| 2 | `&` (address-of) mengambil alamat variabel | `int *ptr = &battery;` |
-| 3 | `*` (dereference) mengakses nilai dari alamat | `*ptr = 50;` → battery berubah |
-| 4 | Pointer menyimpan **alamat**, bukan nilai | `ptr` isi alamat, `*ptr` isi nilai |
+| 1 | Every variable has a **unique address** in memory | `&battery` → `0x7fff...` |
+| 2 | `&` (address-of) gets the variable's address | `int *ptr = &battery;` |
+| 3 | `*` (dereference) accesses the value at the address | `*ptr = 50;` → battery changes |
+| 4 | Pointer stores an **address**, not a value | `ptr` holds address, `*ptr` holds value |
 
 ## Program 1 — `memory.cpp`
 
@@ -83,18 +83,18 @@ ptr     : 0x7fff0b18273c
 50
 ```
 
-## Diagram Memori
+## Memory Diagram
 
 ```
-Variabel battery (int)
-  Alamat: 0x7fff...
-  Nilai : 100
+Variable battery (int)
+  Address: 0x7fff...
+  Value : 100
 
 Pointer ptr (int*)
-  Alamat: 0x7fff... (berbeda)
-  Nilai : 0x7fff... (sama dengan &battery)
+  Address: 0x7fff... (different)
+  Value : 0x7fff... (same as &battery)
 
-Dereference *ptr → mengakses nilai 100 di alamat tersebut
+Dereference *ptr → accesses value 100 at that address
 ```
 
 ## Command Line
@@ -105,20 +105,20 @@ g++ address_pointer.cpp -o address_pointer && ./address_pointer
 g++ pointer_test.cpp -o pointer_test && ./pointer_test
 ```
 
-## Analogi
+## Analogy
 
-Memory seperti **lokasi penyimpanan suku cadang di gudang robot**.
+Memory is like a **spare parts storage location in a robot warehouse**.
 
-| Konsep C++ | Analogi Gudang |
+| C++ Concept | Warehouse Analogy |
 |-----------|----------------|
-| Variabel `battery` | Kotak suku cadang berisi "100" |
-| Alamat `&battery` | Label rak: "Gedung A, Rak 3, Kolom 5" |
-| Pointer `ptr` | Kartu catatan yang berisi tulisan lokasi rak |
-| Dereference `*ptr` | Pergi ke rak sesuai catatan, ambil isinya |
+| Variable `battery` | Parts box containing "100" |
+| Address `&battery` | Shelf label: "Building A, Shelf 3, Column 5" |
+| Pointer `ptr` | Note card with the shelf location written on it |
+| Dereference `*ptr` | Go to the shelf according to the note, take the contents |
 
-## Latihan
+## Exercises
 
-1. Buat pointer ke `double voltage` — apa tipe pointer-nya?
-2. Ubah `battery` melalui pointer beberapa kali — apa yang terjadi pada alamat `ptr`?
-3. Bandingkan `&ptr` dengan `&battery` — apakah sama? Mengapa?
-4. Buat dua pointer ke variabel yang sama — apakah `*ptr1 == *ptr2`?
+1. Create a pointer to `double voltage` — what is the pointer type?
+2. Change `battery` through a pointer several times — what happens to the `ptr` address?
+3. Compare `&ptr` with `&battery` — are they the same? Why?
+4. Create two pointers to the same variable — does `*ptr1 == *ptr2`?

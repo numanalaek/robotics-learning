@@ -1,19 +1,19 @@
 // ============================================================
 // Program 01: Hello Robot
-// Deskripsi : Program pertama untuk menampilkan informasi robot
-//             ke layar konsol menggunakan std::cout.
-// Konsep    : - #include untuk mengimpor library
-//             - Fungsi main() sebagai titik masuk program
-//             - std::cout untuk mencetak teks ke layar
-//             - std::endl untuk baris baru
-//             - return 0 menandakan program berhasil
+// Description: First program to display robot information
+//             to the console using std::cout.
+// Concepts  : - #include to import library
+//             - main() function as program entry point
+//             - std::cout to print text to the screen
+//             - std::endl for new line
+//             - return 0 indicates program success
 // ============================================================
 
 #include <iostream>
 
 int main()
 {
-    // Cetak header robot ke layar
+    // Print robot header to screen
     std::cout << "==========================" << std::endl;
     std::cout << "NUIN Autonomous Robot" << std::endl;
     std::cout << "Modern C++ Learning" << std::endl;

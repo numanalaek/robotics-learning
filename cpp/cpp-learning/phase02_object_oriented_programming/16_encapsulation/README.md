@@ -1,6 +1,6 @@
 # 16. Encapsulation & Struct Composition
 
-Data member class dibuat **private** agar tidak bisa diakses langsung dari luar class. Akses hanya melalui **public member function**. Data juga dikelompokkan dalam **struct** agar lebih terstruktur dan mendekati representasi robot nyata.
+Class data members are made **private** so they cannot be accessed directly from outside the class. Access is only through **public member functions**. Data is also grouped into **structs** to be more structured and closer to real robot representation.
 
 ## Compile & Run
 
@@ -14,7 +14,7 @@ g++ encapsulation_test.cpp -o encapsulation_test && ./encapsulation_test
 
 ## Program 1 — `encapsulation.cpp`
 
-Encapsulation dasar: `battery` bersifat `private`, akses hanya melalui `printStatus()`.
+Basic encapsulation: `battery` is `private`, access only through `printStatus()`.
 
 ```cpp
 Robot robot;
@@ -24,7 +24,7 @@ robot.printStatus();     // OK: public member function
 
 ## Program 2 — `encapsulation_test.cpp`
 
-Data dikelompokkan dalam struct dan class menggunakan **trailing underscore** (`_`):
+Data is grouped into structs and classes using **trailing underscore** (`_`):
 
 ```cpp
 struct Battery {
@@ -46,7 +46,7 @@ private:
 };
 ```
 
-Constructor menerima `const&` ke struct, bukan parameter individual:
+Constructor receives `const&` to struct, not individual parameters:
 
 ```cpp
 Robot(const Battery& battery, const Velocity& velocity, bool emergency)
@@ -57,15 +57,15 @@ Robot(const Battery& battery, const Velocity& velocity, bool emergency)
 }
 ```
 
-Pembuatan object di `main()`:
+Object creation in `main()`:
 
 ```cpp
 Robot robot1({100, 24.5}, {0.0, 0.0}, false);
 Robot robot2({85, 48.0}, {1.5, 0.0}, false);
 ```
 
-## Mengapa penting di ROS 2?
+## Why is this important in ROS 2?
 
-- **Encapsulation** — mencegah data sensor/motor diubah sembarangan dari luar class.
-- **Struct composition** — data robot (Battery, Velocity, Pose) lebih modular dan bisa dipakai ulang.
-- **Trailing underscore** (`_`) — gaya penamaan yang banyak digunakan di codebase ROS 2, membedakan member dengan parameter constructor.
+- **Encapsulation** — prevents sensor/motor data from being arbitrarily changed from outside the class.
+- **Struct composition** — robot data (Battery, Velocity, Pose) is more modular and reusable.
+- **Trailing underscore** (`_`) — naming convention widely used in ROS 2 codebases, distinguishing members from constructor parameters.

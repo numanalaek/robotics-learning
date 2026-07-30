@@ -1,13 +1,13 @@
 // ============================================================
 // Program 11b: Class Robot
-// Deskripsi : Mengubah struct menjadi class. Hasilnya sama
-//             persis, tapi class memerlukan public: eksplisit.
-// Konsep    : - class juga blueprint seperti struct
-//             - Perbedaan: class default private, struct
-//               default public
-//             - Tanpa public:, member tidak bisa diakses
-//               dari luar class
-//             - Cara pakai sama: Robot robot1; robot1.id = ...;
+// Description: Converting struct to class. The result is exactly
+//             the same, but class requires explicit public:.
+// Concepts  : - class is also a blueprint like struct
+//             - Difference: class defaults to private, struct
+//               defaults to public
+//             - Without public:, members cannot be accessed
+//               from outside the class
+//             - Same usage: Robot robot1; robot1.id = ...;
 // ============================================================
 
 #include <iostream>

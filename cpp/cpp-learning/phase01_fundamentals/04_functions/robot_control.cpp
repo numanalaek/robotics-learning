@@ -1,18 +1,18 @@
 // ============================================================
-// Program 04: Fungsi dan Robot Control (Simulasi)
-// Deskripsi : Simulasi kontrol robot sederhana dengan fungsi.
-//             Robot bisa maju, mundur, belok kiri/kanan.
-// Konsep    : - Fungsi: memecah program menjadi bagian kecil
-//             - Pass by reference (&): fungsi bisa mengubah
-//               variabel asli (x, y, dir, battery)
-//             - Pass by value (tanpa &): fungsi hanya terima salinan
-//             - switch-case untuk menangani perintah
-//             - while loop untuk program interaktif
+// Program 04: Functions and Robot Control (Simulation)
+// Description: Simple robot control simulation with functions.
+//             Robot can move forward, backward, turn left/right.
+// Concepts  : - Functions: break program into small parts
+//             - Pass by reference (&): function can modify
+//               original variables (x, y, dir, battery)
+//             - Pass by value (without &): function only receives a copy
+//             - switch-case to handle commands
+//             - while loop for interactive program
 // ============================================================
 
 #include <iostream>
 
-// Cetak header program
+// Print program header
 void printHeader()
 {
     std::cout << "==============================\n";
@@ -20,17 +20,17 @@ void printHeader()
     std::cout << "==============================\n";
 }
 
-// Tampilkan posisi, arah, dan baterai robot
+// Display robot position, direction, and battery
 void printStatus(int x, int y, int dir, int battery)
 {
-    const char *arah[] = {"Utara", "Timur", "Selatan", "Barat"};
-    std::cout << "Posisi : (" << x << ", " << y << ")\n";
-    std::cout << "Arah   : " << arah[dir] << "\n";
-    std::cout << "Baterai: " << battery << "%\n";
+    const char *arah[] = {"North", "East", "South", "West"};
+    std::cout << "Position : (" << x << ", " << y << ")\n";
+    std::cout << "Direction: " << arah[dir] << "\n";
+    std::cout << "Battery  : " << battery << "%\n";
     std::cout << "------------------------------\n";
 }
 
-// Kurangi baterai 1% (pass by reference agar nilai asli berubah)
+// Reduce battery by 1% (pass by reference so original value changes)
 void consumeBattery(int &battery)
 {
     if (battery > 0)
@@ -41,58 +41,58 @@ void consumeBattery(int &battery)
     }
 }
 
-// Gerak maju sesuai arah
+// Move forward according to direction
 void moveForward(int &x, int &y, int dir, int &battery)
 {
     if (battery <= 0)
     {
-        std::cout << "[GAGAL] Baterai habis!\n";
+        std::cout << "[FAIL] Battery empty!\n";
         return;
     }
     switch (dir)
     {
-    case 0: y++; break; // Utara: Y + 1
-    case 1: x++; break; // Timur: X + 1
-    case 2: y--; break; // Selatan: Y - 1
-    case 3: x--; break; // Barat: X - 1
+    case 0: y++; break; // North: Y + 1
+    case 1: x++; break; // East: X + 1
+    case 2: y--; break; // South: Y - 1
+    case 3: x--; break; // West: X - 1
     }
     consumeBattery(battery);
-    const char *arah[] = {"Utara", "Timur", "Selatan", "Barat"};
-    std::cout << "[OK] Maju ke " << arah[dir] << " | Baterai: " << battery << "%\n";
+    const char *arah[] = {"North", "East", "South", "West"};
+    std::cout << "[OK] Move to " << arah[dir] << " | Battery: " << battery << "%\n";
 }
 
-// Belok kiri (berputar 90 derajat)
+// Turn left (rotate 90 degrees)
 void turnLeft(int &dir, int &battery)
 {
     if (battery <= 0)
     {
-        std::cout << "[GAGAL] Baterai habis!\n";
+        std::cout << "[FAIL] Battery empty!\n";
         return;
     }
-    dir = (dir + 3) % 4; // Geser arah ke kiri
+    dir = (dir + 3) % 4; // Shift direction left
     consumeBattery(battery);
-    std::cout << "[OK] Belok kiri | Baterai: " << battery << "%\n";
+    std::cout << "[OK] Turn left | Battery: " << battery << "%\n";
 }
 
-// Belok kanan (berputar -90 derajat)
+// Turn right (rotate -90 degrees)
 void turnRight(int &dir, int &battery)
 {
     if (battery <= 0)
     {
-        std::cout << "[GAGAL] Baterai habis!\n";
+        std::cout << "[FAIL] Battery empty!\n";
         return;
     }
-    dir = (dir + 1) % 4; // Geser arah ke kanan
+    dir = (dir + 1) % 4; // Shift direction right
     consumeBattery(battery);
-    std::cout << "[OK] Belok kanan | Baterai: " << battery << "%\n";
+    std::cout << "[OK] Turn right | Battery: " << battery << "%\n";
 }
 
-// Gerak mundur (kebalikan dari maju)
+// Move backward (opposite of forward)
 void moveBackward(int &x, int &y, int dir, int &battery)
 {
     if (battery <= 0)
     {
-        std::cout << "[GAGAL] Baterai habis!\n";
+        std::cout << "[FAIL] Battery empty!\n";
         return;
     }
     switch (dir)
@@ -103,14 +103,14 @@ void moveBackward(int &x, int &y, int dir, int &battery)
     case 3: x++; break;
     }
     consumeBattery(battery);
-    std::cout << "[OK] Mundur | Baterai: " << battery << "%\n";
+    std::cout << "[OK] Move backward | Battery: " << battery << "%\n";
 }
 
 int main()
 {
-    int x = 0, y = 0;  // Posisi robot
-    int dir = 0;        // Arah: 0=Utara, 1=Timur, 2=Selatan, 3=Barat
-    int battery = 100;  // Baterai awal 100%
+    int x = 0, y = 0;  // Robot position
+    int dir = 0;        // Direction: 0=North, 1=East, 2=South, 3=West
+    int battery = 100;  // Initial battery 100%
 
     printHeader();
     printStatus(x, y, dir, battery);
@@ -118,7 +118,7 @@ int main()
     char cmd;
     while (true)
     {
-        std::cout << "\nMasukkan perintah (w: maju, s: mundur, a: kiri, d: kanan, q: keluar): ";
+        std::cout << "\nEnter command (w: forward, s: backward, a: left, d: right, q: quit): ";
         std::cin >> cmd;
 
         switch (cmd)
@@ -128,10 +128,10 @@ int main()
         case 'a': turnLeft(dir, battery); break;
         case 'd': turnRight(dir, battery); break;
         case 'q':
-            std::cout << "Program selesai.\n";
+            std::cout << "Program finished.\n";
             return 0;
         default:
-            std::cout << "[ERROR] Perintah tidak dikenal!\n";
+            std::cout << "[ERROR] Unknown command!\n";
             continue;
         }
         printStatus(x, y, dir, battery);

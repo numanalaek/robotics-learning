@@ -27,7 +27,7 @@ class Robot
 {
 private:
     Battery battery_;   // trailing underscore _
-    Velocity velocity_; // membedakan member vs parameter
+    Velocity velocity_; // distinguishes member from parameter
 
 public:
     Robot()
@@ -35,11 +35,11 @@ public:
     {
     }
 
-    // Getter — return by value karena tipe kecil.
-    // const → fungsi tidak mengubah member class.
+    // Getter — return by value because type is small.
+    // const → function does not modify class members.
     Battery getBattery() const
     {
-        return battery_; // copy kecil, sama efisien dg reference
+        return battery_; // small copy, as efficient as reference
     }
 
     Velocity getVelocity() const
@@ -54,8 +54,8 @@ int main()
 {
     Robot robot;
 
-    // const auto → snapshot, tidak akan diubah
-    // (tanda bahwa kita hanya membaca data)
+    // const auto → snapshot, will not be modified
+    // (indicates that we are only reading data)
     const auto battery = robot.getBattery();
     const auto velocity = robot.getVelocity();
 

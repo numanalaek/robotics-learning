@@ -1,11 +1,11 @@
 // ============================================================
-// Program 10e: Lifetime Sederhana — Block
-// Deskripsi : Menunjukkan masa hidup variabel dalam block.
-//             sensor_distance dibuat di dalam { } dan otomatis
-//             dihancurkan saat block selesai ( } ).
-// Konsep    : - Objek lokal di block hanya hidup selama
-//               eksekusi di dalam block tersebut
-//             - Setelah } , objek tidak lagi ada di memori
+// Program 10e: Simple Lifetime — Block
+// Description: Shows variable lifetime inside a block.
+//             sensor_distance is created inside { } and automatically
+//             destroyed when the block ends ( } ).
+// Concepts  : - Local objects in a block only live during
+//               execution inside that block
+//             - After } , the object no longer exists in memory
 // ============================================================
 
 #include <iostream>

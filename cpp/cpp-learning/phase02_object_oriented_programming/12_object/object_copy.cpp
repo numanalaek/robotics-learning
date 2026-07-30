@@ -1,5 +1,5 @@
 // ============================================================
-// object_copy.cpp — Copy object (bukan reference)
+// object_copy.cpp — Copy object (not a reference)
 // ============================================================
 // Compile & run:
 //   g++ object_copy.cpp -o object_copy && ./object_copy
@@ -15,16 +15,16 @@ public:
     double velocity;
 };
 
-// --- main: membuktikan Robot robot2 = robot1 adalah COPY
+// --- main: proving Robot robot2 = robot1 is COPY
 //
 //   Robot robot1;
 //   robot1.battery = 90;
 //
-//   Robot robot2 = robot1;    ← COPY, bukan reference
+//   Robot robot2 = robot1;    ← COPY, not a reference
 //   robot2.battery = 50;
 //
-//   robot1.battery = 90  (tidak berubah)
-//   robot2.battery = 50  (berdiri sendiri)
+//   robot1.battery = 90  (unchanged)
+//   robot2.battery = 50  (independent)
 
 int main()
 {
@@ -33,14 +33,14 @@ int main()
     robot1.voltage = 24.5;
     robot1.velocity = 0.5;
 
-    // Robot robot2 = robot1;  bukan reference!
-    // Ini membuat object BARU dengan nilai yang SAMA
+    // Robot robot2 = robot1;  not a reference!
+    // This creates a NEW object with the SAME values
     // Copy Initialization
-    // Semua member (battery, voltage, velocity)
-    // disalin (copied) dari robot1 ke robot2.
+    // All members (battery, voltage, velocity)
+    // are copied from robot1 to robot2.
     Robot robot2 = robot1;
 
-    // Ubah robot2 — robot1 tidak terpengaruh
+    // Change robot2 — robot1 is not affected
     robot2.battery = 50;
     robot2.voltage = 12.0;
     robot2.velocity = 1.2;

@@ -1,11 +1,11 @@
 // ============================================================
 // Program 07a: Range-based For Loop - Battery Cell Monitor
-// Deskripsi : Memeriksa 6 sel baterai dengan range-based for,
-//             menghitung min, max, rata-rata, dan sel lemah.
-// Konsep    : - for (const double &cell : cells)
-//             - Iterasi otomatis tanpa indeks
-//             - Lebih sederhana dari for loop biasa
-//             - Cocok untuk membaca seluruh elemen array
+// Description: Checks 6 battery cells with range-based for,
+//             calculates min, max, average, and weak cell.
+// Concepts  : - for (const double &cell : cells)
+//             - Automatic iteration without index
+//             - Simpler than regular for loop
+//             - Suitable for reading all array elements
 // ============================================================
 
 #include <iostream>
@@ -13,7 +13,7 @@
 
 int main()
 {
-    // Tegangan 6 sel baterai (dalam Volt)
+    // Voltage of 6 battery cells (in Volts)
     double cells[] =
         {
             3.21, 3.19, 3.24,
@@ -26,8 +26,8 @@ int main()
     double sum = 0;
     bool has_low_cell = false;
 
-    // Range-based for: untuk setiap elemen cell di dalam array cells
-    // const double &cell = reference read-only (tidak copy, tidak bisa ubah)
+    // Range-based for: for each element cell in the cells array
+    // const double &cell = read-only reference (no copy, cannot modify)
     for (const double &cell : cells)
     {
         if (cell < min)
@@ -39,7 +39,7 @@ int main()
             has_low_cell = true;
     }
 
-    // std::size(cells) menghitung jumlah elemen array secara otomatis
+    // std::size(cells) calculates the number of array elements automatically
     double avg = sum / std::size(cells);
 
     std::cout << std::fixed;

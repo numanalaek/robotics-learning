@@ -1,17 +1,17 @@
 # 09 — Default Parameters
 
-Memberikan nilai default pada parameter fungsi sehingga bisa dipanggil dengan jumlah argumen bervariasi.
+Giving default values to function parameters so they can be called with varying numbers of arguments.
 
-## Empat Hal Penting tentang Default Parameters
+## Four Important Things about Default Parameters
 
-| # | Konsep | Contoh |
+| # | Concept | Example |
 |---|--------|--------|
-| 1 | Parameter bisa punya **nilai default** | `void func(int x = 10);` |
-| 2 | Argumen diisi dari **kiri ke kanan** | Tidak bisa skip `func(, 20)` ❌ |
-| 3 | Default hanya di **parameter paling kanan** | `void func(int a, int b = 5);` ✅ |
-| 4 | Mengurangi kebutuhan **overloading** | 1 fungsi dengan default = 4 cara panggil |
+| 1 | Parameters can have **default values** | `void func(int x = 10);` |
+| 2 | Arguments are filled **left to right** | Cannot skip `func(, 20)` ❌ |
+| 3 | Defaults only on the **rightmost parameters** | `void func(int a, int b = 5);` ✅ |
+| 4 | Reduces the need for **overloading** | 1 function with defaults = 4 ways to call |
 
-## Kode — `default_parameters.cpp`
+## Code — `default_parameters.cpp`
 
 ```cpp
 #include <iomanip>
@@ -60,10 +60,10 @@ Voltage  : 23.5 V
 Obstacle : YES
 ```
 
-## Cara Kerja
+## How It Works
 
 ```
-Panggilan                       battery    voltage    obstacle
+Call                            battery    voltage    obstacle
 ─────────────────────────────────────────────────────────────
 robotStatus()                      100       24.0       false
 robotStatus(80)                     80       24.0       false
@@ -71,21 +71,21 @@ robotStatus(80, 23.5)               80       23.5       false
 robotStatus(80, 23.5, true)         80       23.5       true
 ```
 
-Parameter yang tidak diberi argumen akan menggunakan nilai default.
+Parameters that are not given an argument will use their default values.
 
-## Aturan Default Parameter
+## Default Parameter Rules
 
-✅ **Boleh:**
+✅ **Allowed:**
 ```cpp
-void func(int a, int b = 10);         // parameter kanan default
-void func(int a = 1, int b = 2);      // semua default
-void func(int a, int b = 5, int c = 0); // sebagian default
+void func(int a, int b = 10);         // right parameter default
+void func(int a = 1, int b = 2);      // all default
+void func(int a, int b = 5, int c = 0); // some default
 ```
 
-❌ **Tidak boleh:**
+❌ **Not allowed:**
 ```cpp
-void func(int a = 10, int b);         // kiri default, kanan tidak
-void func(int a = 1, int b = 2, int c); // skip tengah
+void func(int a = 10, int b);         // left default, right not
+void func(int a = 1, int b = 2, int c); // skip middle
 ```
 
 ## Command Line
@@ -96,20 +96,20 @@ g++ default_parameters_test1.cpp -o default_parameters_test1 && ./default_parame
 g++ default_parameters_test2.cpp -o default_parameters_test2 && ./default_parameters_test2
 ```
 
-## Analogi
+## Analogy
 
-Default parameter seperti **preset mode pada robot**.
+Default parameters are like **preset modes on a robot**.
 
-| Panggilan | Mode |
+| Call | Mode |
 |-----------|------|
-| `robotStatus()` | "Auto" — semua pakai default |
-| `robotStatus(80)` | "Custom battery" — battery diatur, sisanya default |
-| `robotStatus(80, 23.5)` | "Custom power" — battery & voltage diatur |
-| `robotStatus(80, 23.5, true)` | "Manual" — semua diatur pengguna |
+| `robotStatus()` | "Auto" — all use defaults |
+| `robotStatus(80)` | "Custom battery" — battery set, rest default |
+| `robotStatus(80, 23.5)` | "Custom power" — battery & voltage set |
+| `robotStatus(80, 23.5, true)` | "Manual" — all set by user |
 
-## Latihan
+## Exercises
 
-1. Ubah default `obstacle` jadi `true`. Panggil `robotStatus()` — apa outputnya?
-2. Tambah parameter `int temperature = 25` di posisi paling kanan.
-3. Panggil `robotStatus(80, true)` — apakah kompilasi error? Mengapa?
-4. Buat fungsi `moveRobot(int steps = 1, double speed = 1.0)` — panggil dengan 3 cara berbeda.
+1. Change the default of `obstacle` to `true`. Call `robotStatus()` — what is the output?
+2. Add parameter `int temperature = 25` at the rightmost position.
+3. Call `robotStatus(80, true)` — does it cause a compilation error? Why?
+4. Create a function `moveRobot(int steps = 1, double speed = 1.0)` — call it in 3 different ways.

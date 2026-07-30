@@ -1,37 +1,37 @@
 // ============================================================
 // Program 05c: Pass by Reference
-// Deskripsi : Mendemonstrasikan bahwa pass by reference
-//             memungkinkan fungsi mengubah variabel asli.
-// Konsep    : - Parameter &name = reference (alias) ke robot
-//             - Alamat name SAMA dengan alamat robot
-//             - Perubahan di fungsi JUGA mengubah variabel asli
-//             - Reference lebih efisien karena tidak ada copy
+// Description: Demonstrates that pass by reference
+//             allows the function to modify the original variable.
+// Concepts  : - Parameter &name = reference (alias) to robot
+//             - name's address is the SAME as robot's address
+//             - Changes in the function ALSO modify the original
+//             - Reference is more efficient because no copy is made
 // ============================================================
 
 #include <iostream>
 #include <string>
 
-// name adalah reference (alias) ke robot di main()
-// Alamat name SAMA dengan alamat robot
+// name is a reference (alias) to robot in main()
+// name's address is the SAME as robot's address
 void printName(std::string &name)
 {
-    std::cout << "Alamat di fungsi : " << &name << '\n';
-    std::cout << "Isi di fungsi    : " << name << '\n';
+    std::cout << "Address in function : " << &name << '\n';
+    std::cout << "Content in function : " << name << '\n';
     name = "MODIFIED";
-    std::cout << "Setelah diubah   : " << name << '\n';
+    std::cout << "After modification  : " << name << '\n';
 }
 
 int main()
 {
     std::string robot = "NUIN-AMR-01";
 
-    std::cout << "Alamat di main   : " << &robot << '\n';
-    std::cout << "Isi di main      : " << robot << '\n';
+    std::cout << "Address in main    : " << &robot << '\n';
+    std::cout << "Content in main    : " << robot << '\n';
 
-    printName(robot);  // robot di-reference, bukan di-copy
+    printName(robot);  // robot is referenced, not copied
 
-    // robot BERUBAH menjadi "MODIFIED" karena fungsi mengubah asli
-    std::cout << "Isi di main setelah fungsi : " << robot << '\n';
+    // robot CHANGES to "MODIFIED" because the function modifies the original
+    std::cout << "Content in main after function : " << robot << '\n';
 
     return 0;
 }

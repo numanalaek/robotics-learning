@@ -1,10 +1,10 @@
 // ============================================================
-// Program 11c: Struct Test — Latihan Dasar
-// Deskripsi : Latihan sederhana membuat struct Robot dengan
-//             3 member dan satu object.
-// Konsep    : - struct minimal: id, battery, voltage
-//             - Membuat object lalu mengisi data member
-//             - Menampilkan data dengan std::cout
+// Program 11c: Struct Test — Basic Exercise
+// Description: Simple exercise creating a Robot struct with
+//             3 members and one object.
+// Concepts  : - minimal struct: id, battery, voltage
+//             - Creating an object then filling data members
+//             - Displaying data with std::cout
 // ============================================================
 
 #include <iostream>

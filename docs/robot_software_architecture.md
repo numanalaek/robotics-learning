@@ -1,10 +1,10 @@
 # ROBOT SOFTWARE ARCHITECTURE
 
-Layered Architecture untuk Robot Komersial
+Layered Architecture for Commercial Robots
 
 ## OVERVIEW
 
-Arsitektur software robot berlapis (*layered architecture*) — dari **Hardware** hingga **Enterprise/Cloud Layer**. Setiap lapisan memiliki tanggung jawab yang terpisah dan berkomunikasi melalui antarmuka yang terdefinisi.
+Layered robot software architecture — from **Hardware** to **Enterprise/Cloud Layer**. Each layer has separate responsibilities and communicates through defined interfaces.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -56,7 +56,7 @@ Arsitektur software robot berlapis (*layered architecture*) — dari **Hardware*
 
 ## LAYER 1 — HARDWARE LAYER
 
-Komponen fisik robot.
+Physical robot components.
 
 ### Main Controller
 
@@ -102,7 +102,7 @@ Komponen fisik robot.
 
 ## LAYER 2 — FIRMWARE LAYER
 
-Real-time control & safety yang berjalan di microcontroller.
+Real-time control & safety running on microcontrollers.
 
 ### Motion Control
 
@@ -131,7 +131,7 @@ Real-time control & safety yang berjalan di microcontroller.
 
 ## LAYER 3 — HARDWARE INTERFACE LAYER
 
-Abstraksi hardware — driver dan protokol komunikasi.
+Hardware abstraction — drivers and communication protocols.
 
 ### Device Drivers
 
@@ -161,7 +161,7 @@ Abstraksi hardware — driver dan protokol komunikasi.
 
 ## LAYER 4 — ROBOT MIDDLEWARE LAYER
 
-Framework komunikasi dan orchestration antar komponen software.
+Communication framework and orchestration between software components.
 
 ### ROS 2 Communication
 
@@ -178,7 +178,7 @@ Framework komunikasi dan orchestration antar komponen software.
 
 ## LAYER 5 — APPLICATION LAYER
 
-Logika aplikasi dan intelligence robot.
+Application logic and robot intelligence.
 
 ### Mission Manager
 
@@ -222,7 +222,7 @@ Logika aplikasi dan intelligence robot.
 
 ## LAYER 6 — ENTERPRISE / CLOUD LAYER
 
-Fleet management, monitoring, dan integrasi enterprise.
+Fleet management, monitoring, and enterprise integration.
 
 ### Components
 
@@ -242,7 +242,7 @@ Fleet management, monitoring, dan integrasi enterprise.
 
 ---
 
-## ALIRAN DATA (DATA FLOW)
+## DATA FLOW
 
 ### Sensor Data (Bottom → Top)
 
@@ -280,11 +280,11 @@ Hardware Layer
 
 ## NOTES & PERSONAL REFLECTION
 
-> *Catatan arsitektur, keputusan desain, blockers, dll.*
+> *Architecture notes, design decisions, blockers, etc.*
 
 ```
-Tanggal: YYYY-MM-DD
-Catatan:
+Date: YYYY-MM-DD
+Notes:
 - ...
 - ...
 ```

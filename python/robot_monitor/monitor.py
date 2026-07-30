@@ -7,5 +7,5 @@ y = 0
 print("=== ROBOT STATUS ===")
 print(f"Robot   : {robot_name}")
 print(f"Battery : {battery}%")
-print(f"Posisi  : ({x}, {y})")
+print(f"Position: ({x}, {y})")
 

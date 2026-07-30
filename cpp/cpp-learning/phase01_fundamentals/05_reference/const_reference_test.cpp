@@ -1,11 +1,11 @@
 // ============================================================
 // Program 05h: Error Const Reference (Demo)
-// Deskripsi : Program ini sengaja dibuat ERROR untuk menunjukkan
-//             bahwa const reference TIDAK BISA diubah nilainya.
-// Konsep    : - const reference bersifat read-only
-//             - Mencoba mengubahnya akan menyebabkan error
-//               compile: "assignment of read-only reference"
-//             - Ini adalah fitur keamanan C++
+// Description: This program is intentionally made to ERROR to show
+//             that a const reference CANNOT be modified.
+// Concepts  : - const reference is read-only
+//             - Trying to modify it will cause a compile error:
+//               "assignment of read-only reference"
+//             - This is a C++ safety feature
 // ============================================================
 
 #include <iostream>

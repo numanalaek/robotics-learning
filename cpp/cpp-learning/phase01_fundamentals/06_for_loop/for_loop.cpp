@@ -1,38 +1,38 @@
 // ============================================================
-// Program 06a: For Loop - Analisis Sensor Robot
-// Deskripsi : Membaca 8 sensor jarak, menghitung statistik
-//             (min, max, rata-rata), dan menentukan status robot.
-// Konsep    : - for loop: iterasi dengan counter i dari 0 ke n-1
-//             - Array: menyimpan banyak data dengan tipe sama
-//             - Mencari nilai minimum dan maksimum
-//             - Menghitung rata-rata
-//             - Logika kondisi untuk status robot
+// Program 06a: For Loop - Robot Sensor Analysis
+// Description: Reads 8 distance sensors, calculates statistics
+//             (min, max, average), and determines robot status.
+// Concepts  : - for loop: iteration with counter i from 0 to n-1
+//             - Array: stores multiple data of the same type
+//             - Finding minimum and maximum values
+//             - Calculating average
+//             - Conditional logic for robot status
 // ============================================================
 
 #include <iostream>
 
 int main()
 {
-    constexpr int SENSOR_COUNT = 8;   // Jumlah sensor
+    constexpr int SENSOR_COUNT = 8;   // Number of sensors
 
-    // Array data sensor jarak (dalam cm)
+    // Array of distance sensor data (in cm)
     int sensors[SENSOR_COUNT] =
         {
             120, 45, 80, 30,
             65, 90, 20, 55};
 
-    int sensor_sum = 0;       // total semua nilai sensor
-    int min = sensors[0];     // inisialisasi min dengan data pertama
-    int max = sensors[0];     // inisialisasi max dengan data pertama
-    int warning_count = 0;    // jumlah sensor yang mendeteksi bahaya
+    int sensor_sum = 0;       // total of all sensor values
+    int min = sensors[0];     // initialize min with first data
+    int max = sensors[0];     // initialize max with first data
+    int warning_count = 0;    // number of sensors detecting danger
 
-    // 1. For loop: mulai dari i=0 selama i < SENSOR_COUNT
-    //    Setiap iterasi i bertambah 1 (++i)
+    // 1. For loop: start from i=0 while i < SENSOR_COUNT
+    //    Each iteration i increments by 1 (++i)
     for (int i = 0; i < SENSOR_COUNT; ++i)
     {
         std::cout << "Sensor " << i << " = " << sensors[i] << " cm";
 
-        // Jika jarak < 50 cm, anggap berbahaya
+        // If distance < 50 cm, consider dangerous
         if (sensors[i] < 50)
         {
             std::cout << "  <-- WARNING";
@@ -41,22 +41,22 @@ int main()
 
         std::cout << '\n';
 
-        sensor_sum += sensors[i];  // Akumulasi total
+        sensor_sum += sensors[i];  // Accumulate total
 
         // Update minimum
         if (sensors[i] < min)
             min = sensors[i];
 
-        // Update maksimum
+        // Update maximum
         if (sensors[i] > max)
             max = sensors[i];
     }
 
-    // 2. Hitung statistik
+    // 2. Calculate statistics
     int safe_count = SENSOR_COUNT - warning_count;
     double average = static_cast<double>(sensor_sum) / SENSOR_COUNT;
 
-    // 3. Tampilkan hasil
+    // 3. Display results
     std::cout << "\n--- Statistics ---\n";
     std::cout << "Minimum : " << min << " cm\n";
     std::cout << "Maximum : " << max << " cm\n";
@@ -65,7 +65,7 @@ int main()
     std::cout << "\nWarning : " << warning_count << "\n";
     std::cout << "Safe    : " << safe_count << "\n";
 
-    // 4. Tentukan status robot berdasarkan jumlah warning
+    // 4. Determine robot status based on warning count
     std::cout << "\nRobot Status : ";
     if (warning_count == 0)
         std::cout << "SAFE\n";

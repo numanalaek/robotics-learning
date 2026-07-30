@@ -1,23 +1,23 @@
 # 05 — Reference
 
-Perbedaan pass by value, pass by reference, dan pass by const reference.
+The differences between pass by value, pass by reference, and pass by const reference.
 
-## Empat Hal Penting tentang Reference
+## Four Important Things about Reference
 
-| # | Konsep | Contoh |
+| # | Concept | Example |
 |---|--------|--------|
-| 1 | **Pass by value** — fungsi menerima **salinan** (copy) | `void func(int x)` |
-| 2 | **Pass by reference** — fungsi menerima **alias** (sama dengan asli) | `void func(int &x)` |
-| 3 | **Pass by const ref** — efisien (tanpa copy) + aman (read-only) | `void func(const int &x)` |
-| 4 | Reference adalah **nama lain**, bukan pointer — alamatnya SAMA | `&ref == &battery` |
+| 1 | **Pass by value** — function receives a **copy** | `void func(int x)` |
+| 2 | **Pass by reference** — function receives an **alias** (same as original) | `void func(int &x)` |
+| 3 | **Pass by const ref** — efficient (no copy) + safe (read-only) | `void func(const int &x)` |
+| 4 | Reference is **another name**, not a pointer — addresses are the SAME | `&ref == &battery` |
 
-## Tabel Perbandingan
+## Comparison Table
 
-| Metode | Sintaks | Copy? | Ubah Asli? | Efisien? |
+| Method | Syntax | Copy? | Modify Original? | Efficient? |
 |--------|---------|-------|------------|----------|
-| Pass by value | `T x` | Ya | Tidak | Boros (untuk objek besar) |
-| Pass by reference | `T &x` | Tidak | Ya | Ya |
-| Pass by const ref | `const T &x` | Tidak | Tidak | Ya |
+| Pass by value | `T x` | Yes | No | Wasteful (for large objects) |
+| Pass by reference | `T &x` | No | Yes | Yes |
+| Pass by const ref | `const T &x` | No | No | Yes |
 
 ## Program 1 — `pass_by_value.cpp`
 
@@ -141,25 +141,25 @@ g++ reference_test1.cpp -o reference_test1 && ./reference_test1
 g++ reference_test2.cpp -o reference_test2 && ./reference_test2
 ```
 
-## Analogi
+## Analogy
 
-| Metode | Analogi |
+| Method | Analogy |
 |--------|---------|
-| **Pass by value** | Fotokopi datasheet — coretan di fotokopi tidak merusak asli |
-| **Pass by reference** | Meminjamkan datasheet asli — coretan akan merusak asli |
-| **Pass by const ref** | Membaca datasheet di rak — tidak boleh disentuh, tapi tidak perlu difotokopi |
+| **Pass by value** | Photocopy of a datasheet — scribbles on the copy don't damage the original |
+| **Pass by reference** | Lending the original datasheet — scribbles will damage the original |
+| **Pass by const ref** | Reading the datasheet on the shelf — can't touch it, but no need to photocopy |
 
-## Aturan Praktis
+## Practical Guidelines
 
-| Situasi | Gunakan |
+| Situation | Use |
 |---------|---------|
-| Ingin mengubah variabel asli | `T &x` (reference) |
-| Hanya perlu membaca, tipe kecil (int, double) | `T x` (by value) |
-| Hanya perlu membaca, tipe besar (string, vector) | `const T &x` (const ref) |
+| Want to modify the original variable | `T &x` (reference) |
+| Only need to read, small type (int, double) | `T x` (by value) |
+| Only need to read, large type (string, vector) | `const T &x` (const ref) |
 
-## Latihan
+## Exercises
 
-1. Di `pass_by_value.cpp`, buktikan alamat berbeda dengan mencetak `&name` dan `&robot`.
-2. Di `pass_by_reference.cpp`, apa yang terjadi jika `&name == &robot`?
-3. Compile `const_reference_test.cpp` — baca pesan error-nya.
-4. Di `reference_test2.cpp`, buktikan bahwa `&ref == &battery` (reference tidak punya alamat sendiri).
+1. In `pass_by_value.cpp`, prove the addresses are different by printing `&name` and `&robot`.
+2. In `pass_by_reference.cpp`, what happens when `&name == &robot`?
+3. Compile `const_reference_test.cpp` — read the error message.
+4. In `reference_test2.cpp`, prove that `&ref == &battery` (reference doesn't have its own address).

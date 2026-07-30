@@ -1,17 +1,17 @@
 # 02 — Variables
 
-Mendeklarasikan dan menggunakan berbagai tipe data C++ dalam konteks robot.
+Declaring and using various C++ data types in a robot context.
 
-## Empat Hal Penting tentang Variabel
+## Four Important Things about Variables
 
-| # | Konsep | Contoh |
+| # | Concept | Example |
 |---|--------|--------|
-| 1 | Setiap variabel punya **tipe data** | `int battery = 100;` |
-| 2 | `std::string` untuk teks | `std::string name = "Robot";` |
-| 3 | `constexpr` untuk konstanta waktu kompilasi | `constexpr int WHEELS = 2;` |
-| 4 | `auto` mendeduksi tipe otomatis | `auto version = "v1.0";` |
+| 1 | Every variable has a **data type** | `int battery = 100;` |
+| 2 | `std::string` for text | `std::string name = "Robot";` |
+| 3 | `constexpr` for compile-time constants | `constexpr int WHEELS = 2;` |
+| 4 | `auto` deduces type automatically | `auto version = "v1.0";` |
 
-## Kode — `variables.cpp`
+## Code — `variables.cpp`
 
 ```cpp
 #include <iostream>
@@ -78,16 +78,16 @@ Max Payload       : 500.0 kg
 Software Version  : v1.0.0
 ```
 
-## Tipe Data
+## Data Types
 
-| Tipe | Ukuran | Contoh Robotik |
+| Type | Size | Robotics Example |
 |------|--------|----------------|
-| `int` | 4 byte | ID robot, jumlah roda, baterai |
-| `double` | 8 byte | Tegangan, koordinat GPS |
-| `float` | 4 byte | Kecepatan, suhu |
-| `bool` | 1 byte | Deteksi obstacle, status darurat |
-| `char` | 1 byte | Perintah gerak ('W', 'S', 'A', 'D') |
-| `std::string` | dinamis | Nama robot, versi software |
+| `int` | 4 bytes | Robot ID, wheel count, battery |
+| `double` | 8 bytes | Voltage, GPS coordinates |
+| `float` | 4 bytes | Speed, temperature |
+| `bool` | 1 byte | Obstacle detection, emergency status |
+| `char` | 1 byte | Movement command ('W', 'S', 'A', 'D') |
+| `std::string` | dynamic | Robot name, software version |
 
 ## Command Line
 
@@ -95,21 +95,21 @@ Software Version  : v1.0.0
 g++ variables.cpp -o variables && ./variables
 ```
 
-## Analogi
+## Analogy
 
-Variabel seperti **papan status di dashboard robot** — setiap papan menyimpan satu informasi dengan format tertentu.
+Variables are like **status boards on a robot dashboard** — each board stores one piece of information in a specific format.
 
-| Papan Dashboard | Tipe | Isi |
+| Dashboard Board | Type | Content |
 |----------------|------|-----|
-| Nama robot | `string` | "NUIN-AMR-01" |
-| Baterai | `int` | 100 |
-| Tegangan | `double` | 24.6 |
-| Kecepatan | `float` | 1.25 |
-| Halangan | `bool` | false |
+| Robot name | `string` | "NUIN-AMR-01" |
+| Battery | `int` | 100 |
+| Voltage | `double` | 24.6 |
+| Speed | `float` | 1.25 |
+| Obstacle | `bool` | false |
 
-## Latihan
+## Exercises
 
-1. Tambah variabel `int temperature = 45;` — cetak dengan `std::setw`.
-2. Ubah nilai `obstacle` menjadi `true` — apa yang berubah pada output?
-3. Ganti `constexpr` dengan `const` — apakah tetap jalan?
-4. Gunakan `auto` untuk semua variabel — apakah tetap bisa dicetak?
+1. Add variable `int temperature = 45;` — print it with `std::setw`.
+2. Change `obstacle` to `true` — what changes in the output?
+3. Replace `constexpr` with `const` — does it still work?
+4. Use `auto` for all variables — can they still be printed?

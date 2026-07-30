@@ -4,7 +4,7 @@ Robotics Software Engineer Edition
 
 ## OVERVIEW
 ===========
-Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Engineer — dari fundamental hingga siap menggunakan **rclcpp** (ROS 2) dan membangun software robot berperforma tinggi.
+Structured roadmap to master **Modern C++** as a Robotics Software Engineer — from fundamentals to being ready to use **rclcpp** (ROS 2) and build high-performance robot software.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -15,7 +15,7 @@ Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Eng
 └──────────────┴──────────────┴──────────────┴────────────────┘
 ```
 
-**Progress Keseluruhan:** ~20–25%
+**Overall Progress:** ~20–25%
 
 ---
 
@@ -23,7 +23,7 @@ Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Eng
 =======================
 
 ### PHASE 1: C++ FUNDAMENTALS
-**Tujuan:** Menguasai sintaks C++ secara mendalam.
+**Goal:** Master C++ syntax in depth.
 
 **Program Structure**
 - [x] main()
@@ -389,45 +389,45 @@ Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Eng
 ==========================
 
 ### CORE
-- [ ] Menguasai C++ Fundamentals & OOP
-- [ ] Menguasai Modern C++ (C++17/C++20) — Move Semantics, Smart Pointers, Lambdas
-- [ ] Menguasai STL (Containers, Algorithms, Utilities)
-- [ ] Paham Memory Management, Ownership, dan Lifetime
+- [ ] Master C++ Fundamentals & OOP
+- [ ] Master Modern C++ (C++17/C++20) — Move Semantics, Smart Pointers, Lambdas
+- [ ] Master STL (Containers, Algorithms, Utilities)
+- [ ] Understand Memory Management, Ownership, and Lifetime
 
 ### ENGINEERING
-- [ ] Mampu menggunakan CMake & Build System
-- [ ] Mampu Debug & Test (gdb, GoogleTest, Sanitizers)
-- [ ] Mampu menulis Clean Code & menerapkan Design Patterns
-- [ ] Paham Multithreading & Concurrency
+- [ ] Able to use CMake & Build System
+- [ ] Able to Debug & Test (gdb, GoogleTest, Sanitizers)
+- [ ] Able to write Clean Code & apply Design Patterns
+- [ ] Understand Multithreading & Concurrency
 
 ### ROBOTICS
-- [ ] Mampu membuat project C++ modular
-- [ ] Mampu membaca project C++ skala besar (ROS 2, MoveIt)
-- [ ] Mampu membuat architecture software robot (HAL, State Machine)
-- [ ] Paham Real-Time Programming & Time-Critical Code
+- [ ] Able to create modular C++ projects
+- [ ] Able to read large-scale C++ projects (ROS 2, MoveIt)
+- [ ] Able to design robot software architecture (HAL, State Machine)
+- [ ] Understand Real-Time Programming & Time-Critical Code
 
 ### ROS 2
-- [ ] Siap mempelajari ROS 2 menggunakan **rclcpp**
-- [ ] Paham Node, Publisher, Subscriber, Service, Action di C++
+- [ ] Ready to learn ROS 2 using **rclcpp**
+- [ ] Understand Node, Publisher, Subscriber, Service, Action in C++
 
 ---
 
-## LEARNING PATH RECOMMENDATION (12 BULAN)
+## LEARNING PATH RECOMMENDATION (12 MONTHS)
 ===========================================
 
-| Bulan | Fokus Utama                          | Output Target                            |
+| Month | Main Focus                           | Output Target                            |
 |-------|---------------------------------------|-------------------------------------------|
-| 1     | Phase 1: C++ Fundamentals             | Console apps, paham pointer & reference   |
+| 1     | Phase 1: C++ Fundamentals             | Console apps, understand pointers & references |
 | 2     | Phase 2: OOP                          | Class design, inheritance, polymorphism   |
 | 3     | Phase 3: Modern C++ Language          | Smart pointers, move semantics, lambdas   |
 | 4     | Phase 4: STL                          | Efficient data structures & algorithms    |
-| 5     | Phase 5-6: Project Structure + CMake  | Library C++ dengan CMake build            |
+| 5     | Phase 5-6: Project Structure + CMake  | C++ library with CMake build              |
 | 6     | Phase 7: Multithreading               | Thread-safe concurrent code               |
 | 7     | Phase 8-9: Patterns + Testing         | GoogleTest + Design Pattern project       |
 | 8     | Phase 10: Best Practices              | Clean Code, RAII, Performance optimization |
 | 9     | Phase 11: C++ for Robotics            | Robot HAL + Control Loop in C++           |
 | 10    | Phase 12: ROS 2 Preparation           | rclcpp Node with Pub/Sub                  |
-| 11    | Integrasi C++ + ROS 2                 | Build ROS 2 package C++                   |
+| 11    | C++ + ROS 2 Integration               | Build ROS 2 package C++                   |
 | 12    | **Capstone**                          | **Robot software library in C++**         |
 
 ---
@@ -454,11 +454,11 @@ Roadmap terstruktur untuk menguasai **Modern C++** sebagai Robotics Software Eng
 
 ## NOTES & PERSONAL REFLECTION
 ===============================
-> *Catatan pribadi, blockers, insights, link referensi penting, dll.*
+> *Personal notes, blockers, insights, important reference links, etc.*
 
 ```
-Tanggal: YYYY-MM-DD
-Catatan:
+Date: YYYY-MM-DD
+Notes:
 - ...
 - ...
 ```

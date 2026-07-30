@@ -1,15 +1,15 @@
 # 01 — Hello Robot
 
-Program pertama C++ untuk menampilkan informasi robot ke terminal.
+The first C++ program to display robot information to the terminal.
 
-## Empat Hal Penting
+## Four Important Things
 
-| # | Konsep | Contoh |
+| # | Concept | Example |
 |---|--------|--------|
-| 1 | `#include <iostream>` mengimpor library I/O | `#include <iostream>` |
-| 2 | `main()` adalah titik masuk program | `int main() { }` |
-| 3 | `std::cout` mencetak teks ke layar | `std::cout << "Halo";` |
-| 4 | `return 0` menandakan program sukses | `return 0;` |
+| 1 | `#include <iostream>` imports the I/O library | `#include <iostream>` |
+| 2 | `main()` is the program entry point | `int main() { }` |
+| 3 | `std::cout` prints text to the screen | `std::cout << "Hello";` |
+| 4 | `return 0` indicates the program succeeded | `return 0;` |
 
 ## Program 1 — `main.cpp`
 
@@ -73,19 +73,19 @@ g++ main.cpp -o main && ./main
 g++ mainTest.cpp -o mainTest && ./mainTest
 ```
 
-## Analogi
+## Analogy
 
-`std::cout` seperti **layar LCD robot** — apa pun yang dikirim ke sana akan tampil.
+`std::cout` is like a **robot LCD screen** — whatever is sent to it will be displayed.
 
-| Kode C++ | Hasil di Layar |
+| C++ Code | Result on Screen |
 |----------|---------------|
-| `std::cout << "Halo";` | `Halo` |
+| `std::cout << "Hello";` | `Hello` |
 | `std::cout << 42;` | `42` |
-| `std::cout << std::endl;` | Pindah baris baru |
+| `std::cout << std::endl;` | New line |
 
-## Latihan
+## Exercises
 
-1. Ubah teks "NUIN Autonomous Robot" menjadi nama robot Anda.
-2. Tambahkan baris `std::cout << "Siap bergerak!" << std::endl;`
-3. Ganti `std::endl` dengan `'\n'` — apa bedanya?
-4. Hapus `return 0;` — apakah program tetap berjalan?
+1. Change the text "NUIN Autonomous Robot" to your robot's name.
+2. Add the line `std::cout << "Ready to move!" << std::endl;`
+3. Replace `std::endl` with `'\n'` — what's the difference?
+4. Remove `return 0;` — does the program still run?

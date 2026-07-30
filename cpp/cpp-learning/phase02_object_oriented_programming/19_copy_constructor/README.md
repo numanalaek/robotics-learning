@@ -1,25 +1,25 @@
 # 19. Copy Constructor
 
-## Tujuan
+## Objective
 
-Memahami bahwa:
+Understand that:
 
 ```cpp
 Robot robot2 = robot1;
 ```
 
-tidak selalu menggunakan copy biasa. Compiler sebenarnya memanggil sebuah **constructor khusus** — **Copy Constructor**.
+does not always use ordinary copying. The compiler actually calls a **special constructor** — **Copy Constructor**.
 
-## Empat Hal Penting tentang Copy Constructor
+## Four Important Things About Copy Constructor
 
-| # | Aturan | Contoh |
-|---|--------|--------|
-| 1 | Dipanggil saat object dibuat **dari object lain** | `Robot robot2 = robot1;` |
-| 2 | Parameternya **harus** `const Robot &other` (reference) | `Robot(const Robot &other)` |
-| 3 | Bukan `Robot(Robot other)` — sebab itu menyebabkan **rekursi** | `Robot(Robot other)` ❌ |
-| 4 | Menyalin seluruh data member satu per satu | `name_(other.name_)` |
+| # | Rule | Example |
+|---|------|--------|
+| 1 | Called when an object is created **from another object** | `Robot robot2 = robot1;` |
+| 2 | Parameter **must** be `const Robot &other` (reference) | `Robot(const Robot &other)` |
+| 3 | Not `Robot(Robot other)` — because that causes **recursion** | `Robot(Robot other)` ❌ |
+| 4 | Copies all data members one by one | `name_(other.name_)` |
 
-## Kode — `copy_constructor.cpp`
+## Code — `copy_constructor.cpp`
 
 ```cpp
 #include <iostream>
@@ -83,7 +83,7 @@ Robot = NUIN-AMR-01
 Robot = NUIN-AMR-01
 ```
 
-## Visualisasi
+## Visualization
 
 ```
 Robot robot1("NUIN-AMR-01");
@@ -109,58 +109,58 @@ Copy Constructor
 | name_ = NUIN   |
 +----------------+
 
-Object baru dibuat.
-Seluruh isi robot1 disalin ke robot2.
+A new object is created.
+The entire contents of robot1 are copied to robot2.
 ```
 
-## Kenapa parameter `const Robot &other`?
+## Why parameter `const Robot &other`?
 
-Perhatikan tanda tangan:
+Notice the signature:
 
 ```cpp
 Robot(const Robot &other);   // ✅ benar
 ```
 
-Bukan:
+Not:
 
 ```cpp
-Robot(Robot other);          // ❌ SALAH!
+Robot(Robot other);          // ❌ WRONG!
 ```
 
-**Mengapa?**
+**Why?**
 
-Jika ditulis `Robot(Robot other)`, maka untuk memanggil Copy Constructor, compiler harus **menyalin object dulu**. Menyalin object berarti **memanggil Copy Constructor lagi**, yang kemudian harus menyalin object lagi, dan seterusnya — terjadi **rekursi tak berujung**.
+If written as `Robot(Robot other)`, then to call the Copy Constructor, the compiler must **copy the object first**. Copying the object means **calling the Copy Constructor again**, which then must copy the object again, and so on — causing **infinite recursion**.
 
-Karena itu parameter **wajib reference**. Dan karena object sumber tidak boleh berubah, digunakan `const`.
+Therefore the parameter **must be a reference**. And because the source object must not be modified, `const` is used.
 
-Ini adalah salah satu contoh penggunaan `const reference` yang **paling penting di seluruh C++**.
+This is one of the **most important uses of `const reference` in all of C++**.
 
-## Perbedaan Constructor Biasa vs Copy Constructor
+## Difference Between Regular Constructor vs Copy Constructor
 
 | Constructor | Copy Constructor |
 |-------------|------------------|
 | `Robot(const std::string &name)` | `Robot(const Robot &other)` |
-| Menerima **string** sebagai sumber | Menerima **object lain** sebagai sumber |
-| Menginisialisasi dari nilai baru | Menyalin dari object yang sudah ada |
+| Receives a **string** as source | Receives **another object** as source |
+| Initializes from a new value | Copies from an existing object |
 | `Robot robot1("NUIN");` | `Robot robot2 = robot1;` |
 
-## Hubungan dengan ROS 2
+## Connection to ROS 2
 
-Di ROS 2 Anda akan sering melihat pola seperti:
+In ROS 2 you will often see patterns like:
 
 ```cpp
 Robot(const Robot &) = delete;
 ```
 
-atau
+or
 
 ```cpp
 Node(const Node &) = delete;
 ```
 
-**Mengapa?**
+**Why?**
 
-Karena banyak object ROS 2 tidak boleh dicopy sembarangan — misalnya publisher, subscriber, mutex, thread, socket, dan resource sistem. Dengan memahami Copy Constructor sekarang, saat melihat kode ROS 2 seperti itu Anda akan langsung tahu maksudnya.
+Because many ROS 2 objects cannot be arbitrarily copied — for example publishers, subscribers, mutexes, threads, sockets, and system resources. By understanding Copy Constructor now, when you see ROS 2 code like that you will immediately understand its purpose.
 
 ## Command Line
 
@@ -168,19 +168,19 @@ Karena banyak object ROS 2 tidak boleh dicopy sembarangan — misalnya publisher
 g++ copy_constructor.cpp -o copy_constructor && ./copy_constructor
 ```
 
-## Target Pembelajaran
+## Learning Objectives
 
-Di akhir bab ini, Anda diharapkan memahami:
+By the end of this chapter, you are expected to understand:
 
-- ✅ Apa itu Copy Constructor
-- ✅ Kapan Copy Constructor dipanggil
-- ✅ Mengapa parameternya bertipe `const Robot &other`
-- ✅ Perbedaan constructor biasa dan Copy Constructor
-- ✅ Mengapa Copy Constructor sangat penting dalam desain object C++ modern
+- ✅ What Copy Constructor is
+- ✅ When Copy Constructor is called
+- ✅ Why its parameter type is `const Robot &other`
+- ✅ The difference between regular constructor and Copy Constructor
+- ✅ Why Copy Constructor is very important in modern C++ object design
 
-## Langkah Selanjutnya
+## Next Steps
 
-Setelah bab ini, langkah paling alami adalah **Copy Assignment Operator** (`operator=`). Di situlah Anda akan memahami perbedaan antara:
+After this chapter, the most natural next step is **Copy Assignment Operator** (`operator=`). That is where you will understand the difference between:
 
 ```cpp
 Robot robot2 = robot1;   // Copy Constructor
@@ -191,11 +191,11 @@ Robot robot2;
 robot2 = robot1;         // Copy Assignment Operator
 ```
 
-Perbedaannya tampak kecil di kode, tetapi secara internal keduanya adalah mekanisme yang berbeda dan merupakan fondasi penting sebelum mempelajari **move semantics** serta **smart pointer**.
+The difference looks small in code, but internally they are different mechanisms and are an important foundation before learning **move semantics** and **smart pointers**.
 
-## Latihan
+## Exercises
 
-1. Hapus Copy Constructor dari class — compile. Apakah program tetap jalan? (Compiler membuat implicit copy constructor).
-2. Ganti `Robot(const Robot &other)` menjadi `Robot(Robot other)` — compile dan lihat error.
-3. Tambah `std::cout << "Address other: " << &other << '\n';` di dalam Copy Constructor — apakah alamat `other` sama dengan `robot1`?
-4. Buat fungsi `void printRobot(Robot r)` — panggil dengan `robot1`. Constructor mana yang dipanggil?
+1. Remove the Copy Constructor from the class — compile. Does the program still run? (Compiler creates implicit copy constructor).
+2. Change `Robot(const Robot &other)` to `Robot(Robot other)` — compile and see the error.
+3. Add `std::cout << "Address other: " << &other << '\n';` inside the Copy Constructor — is the address of `other` the same as `robot1`?
+4. Create a function `void printRobot(Robot r)` — call it with `robot1`. Which constructor is called?

@@ -1,17 +1,17 @@
 # 08 — Function Overloading
 
-Mendefinisikan beberapa fungsi dengan **nama sama** tetapi **parameter berbeda**.
+Defining multiple functions with the **same name** but **different parameters**.
 
-## Empat Hal Penting tentang Function Overloading
+## Four Important Things about Function Overloading
 
-| # | Konsep | Contoh |
+| # | Concept | Example |
 |---|--------|--------|
-| 1 | Nama fungsi **sama**, parameter **berbeda** | `void printStatus();` vs `void printStatus(int);` |
-| 2 | Compiler memilih fungsi **cocok** dengan argumen | `printStatus(80)` → panggil versi `int` |
-| 3 | Bisa berbeda dalam **jumlah** atau **tipe** parameter | `(int)` vs `(int, double)` |
-| 4 | Tidak bisa dibedakan hanya dari **return type** | `int foo();` dan `void foo();` ❌ error |
+| 1 | Function name **same**, parameters **different** | `void printStatus();` vs `void printStatus(int);` |
+| 2 | Compiler selects the **matching** function based on arguments | `printStatus(80)` → calls `int` version |
+| 3 | Can differ in **number** or **type** of parameters | `(int)` vs `(int, double)` |
+| 4 | Cannot be distinguished only by **return type** | `int foo();` and `void foo();` ❌ error |
 
-## Kode — `function_overloading.cpp`
+## Code — `function_overloading.cpp`
 
 ```cpp
 #include <iostream>
@@ -50,30 +50,30 @@ Battery : 80%
 Voltage : 24.5 V
 ```
 
-## Cara Kerja Overloading
+## How Overloading Works
 
 ```
-printStatus()           → panggil void printStatus()
-printStatus(80)         → panggil void printStatus(int)
-printStatus(80, 24.5)   → panggil void printStatus(int, double)
+printStatus()           → calls void printStatus()
+printStatus(80)         → calls void printStatus(int)
+printStatus(80, 24.5)   → calls void printStatus(int, double)
 ```
 
-Compiler mencocokkan **jumlah** dan **tipe** argumen dengan parameter yang tersedia.
+The compiler matches the **number** and **type** of arguments with available parameters.
 
-## Program Lain
+## Other Programs
 
 | File | Overloading |
 |------|-------------|
-| `function_overloading_test1.cpp` | `move()` dan `move(int step)` |
-| `function_overloading_test2.cpp` | `setSpeed(int)` dan `setSpeed(double)` |
+| `function_overloading_test1.cpp` | `move()` and `move(int step)` |
+| `function_overloading_test2.cpp` | `setSpeed(int)` and `setSpeed(double)` |
 
-## Syarat Overloading
+## Overloading Requirements
 
-| Bisa | Tidak Bisa |
+| Allowed | Not Allowed |
 |------|------------|
-| Beda jumlah parameter | Hanya beda return type |
-| Beda tipe parameter | Parameter sama, nama berbeda |
-| `(int)` vs `(double)` | `(int)` vs `(int)` — duplikat |
+| Different number of parameters | Different return type only |
+| Different parameter types | Same parameters, different names |
+| `(int)` vs `(double)` | `(int)` vs `(int)` — duplicate |
 
 ## Command Line
 
@@ -83,19 +83,19 @@ g++ function_overloading_test1.cpp -o function_overloading_test1 && ./function_o
 g++ function_overloading_test2.cpp -o function_overloading_test2 && ./function_overloading_test2
 ```
 
-## Analogi
+## Analogy
 
-Overloading seperti **remote control universal** — tombol "ON" berbeda arti tergantung device yang dituju.
+Overloading is like a **universal remote control** — the "ON" button means different things depending on the target device.
 
-| Panggilan | Remote | Aksi |
+| Call | Remote | Action |
 |-----------|--------|------|
-| `printStatus()` | Tekan "Status" tanpa device | "Robot READY" |
-| `printStatus(80)` | Tekan "Status" → TV | "Battery: 80%" |
-| `printStatus(80, 24.5)` | Tekan "Status" → AC | "Battery: 80%, Voltage: 24.5V" |
+| `printStatus()` | Press "Status" without device | "Robot READY" |
+| `printStatus(80)` | Press "Status" → TV | "Battery: 80%" |
+| `printStatus(80, 24.5)` | Press "Status" → AC | "Battery: 80%, Voltage: 24.5V" |
 
-## Latihan
+## Exercises
 
-1. Tambah overload `printStatus(double voltage)` — hanya cetak tegangan. Apa yang terjadi?
-2. Buat overload `printStatus(int battery, bool emergency)`.
-3. Compile `printStatus(80, 24);` — overload mana yang dipanggil? Kenapa?
-4. Bisakah `void printStatus(int a)` dan `void printStatus(int b)` di-overload? Mengapa?
+1. Add overload `printStatus(double voltage)` — only print voltage. What happens?
+2. Create overload `printStatus(int battery, bool emergency)`.
+3. Compile `printStatus(80, 24);` — which overload is called? Why?
+4. Can `void printStatus(int a)` and `void printStatus(int b)` be overloaded? Why?

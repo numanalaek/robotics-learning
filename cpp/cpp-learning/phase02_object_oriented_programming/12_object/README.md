@@ -1,17 +1,17 @@
 # 12. Object dalam C++
 
-## Empat Hal Penting tentang Object
+## Four Important Things About Object
 
-| # | Aturan | Contoh |
-|---|--------|--------|
-| 1 | Object adalah **instance nyata** dari class (blueprint) | `Robot robot1;` |
-| 2 | Setiap object punya **memori sendiri** | `robot1.battery` ≠ `robot2.battery` |
-| 3 | Perubahan satu object **tidak memengaruhi** object lain | `robot1.battery = 0` → `robot2` tetap 40 |
-| 4 | Alamat setiap object **berbeda** di memory | `&robot1` ≠ `&robot2` |
+| # | Rule | Example |
+|---|------|--------|
+| 1 | Object is a **real instance** of a class (blueprint) | `Robot robot1;` |
+| 2 | Each object has **its own memory** | `robot1.battery` ≠ `robot2.battery` |
+| 3 | Changing one object **does not affect** another object | `robot1.battery = 0` → `robot2` stays 40 |
+| 4 | Each object has a **different address** in memory | `&robot1` ≠ `&robot2` |
 
-## Program 1 — Dua Object Berdiri Sendiri (`object.cpp`)
+## Program 1 — Two Independent Objects (`object.cpp`)
 
-### Kode
+### Code
 
 ```cpp
 #include <iostream>
@@ -85,7 +85,7 @@ Setelah robot1.battery = 0:
   (robot2 tidak terpengaruh)
 ```
 
-### Diagram Memori
+### Memory Diagram
 
 ```
    Robot class (blueprint)
@@ -111,9 +111,9 @@ Setelah robot1.battery = 0:
 
 ## Program 2 — Copy Object (`object_copy.cpp`)
 
-Membuktikan bahwa `Robot robot2 = robot1;` membuat **salinan (copy)**, bukan reference.
+Proves that `Robot robot2 = robot1;` creates a **copy**, not a reference.
 
-### Kode
+### Code
 
 ```cpp
 #include <iostream>
@@ -193,7 +193,7 @@ Robot2
 (alamat berbeda -> object berbeda, bukan reference)
 ```
 
-### Visualisasi Copy
+### Copy Visualization
 
 ```
 Blueprint
@@ -238,16 +238,16 @@ Robot robot2 = robot1;   // ← COPY
 Robot &robot2 = robot1;  // ← REFERENCE
 ```
 
-**Visualisasi COPY:**
+**COPY Visualization:**
 
 ```
 robot1 ──────────► object A
 robot2 ──────────► object B (salinan dari A)
 ```
 
-`robot2` adalah **object baru** di alamat berbeda. Mengubah `robot2` tidak memengaruhi `robot1`.
+`robot2` is a **new object** at a different address. Changing `robot2` does not affect `robot1`.
 
-**Visualisasi REFERENCE:**
+**REFERENCE Visualization:**
 
 ```
 robot1 ──────────► object A
@@ -256,25 +256,25 @@ robot1 ──────────► object A
 robot2 ───────────────┘
 ```
 
-`robot2` hanyalah **nama lain (alias)** untuk `robot1`. Alamatnya SAMA. Mengubah `robot2` = mengubah `robot1`.
+`robot2` is just **another name (alias)** for `robot1`. Their address is THE SAME. Changing `robot2` = changing `robot1`.
 
-### Koneksi ke Copy Constructor
+### Connection to Copy Constructor
 
-Tanpa sadar Anda sudah menyentuh konsep besar dalam C++:
+Without realizing it, you have already touched a major concept in C++:
 
 ```cpp
 Robot robot2 = robot1;
 ```
 
-Saat baris ini ditulis, compiler menggunakan **copy constructor bawaan** (implicit copy constructor). Walaupun Anda belum pernah menulis:
+When this line is written, the compiler uses the **default copy constructor** (implicit copy constructor). Even though you have never written:
 
 ```cpp
 Robot(const Robot &other);
 ```
 
-compiler membuatkannya secara otomatis — menyalin setiap member satu per satu dari `robot1` ke `robot2`.
+the compiler creates it automatically — copying each member one by one from `robot1` to `robot2`.
 
-### Alur Pembelajaran Ideal
+### Ideal Learning Flow
 
 ```
 Class
@@ -294,7 +294,7 @@ Destructor
 Assignment Operator
 ```
 
-Ini adalah urutan yang dipakai di buku-buku Modern C++ yang baik. Dengan fondasi ini, saat nanti masuk ke **smart pointer, RAII, dan rclcpp (ROS 2)**, Anda akan memahami bukan hanya cara menulis kode, tetapi juga apa yang terjadi di memori setiap kali object dibuat, disalin, atau dihancurkan.
+This is the order used in good Modern C++ books. With this foundation, when you later get into **smart pointers, RAII, and rclcpp (ROS 2)**, you will understand not just how to write code, but also what happens in memory every time an object is created, copied, or destroyed.
 
 ## Command Line
 
@@ -306,28 +306,28 @@ g++ object.cpp -o object && ./object
 g++ object_copy.cpp -o object_copy && ./object_copy
 ```
 
-## Analogi
+## Analogy
 
-| Konsep | Analogi |
-|--------|---------|
-| `class Robot { }` | Cetakan kue robot |
-| `Robot robot1;` | Kue robot pertama |
-| `Robot robot2;` | Kue robot kedua |
-| `robot1.battery = 90` | Taburan coklat di kue 1 |
-| `robot2.battery = 40` | Taburan coklat di kue 2 |
+| Concept | Analogy |
+|---------|---------|
+| `class Robot { }` | Robot cookie cutter |
+| `Robot robot1;` | First robot cookie |
+| `Robot robot2;` | Second robot cookie |
+| `robot1.battery = 90` | Chocolate sprinkles on cookie 1 |
+| `robot2.battery = 40` | Chocolate sprinkles on cookie 2 |
 
-Setiap kue punya topping sendiri — mengganti topping kue 1 tidak mengubah kue 2.
+Each cookie has its own topping — changing cookie 1's topping does not change cookie 2.
 
-| Konsep Copy | Analogi |
+| Copy Concept | Analogy |
 |-------------|---------|
-| `Robot robot2 = robot1;` (copy) | Fotokopi resek — hasil fotokopian punya buku sendiri |
-| `Robot &ref = robot1;` (reference) | Pinjam buku resep asli — coretan merusak aslinya |
+| `Robot robot2 = robot1;` (copy) | Photocopy of a recipe — the copy has its own book |
+| `Robot &ref = robot1;` (reference) | Borrowing the original recipe book — scribbles damage the original |
 
-## Latihan
+## Exercises
 
-1. Tambah `Robot robot3;` — beri nilai berbeda. Prediksi alamatnya.
-2. Cetak `sizeof(Robot)` — berapa byte setiap object?
-3. Buat array `Robot robot[3];` — apakah alamatnya berurutan?
-4. Bandingkan alamat `&robot1.voltage` dengan `&robot1.battery` — berapa bedanya? (petunjuk: `int` = 4 byte)
-5. Di `object_copy.cpp`, ganti `Robot robot2 = robot1;` dengan `Robot &robot2 = robot1;` — apa yang terjadi pada output?
-6. Prediksi output sebelum menjalankan: `robot1.battery = 90; Robot robot2 = robot1; robot1.battery = 0;` — berapa `robot2.battery`?
+1. Add `Robot robot3;` — give it different values. Predict its address.
+2. Print `sizeof(Robot)` — how many bytes per object?
+3. Create an array `Robot robot[3];` — are the addresses sequential?
+4. Compare addresses `&robot1.voltage` with `&robot1.battery` — what is the difference? (hint: `int` = 4 bytes)
+5. In `object_copy.cpp`, replace `Robot robot2 = robot1;` with `Robot &robot2 = robot1;` — what happens to the output?
+6. Predict the output before running: `robot1.battery = 90; Robot robot2 = robot1; robot1.battery = 0;` — what is `robot2.battery`?

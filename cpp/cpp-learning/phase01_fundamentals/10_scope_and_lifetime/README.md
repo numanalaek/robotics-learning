@@ -1,15 +1,15 @@
 # 10 — Scope & Lifetime
 
-Memahami ruang lingkup (scope) dan masa hidup (lifetime) variabel dalam C++.
+Understanding variable scope and lifetime in C++.
 
-## Empat Hal Penting tentang Scope & Lifetime
+## Four Important Things about Scope & Lifetime
 
-| # | Konsep | Contoh |
+| # | Concept | Example |
 |---|--------|--------|
-| 1 | **Global scope** — variabel di luar fungsi, hidup selama program | `int robot_id = 1;` |
-| 2 | **Local scope** — variabel di dalam fungsi, hidup saat fungsi dipanggil | `int battery = 100;` di `main()` |
-| 3 | **Block scope** — variabel di dalam `{ }`, hidup hanya di dalam blok | `int sensor = 45;` di `{ }` |
-| 4 | **LIFO** — objek yang dibuat terakhir dihancurkan pertama | Destructor urutan terbalik dari constructor |
+| 1 | **Global scope** — variable outside functions, lives for the whole program | `int robot_id = 1;` |
+| 2 | **Local scope** — variable inside a function, lives while function is called | `int battery = 100;` in `main()` |
+| 3 | **Block scope** — variable inside `{ }`, lives only within the block | `int sensor = 45;` in `{ }` |
+| 4 | **LIFO** — last created object is destroyed first | Destructor in reverse order of constructor |
 
 ## Program 1 — `scope.cpp`
 
@@ -101,7 +101,7 @@ Battery destroyed       ← keluar robotFunction()
 Robot ID destroyed     ← global, dihancurkan setelah main
 ```
 
-## Aturan Scope
+## Scope Rules
 
 ```
 ┌─────────────────────────────────────┐
@@ -121,7 +121,7 @@ Robot ID destroyed     ← global, dihancurkan setelah main
 └─────────────────────────────────────┘
 ```
 
-Scope dalam bisa akses scope luar. Scope luar **tidak bisa** akses scope dalam.
+Inner scope can access outer scope. Outer scope **cannot** access inner scope.
 
 ## Command Line
 
@@ -133,19 +133,19 @@ g++ scope_and_lifetime_test2.cpp -o scope_and_lifetime_test2 && ./scope_and_life
 g++ lifetime_test1.cpp -o lifetime_test1 && ./lifetime_test1
 ```
 
-## Analogi
+## Analogy
 
-Scope seperti **area kerja di bengkel robot**.
+Scope is like a **work area in a robot workshop**.
 
-| Scope | Analogi |
+| Scope | Analogy |
 |-------|---------|
-| Global | Gudang pusat — semua teknisi bisa akses |
-| Local (fungsi) | Meja kerja teknisi — hanya teknisi itu yang punya akses |
-| Block (`{ }`) | Laci meja — hanya saat meja dipakai, lacinya terbuka |
+| Global | Central warehouse — all technicians can access |
+| Local (function) | Technician's workbench — only that technician has access |
+| Block (`{ }`) | Desk drawer — only open while the desk is in use |
 
-## Latihan
+## Exercises
 
-1. Di `scope.cpp`, uncomment `std::cout << sensor_distance` — compile dan lihat error.
-2. Di `lifetime.cpp`, perhatikan urutan "destroyed" — mengapa terbalik dari "created"?
-3. Tambah `Robot status{"Status", 1};` di global — kapan di-destroy?
-4. Buat blok `{ }` di dalam `main()` yang berisi `Robot local{"Local", 2};`. Prediksi output.
+1. In `scope.cpp`, uncomment `std::cout << sensor_distance` — compile and see the error.
+2. In `lifetime.cpp`, notice the order of "destroyed" — why is it reversed from "created"?
+3. Add `Robot status{"Status", 1};` in global scope — when is it destroyed?
+4. Create a block `{ }` inside `main()` containing `Robot local{"Local", 2};`. Predict the output.

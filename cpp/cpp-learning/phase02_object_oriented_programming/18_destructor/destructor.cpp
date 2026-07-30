@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-// --- Class dengan constructor & destructor -------------------
+// --- Class with constructor & destructor -------------------
 
 class Robot
 {
@@ -23,22 +23,22 @@ public:
     }
 };
 
-// --- main: membuktikan lifetime object -----------------------
+// --- main: proving object lifetime -----------------------
 // Output:
 //   Constructor    ← robot1
 //   Constructor    ← robot2
-//   Destructor     ← robot2 (keluar scope blok { })
+//   Destructor     ← robot2 (exits block scope { })
 //   Constructor    ← robot3
-//   Destructor     ← robot3 (akhir main)
-//   Destructor     ← robot1 (akhir main)
+//   Destructor     ← robot3 (end of main)
+//   Destructor     ← robot1 (end of main)
 
 int main()
 {
-    Robot robot1;        // Constructor → robot1 hidup di scope main()
+    Robot robot1;        // Constructor → robot1 lives in main() scope
 
-    {                    // buka scope blok
-        Robot robot2;    // Constructor → robot2 hidup di dalam blok
-    }                    // keluar scope → Destructor robot2
+    {                    // open block scope
+        Robot robot2;    // Constructor → robot2 lives inside block
+    }                    // exit scope → Destructor robot2
 
-    Robot robot3;        // Constructor → robot3 hidup di scope main()
-}                        // akhir main → Destructor robot3, lalu robot1
+    Robot robot3;        // Constructor → robot3 lives in main() scope
+}                        // end of main → Destructor robot3, then robot1

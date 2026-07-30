@@ -1,10 +1,10 @@
 // ============================================================
-// Program 09c: Default Parameter - Gerak Robot
-// Deskripsi : Fungsi moveRobot dengan 2 default parameter.
-// Konsep    : - moveRobot()       -> distance=1, speed=1.0
+// Program 09c: Default Parameter - Robot Movement
+// Description: moveRobot function with 2 default parameters.
+// Concepts  : - moveRobot()       -> distance=1, speed=1.0
 //             - moveRobot(5)      -> distance=5, speed=1.0
 //             - moveRobot(5, 1.8) -> distance=5, speed=1.8
-//             - Urutan parameter default harus dari kanan
+//             - Default parameter order must be from the right
 // ============================================================
 
 #include <iostream>
@@ -19,9 +19,9 @@ void moveRobot(
 
 int main()
 {
-    moveRobot();        // Semua default
+    moveRobot();        // All defaults
     std::cout << '\n';
     moveRobot(5);       // distance=5, speed default
     std::cout << '\n';
-    moveRobot(5, 1.8);  // Semua diisi
+    moveRobot(5, 1.8);  // All filled
 }

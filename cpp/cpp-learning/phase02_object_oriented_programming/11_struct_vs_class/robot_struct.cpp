@@ -1,12 +1,12 @@
 // ============================================================
 // Program 11a: Struct Robot
-// Deskripsi : Mendefinisikan struct Robot dan membuat dua
-//             object robot1 dan robot2.
-// Konsep    : - struct adalah blueprint/tipe data bentukan
-//             - Semua member struct default-nya public
-//             - Robot robot1; adalah object nyata dari struct
-//             - robot1.battery mengakses data member object
-//             - Setiap object punya salinan data sendiri
+// Description: Defines a Robot struct and creates two
+//              objects robot1 and robot2.
+// Concepts  : - struct is a blueprint/custom data type
+//             - All struct members are public by default
+//             - Robot robot1; is a real object from the struct
+//             - robot1.battery accesses the object's data member
+//             - Each object has its own copy of data
 // ============================================================
 
 #include <iostream>

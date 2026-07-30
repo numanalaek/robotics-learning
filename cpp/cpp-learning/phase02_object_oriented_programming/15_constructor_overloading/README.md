@@ -1,6 +1,6 @@
 # 15. Constructor Overloading
 
-Satu class bisa memiliki beberapa constructor dengan parameter berbeda. Compiler memilih constructor yang cocok dengan argumen saat pembuatan object.
+One class can have multiple constructors with different parameters. The compiler selects the constructor that matches the arguments when the object is created.
 
 ## Compile & Run
 
@@ -15,14 +15,14 @@ g++ constructor_overloading2.cpp -o constructor_overloading2 && ./constructor_ov
 ## Program 1 — `constructor_overloading.cpp`
 
 ```cpp
-// 4 constructor dengan parameter berbeda
+// 4 constructors with different parameters
 Robot();                          // default: battery=100, voltage=24.5, mode=READY
-Robot(int battery_);              // battery diatur, sisanya default
-Robot(int battery_, double voltage_);         // battery & voltage diatur
-Robot(int battery_, double voltage_, const std::string& mode_);  // semua diatur
+Robot(int battery_);              // battery set, rest default
+Robot(int battery_, double voltage_);         // battery & voltage set
+Robot(int battery_, double voltage_, const std::string& mode_);  // all set
 ```
 
-Compiler memilih berdasarkan argumen:
+Compiler selects based on arguments:
 - `Robot r1;` → `Robot()`
 - `Robot r2(80);` → `Robot(int)`
 - `Robot r3(75, 24.1);` → `Robot(int, double)`
@@ -33,15 +33,15 @@ Compiler memilih berdasarkan argumen:
 ```cpp
 struct Pose { double x; double y; };
 
-// 3 constructor
+// 3 constructors
 Robot();                          // battery=100, pose={0,0}
-Robot(int battery_);              // battery diatur, pose={0,0}
-Robot(int battery_, Pose pose_);  // battery & pose diatur
+Robot(int battery_);              // battery set, pose={0,0}
+Robot(int battery_, Pose pose_);  // battery & pose set
 ```
 
-## Mengapa penting di ROS 2?
+## Why is this important in ROS 2?
 
-Satu class driver sensor bisa memiliki banyak constructor untuk berbagai tingkat konfigurasi:
+A single sensor driver class can have many constructors for different levels of configuration:
 
 ```cpp
 LaserScanner scanner;

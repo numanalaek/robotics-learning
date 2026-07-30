@@ -1,28 +1,28 @@
 // ============================================================
-// Program 08b: Overloading - Gerak Robot
-// Deskripsi : Fungsi move() di-overload untuk gerak tanpa
-//             parameter (1 langkah) atau dengan jumlah langkah.
-// Konsep    : - move()       : maju 1 langkah (default)
-//             - move(int)    : maju n langkah
-//             - Nama fungsi sama, parameter berbeda
+// Program 08b: Overloading - Robot Movement
+// Description: move() function is overloaded for movement
+//             without parameter (1 step) or with step count.
+// Concepts  : - move()       : move forward 1 step (default)
+//             - move(int)    : move forward n steps
+//             - Same function name, different parameters
 // ============================================================
 
 #include <iostream>
 
-// Versi tanpa parameter: maju 1 langkah
+// Version without parameter: move forward 1 step
 void move()
 {
-    std::cout << "Robot maju 1 langkah\n";
+    std::cout << "Robot moves forward 1 step\n";
 }
 
-// Versi dengan parameter: maju n langkah
+// Version with parameter: move forward n steps
 void move(int step)
 {
-    std::cout << "Robot maju " << step << " langkah\n";
+    std::cout << "Robot moves forward " << step << " steps\n";
 }
 
 int main()
 {
-    move();     // Panggil versi tanpa parameter
-    move(5);    // Panggil versi dengan parameter int
+    move();     // Call version without parameter
+    move(5);    // Call version with int parameter
 }

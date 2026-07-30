@@ -1,6 +1,6 @@
 # ROADMAP ROBOTICS SOFTWARE ENGINEER
 
-Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu membangun robot komersial dari nol hingga produksi.
+Structured roadmap to become a **Robotics Software Engineer** capable of building commercial robots from scratch to production.
 
 ```
                         ROBOTICS SOFTWARE ENGINEER
@@ -33,7 +33,7 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 
 ## ROADMAP 1: MODERN C++
 
-**Target:** Menjadi C++ Engineer yang mampu membangun software robot berperforma tinggi.
+**Target:** Become a C++ Engineer capable of building high-performance robot software.
 
 ### Topik
 - Modern C++17/20
@@ -47,15 +47,15 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - Performance Optimization (Profiling, Cache Optimization, SIMD)
 
 ### Output Target
-- [ ] Mampu membuat library C++ reusable
-- [ ] Mampu membaca & memahami project C++ besar (ROS2, MoveIt, dll)
-- [ ] Siap menggunakan **rclcpp** (ROS2 C++ client library)
+- [ ] Able to create reusable C++ libraries
+- [ ] Able to read & understand large C++ projects (ROS2, MoveIt, etc.)
+- [ ] Ready to use **rclcpp** (ROS2 C++ client library)
 
 ---
 
 ## ROADMAP 2: MODERN PYTHON
 
-**Target:** Menjadi Python Engineer yang mampu membangun software robot modular & maintainable.
+**Target:** Become a Python Engineer capable of building modular & maintainable robot software.
 
 ### Topik
 - Modern Python (3.10+): Type Hints, Dataclasses, Pattern Matching
@@ -68,14 +68,14 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - Linting & Formatting (ruff, black, mypy)
 
 ### Output Target
-- [ ] Mampu membuat package Python yang *publishable* ke PyPI
-- [ ] Siap menggunakan **rclpy** (ROS2 Python client library)
+- [ ] Able to create Python packages *publishable* to PyPI
+- [ ] Ready to use **rclpy** (ROS2 Python client library)
 
 ---
 
 ## ROADMAP 3: SOFTWARE ENGINEERING (Language-Agnostic)
 
-**Target:** Mampu mendesain software skala industri (Enterprise-grade).
+**Target:** Able to design enterprise-grade industrial software.
 
 ### Architecture Patterns
 - Layered Architecture
@@ -117,13 +117,13 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - Static Analysis & Security Scanning
 
 ### Output Target
-- [ ] Mampu mendesain arsitektur software enterprise-grade
+- [ ] Able to design enterprise-grade software architecture
 
 ---
 
 ## ROADMAP 4: ROBOTICS CORE (FUNDAMENTAL)
 
-> **Paling Penting** — Konsep di sini berlaku universal untuk C++ maupun Python.
+> **Most Important** — Concepts here are universal for both C++ and Python.
 
 ### Robot Architecture
 - Robot Class Design
@@ -180,13 +180,13 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - Bare Metal vs RTOS vs Linux
 
 ### Output Target
-- [ ] Mampu mendesain arsitektur robot dari nol (Hardware → Software)
+- [ ] Able to design robot architecture from scratch (Hardware → Software)
 
 ---
 
 ## ROADMAP 5: ROS 2 PROFESSIONAL
 
-> Semua ilmu sebelumnya berkumpul di sini.
+> All previous knowledge converges here.
 
 ### ROS 2 Core Concepts
 - Workspace & Package Structure (ament_cmake, ament_python)
@@ -217,13 +217,13 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - Visualization: RViz2, Foxglove
 
 ### Output Target
-- [ ] Mampu membangun robot lengkap menggunakan ROS 2 (Simulasi → Real Robot)
+- [ ] Able to build a complete robot using ROS 2 (Simulation → Real Robot)
 
 ---
 
 ## ROADMAP 6: PRODUCTION ROBOTICS
 
-> **Rarely Taught** — Skill untuk robot komersial di *production environment*.
+> **Rarely Taught** — Skills for commercial robots in a *production environment*.
 
 ### Linux & System Admin
 - Ubuntu Server / Debian Hardening
@@ -264,7 +264,7 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 - MLOps for Robotics (MLflow, DVC, ClearML)
 
 ### Output Target
-- [ ] Siap membangun & mendeploy robot komersial ke *production fleet*
+- [ ] Ready to build & deploy commercial robots to a *production fleet*
 
 ---
 
@@ -275,12 +275,12 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 | 1-2   | Modern C++ + Modern Python     | Library C++ + Package Python     |
 | 3     | Software Engineering           | Clean Architecture Project       |
 | 4-5   | Robotics Core (Math + Motion)  | Robot Simulator Mini Project     |
-| 6-7   | ROS 2 Core + Nav2 + MoveIt     | Robot Navigasi + Manipulasi      |
+| 6-7   | ROS 2 Core + Nav2 + MoveIt     | Robot Navigation + Manipulation  |
 | 8     | Embedded + Communication       | MCU Driver + ROS2 Bridge         |
 | 9     | Perception + Sensor Fusion     | Sensor Fusion Pipeline           |
-| 10    | Production Linux + Docker      | Deploy ke Robot Real (Jetson/PC) |
+| 10    | Production Linux + Docker      | Deploy to Real Robot (Jetson/PC) |
 | 11    | Fleet + OTA + Monitoring       | Fleet Dashboard + OTA Demo       |
-| 12    | Capstone Project               | **Robot Komersial End-to-End**   |
+| 12    | Capstone Project               | **Commercial Robot End-to-End** |
 
 ---
 
@@ -327,11 +327,11 @@ Roadmap terstruktur untuk menjadi **Robotics Software Engineer** yang mampu memb
 
 ## NOTES & PERSONAL REFLECTION
 
-> *Catatan pribadi, blockers, insights, link referensi penting, dll.*
+> *Personal notes, blockers, insights, important reference links, etc.*
 
 ```
-Tanggal: YYYY-MM-DD
-Catatan:
+Date: YYYY-MM-DD
+Notes:
 - ...
 - ...
 ```

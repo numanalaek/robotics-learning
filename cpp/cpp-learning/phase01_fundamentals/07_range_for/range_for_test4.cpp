@@ -1,10 +1,10 @@
 // ============================================================
-// Program 07e: Range-based For dengan Reference
-// Deskripsi : Menggunakan "int &sensor" (reference) agar
-//             bisa mengubah array asli dari dalam loop.
-// Konsep    : - int &sensor : sensors => sensor adalah reference
-//             - Mengubah sensor JUGA mengubah array asli
-//             - Gunakan reference jika perlu memodifikasi data
+// Program 07e: Range-based For with Reference
+// Description: Using "int &sensor" (reference) to
+//             modify the original array from within the loop.
+// Concepts  : - int &sensor : sensors => sensor is a reference
+//             - Changing sensor ALSO changes the original array
+//             - Use reference if you need to modify data
 // ============================================================
 
 #include <iostream>
@@ -20,7 +20,7 @@ int main()
     }
     std::cout << '\n';
 
-    // &sensor adalah reference, bukan copy -> array asli BERUBAH
+    // &sensor is a reference, not a copy -> original array CHANGES
     for (int &sensor : sensors)
     {
         sensor = 0;
@@ -33,7 +33,7 @@ int main()
     }
     std::cout << '\n';
 
-    std::cout << "Array berubah karena sensor adalah reference.\n";
+    std::cout << "Array changed because sensor is a reference.\n";
 
     return 0;
 }

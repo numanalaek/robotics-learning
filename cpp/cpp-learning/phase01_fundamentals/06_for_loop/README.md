@@ -1,17 +1,17 @@
 # 06 — For Loop
 
-Penggunaan `for` loop untuk membaca dan memproses array data sensor.
+Using `for` loop to read and process sensor data arrays.
 
-## Empat Hal Penting tentang For Loop
+## Four Important Things about For Loop
 
-| # | Konsep | Contoh |
+| # | Concept | Example |
 |---|--------|--------|
-| 1 | `for` mengulang kode dengan **counter** | `for (int i = 0; i < N; ++i)` |
-| 2 | Array menyimpan banyak data dengan **indeks 0..n-1** | `sensors[i]` |
-| 3 | Akumulasi nilai dengan `sum += sensors[i]` | `sum += sensors[i];` |
-| 4 | Cari min/max dengan **perbandingan** tiap iterasi | `if (sensors[i] < min) min = sensors[i];` |
+| 1 | `for` repeats code with a **counter** | `for (int i = 0; i < N; ++i)` |
+| 2 | Arrays store multiple data with **index 0..n-1** | `sensors[i]` |
+| 3 | Accumulate values with `sum += sensors[i]` | `sum += sensors[i];` |
+| 4 | Find min/max with **comparison** each iteration | `if (sensors[i] < min) min = sensors[i];` |
 
-## Kode — `for_loop.cpp`
+## Code — `for_loop.cpp`
 
 ```cpp
 #include <iostream>
@@ -90,7 +90,7 @@ Safe    : 5
 Robot Status : EMERGENCY
 ```
 
-## Alur Eksekusi For Loop
+## Flow Eksekusi For Loop
 
 ```
 for (int i = 0;    i < SENSOR_COUNT;    ++i)
@@ -98,12 +98,12 @@ for (int i = 0;    i < SENSOR_COUNT;    ++i)
       ③
 ```
 
-| Langkah | Kode | Penjelasan |
+| Step | Code | Explanation |
 |---------|------|------------|
-| ① | `int i = 0` | Inisialisasi (sekali di awal) |
-| ② | `i < 8` | Cek kondisi — jika true, masuk loop |
-| ③ | `sensors[i]` | Eksekusi body loop |
-| ④ | `++i` | Increment, lalu kembali ke ② |
+| ① | `int i = 0` | Initialization (once at start) |
+| ② | `i < 8` | Check condition — if true, enter loop |
+| ③ | `sensors[i]` | Execute loop body |
+| ④ | `++i` | Increment, then return to ② |
 
 ## Command Line
 
@@ -113,20 +113,20 @@ g++ for_loop_test1.cpp -o for_loop_test1 && ./for_loop_test1
 g++ robot_monitor.cpp -o robot_monitor && ./robot_monitor
 ```
 
-## Analogi
+## Analogy
 
-For loop seperti **robot inspection line** — robot berjalan menyusuri 8 sensor, satu per satu.
+For loop is like a **robot inspection line** — the robot walks along 8 sensors, one by one.
 
-| Bagian Loop | Analogi |
+| Loop Part | Analogy |
 |-------------|---------|
-| `int i = 0` | Mulai dari sensor pertama |
-| `i < 8` | Cek apakah masih ada sensor |
-| `sensors[i]` | Baca nilai sensor ke-i |
-| `++i` | Geser ke sensor berikutnya |
+| `int i = 0` | Start from the first sensor |
+| `i < 8` | Check if there are still sensors |
+| `sensors[i]` | Read the i-th sensor value |
+| `++i` | Move to the next sensor |
 
-## Latihan
+## Exercises
 
-1. Ubah `SENSOR_COUNT` jadi 16 — apa yang perlu diubah di array?
-2. Ganti threshold warning dari 50 jadi 70 — bagaimana hasilnya?
-3. Tambah logika: jika `warning_count >= 4`, cetak "EMERGENCY STOP!".
-4. Gunakan `for (int i = 7; i >= 0; --i)` — apa yang terjadi pada urutan output?
+1. Change `SENSOR_COUNT` to 16 — what needs to change in the array?
+2. Change the warning threshold from 50 to 70 — how does the result change?
+3. Add logic: if `warning_count >= 4`, print "EMERGENCY STOP!".
+4. Use `for (int i = 7; i >= 0; --i)` — what happens to the output order?

@@ -1,5 +1,5 @@
 // ============================================================
-// object.cpp — Object adalah instance nyata dari class
+// object.cpp — Object is a real instance of a class
 // ============================================================
 // Compile & run:
 //   g++ object.cpp -o object && ./object
@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-// --- Class (blueprint / desain) -----------------------------
+// --- Class (blueprint / design) -----------------------------
 
 class Robot
 {
@@ -17,7 +17,7 @@ public:
     double velocity;
 };
 
-// --- main: multiple object, masing-masing punya memori sendiri
+// --- main: multiple objects, each with its own memory
 //
 //   Robot class  ← blueprint
 //      │
@@ -25,16 +25,16 @@ public:
 //   ▼     ▼
 // robot1 robot2
 //
-// Semua punya member: battery, voltage, velocity
-// Tapi nilainya BEBEDA — masing-masing punya memori sendiri
+// All have members: battery, voltage, velocity
+// But their values are DIFFERENT — each has its own memory
 
 int main()
 {
-    // --- Dua object dari class yang sama --------------------
+    // --- Two objects from the same class --------------------
     Robot robot1;
     Robot robot2;
 
-    // Isi nilai masing-masing (tidak saling mempengaruhi)
+    // Fill each with their own values (do not affect each other)
     robot1.battery = 90;
     robot1.voltage = 24.5;
     robot1.velocity = 0.5;
@@ -58,7 +58,7 @@ int main()
         << "  Voltage         = " << robot2.voltage << " V\n"
         << "  Velocity        = " << robot2.velocity << " m/s\n";
 
-    // Bukti perubahan robot1 tidak mempengaruhi robot2
+    // Proof that changing robot1 does not affect robot2
     robot1.battery = 0;
 
     std::cout

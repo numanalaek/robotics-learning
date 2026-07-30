@@ -1,14 +1,14 @@
 // ============================================================
-// Program 10a: Scope — Global, Local, dan Block
-// Deskripsi : Menunjukkan tiga level scope variabel:
-//             - global : robot_id (dapat diakses di mana saja)
-//             - local  : battery (hanya di dalam main)
-//             - block  : sensor_distance (hanya di dalam { })
-// Konsep    : - Scope menentukan di mana variabel bisa diakses
-//             - Block scope: variabel di dalam { } tidak bisa
-//               diakses dari luar { }
-//             - Coba uncomment baris sensor_distance di luar
-//               block untuk melihat error kompilasi
+// Program 10a: Scope — Global, Local, and Block
+// Description: Shows three levels of variable scope:
+//             - global : robot_id (accessible anywhere)
+//             - local  : battery (only inside main)
+//             - block  : sensor_distance (only inside { })
+// Concepts  : - Scope determines where a variable can be accessed
+//             - Block scope: variables inside { } cannot
+//               be accessed from outside { }
+//             - Try uncommenting the sensor_distance line outside
+//               the block to see a compilation error
 // ============================================================
 
 #include <iostream>
@@ -30,7 +30,7 @@ int main()
                   << " cm\n";
     }
 
-    // Coba uncomment baris berikut untuk melihat error:
+    // Try uncommenting the following line to see the error:
     // std::cout << sensor_distance << '\n';
 
     return 0;

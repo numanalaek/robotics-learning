@@ -1,19 +1,19 @@
 // ============================================================
 // Program 05d: Pass by const Reference
-// Deskripsi : Membuktikan bahwa reference dan variabel asli
-//             memiliki alamat memori yang SAMA.
-// Konsep    : - &name (di fungsi) == &robot (di main)
-//             - Reference hanyalah alias/nama lain
-//             - const reference: aman dan efisien untuk baca
+// Description: Proves that a reference and the original variable
+//             have the SAME memory address.
+// Concepts  : - &name (in function) == &robot (in main)
+//             - Reference is just an alias/another name
+//             - const reference: safe and efficient for reading
 // ============================================================
 
 #include <iostream>
 #include <string>
 
-// const reference: alamat sama, tapi tidak bisa ubah nilai
+// const reference: same address, but cannot change value
 void printName(const std::string &name)
 {
-    std::cout << "Alamat di fungsi : "
+    std::cout << "Address in function : "
               << &name << '\n';
 
     std::cout << "Robot : "
@@ -24,10 +24,10 @@ int main()
 {
     std::string robot = "NUIN-AMR-01";
 
-    std::cout << "Alamat di main   : "
+    std::cout << "Address in main    : "
               << &robot << '\n';
 
-    // Alamat yang dicetak di main dan di fungsi akan SAMA
+    // Addresses printed in main and in function will be the SAME
     printName(robot);
 
     return 0;

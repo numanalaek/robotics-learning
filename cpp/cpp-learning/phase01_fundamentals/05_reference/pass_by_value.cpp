@@ -1,37 +1,37 @@
 // ============================================================
 // Program 05a: Pass by Value
-// Deskripsi : Mendemonstrasikan bahwa pass by value membuat
-//             SALINAN (copy) dari data, sehingga fungsi tidak
-//             bisa mengubah variabel asli di main().
-// Konsep    : - Parameter tanpa & = pass by value
-//             - Fungsi menerima COPY, alamat memori berbeda
-//             - Perubahan di fungsi TIDAK mempengaruhi asli
+// Description: Demonstrates that pass by value creates a
+//             COPY of the data, so the function cannot
+//             change the original variable in main().
+// Concepts  : - Parameter without & = pass by value
+//             - Function receives a COPY, different memory address
+//             - Changes in the function do NOT affect the original
 // ============================================================
 
 #include <iostream>
 #include <string>
 
-// name adalah salinan (copy) dari robot di main()
-// Alamat name berbeda dari alamat robot
+// name is a copy of robot in main()
+// name's address is different from robot's address
 void printName(std::string name)
 {
-    std::cout << "Alamat di fungsi : " << &name << '\n';
-    std::cout << "Isi di fungsi    : " << name << '\n';
+    std::cout << "Address in function : " << &name << '\n';
+    std::cout << "Content in function : " << name << '\n';
     name = "MODIFIED";
-    std::cout << "Setelah diubah   : " << name << '\n';
+    std::cout << "After modification  : " << name << '\n';
 }
 
 int main()
 {
     std::string robot = "NUIN-AMR-01";
 
-    std::cout << "Alamat di main   : " << &robot << '\n';
-    std::cout << "Isi di main      : " << robot << '\n';
+    std::cout << "Address in main    : " << &robot << '\n';
+    std::cout << "Content in main    : " << robot << '\n';
 
-    printName(robot);  // robot di-copy ke parameter name
+    printName(robot);  // robot is copied to parameter name
 
-    // robot tetap "NUIN-AMR-01", tidak berubah menjadi "MODIFIED"
-    std::cout << "Isi di main setelah fungsi : " << robot << '\n';
+    // robot stays "NUIN-AMR-01", does not change to "MODIFIED"
+    std::cout << "Content in main after function : " << robot << '\n';
 
     return 0;
 }

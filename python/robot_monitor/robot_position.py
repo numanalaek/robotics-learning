@@ -2,7 +2,7 @@ x = 0
 y = 0
 
 while True:
-    command = input("Perintah (w/a/s/d/q): ")
+    command = input("Command (w/a/s/d/q): ")
 
     if command == "w":
         y += 1
@@ -19,4 +19,4 @@ while True:
     elif command == "q":
         break
 
-    print(f"Posisi robot: ({x}, {y})")
+    print(f"Robot position: ({x}, {y})")

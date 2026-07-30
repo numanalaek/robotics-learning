@@ -1,10 +1,10 @@
 // ============================================================
-// Program 07c: Range-based For - Rata-rata Sensor
-// Deskripsi : Menghitung rata-rata dari 8 sensor menggunakan
-//             range-based for loop.
-// Konsep    : - Akumulasi nilai dengan sum += sensor
-//             - Hitung rata-rata setelah loop
-//             - static_cast<double> untuk konversi tipe
+// Program 07c: Range-based For - Sensor Average
+// Description: Calculates the average of 8 sensors using
+//             a range-based for loop.
+// Concepts  : - Accumulate values with sum += sensor
+//             - Calculate average after loop
+//             - static_cast<double> for type conversion
 // ============================================================
 
 #include <iostream>
@@ -15,13 +15,13 @@ int main()
 
     int sum = 0;
 
-    // Jumlahkan semua nilai sensor
+    // Sum all sensor values
     for (int sensor : sensors)
     {
         sum += sensor;
     }
 
-    // Hitung rata-rata (konversi ke double agar presisi)
+    // Calculate average (convert to double for precision)
     double average = static_cast<double>(sum) / 8;
 
     std::cout << "Average = " << average << '\n';

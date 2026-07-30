@@ -1,14 +1,14 @@
 // ============================================================
-// Program 01b: Hello Robot - Informasi Lengkap
-// Deskripsi : Menampilkan spesifikasi dan status robot
-// Konsep    : Mencetak beberapa baris informasi dengan std::cout
+// Program 01b: Hello Robot - Full Information
+// Description: Displays robot specifications and status
+// Concepts  : Printing multiple lines of information with std::cout
 // ============================================================
 
 #include <iostream>
 
 int main()
 {
-    // Cetak informasi robot
+    // Print robot information
     std::cout << "Robot Name : NUIN-AMR-01" << std::endl;
     std::cout << "Version    : v1.0" << std::endl;
     std::cout << "Language   : Modern C++" << std::endl;

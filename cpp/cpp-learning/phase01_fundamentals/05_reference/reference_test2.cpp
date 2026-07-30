@@ -1,55 +1,55 @@
 // ============================================================
-// Program 05f: Reference BUKAN Pointer
-// Deskripsi : Membuktikan bahwa reference adalah ALIAS (nama
-//             lain), bukan pointer. Reference tidak punya
-//             alamat memori sendiri.
-// Konsep    : - &ref == &battery (alamat SAMA)
-//             - ref adalah nama lain untuk battery
-//             - Berbeda dengan pointer yang punya alamat sendiri
-//             - Mengubah ref = mengubah battery (dan sebaliknya)
+// Program 05f: Reference is NOT a Pointer
+// Description: Proves that a reference is an ALIAS (another
+//             name), not a pointer. References do not have
+//             their own memory address.
+// Concepts  : - &ref == &battery (same address)
+//             - ref is another name for battery
+//             - Unlike a pointer which has its own address
+//             - Changing ref = changing battery (and vice versa)
 // ============================================================
 
 #include <iostream>
 
 int main()
 {
-    std::cout << "=== Membuktikan bahwa Reference BUKAN Pointer ===\n\n";
+    std::cout << "=== Proving that Reference is NOT a Pointer ===\n\n";
 
     int battery = 100;
-    int &ref = battery;     // ref adalah alias/nama lain untuk battery
+    int &ref = battery;     // ref is an alias/another name for battery
 
-    // Nilai battery dan ref selalu sama
-    std::cout << "Cetak nilai:\n";
+    // battery and ref values are always the same
+    std::cout << "Print values:\n";
     std::cout << "  battery = " << battery << "\n";
     std::cout << "  ref     = " << ref << "\n\n";
 
-    // Alamat battery dan ref juga SAMA
-    std::cout << "Cetak alamat:\n";
+    // battery and ref addresses are also the SAME
+    std::cout << "Print addresses:\n";
     std::cout << "  &battery = " << &battery << "\n";
     std::cout << "  &ref     = " << &ref << "\n\n";
 
-    std::cout << "Apakah &battery == &ref ? "
-              << (&battery == &ref ? "YA, alamatnya SAMA" : "TIDAK SAMA") << "\n\n";
+    std::cout << "Is &battery == &ref ? "
+              << (&battery == &ref ? "YES, addresses are the SAME" : "NOT SAME") << "\n\n";
 
-    // Ubah melalui ref -> battery ikut berubah
-    std::cout << "Ubah nilai melalui ref:\n";
+    // Change through ref -> battery also changes
+    std::cout << "Change value through ref:\n";
     ref = 75;
     std::cout << "  ref = 75;\n";
     std::cout << "  battery = " << battery << "\n";
     std::cout << "  ref     = " << ref << "\n\n";
 
-    // Ubah melalui battery -> ref ikut berubah
-    std::cout << "Ubah nilai melalui battery:\n";
+    // Change through battery -> ref also changes
+    std::cout << "Change value through battery:\n";
     battery = 50;
     std::cout << "  battery = 50;\n";
     std::cout << "  battery = " << battery << "\n";
     std::cout << "  ref     = " << ref << "\n\n";
 
-    std::cout << "Kesimpulan:\n";
-    std::cout << "- ref dan battery adalah DUA NAMA untuk SATU VARIABEL yang sama.\n";
-    std::cout << "- ref TIDAK punya alamat sendiri (&ref == &battery).\n";
-    std::cout << "- Pointer punya alamat sendiri (&ptr != &battery).\n";
-    std::cout << "- Reference hanyalah alias (nama lain), bukan objek terpisah.\n";
+    std::cout << "Conclusion:\n";
+    std::cout << "- ref and battery are TWO NAMES for the SAME variable.\n";
+    std::cout << "- ref does NOT have its own address (&ref == &battery).\n";
+    std::cout << "- Pointers have their own address (&ptr != &battery).\n";
+    std::cout << "- Reference is just an alias (another name), not a separate object.\n";
 
     return 0;
 }

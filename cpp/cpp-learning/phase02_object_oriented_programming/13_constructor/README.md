@@ -1,15 +1,15 @@
 # 13. Constructor dalam C++
 
-## Empat Hal Penting tentang Constructor
+## Four Important Things About Constructor
 
-| # | Aturan | Contoh |
-|---|--------|--------|
-| 1 | Dipanggil **otomatis** saat objek dibuat | `Robot robot;` → `Robot()` langsung jalan |
-| 2 | Nama **sama persis** dengan nama class | `class Robot { Robot() { } }` |
-| 3 | **Tidak punya return type** (bukan `void`) | `Robot();` ✅ | `void Robot();` ❌ |
-| 4 | **Menginisialisasi** data member agar objek langsung valid | `: battery(100), voltage(24.5)` |
+| # | Rule | Example |
+|---|------|--------|
+| 1 | Called **automatically** when an object is created | `Robot robot;` → `Robot()` runs immediately |
+| 2 | Name is **exactly the same** as the class name | `class Robot { Robot() { } }` |
+| 3 | **Has no return type** (not even `void`) | `Robot();` ✅ | `void Robot();` ❌ |
+| 4 | **Initializes** data members so the object is immediately valid | `: battery(100), voltage(24.5)` |
 
-## Kode
+## Code
 
 ```cpp
 #include <iostream>
@@ -73,21 +73,21 @@ g++ -std=c++11 -o constructor constructor.cpp
 g++ -std=c++11 -o constructor constructor.cpp && ./constructor
 ```
 
-## Analogi
+## Analogy
 
-Constructor seperti **surat lahir** — saat objek "lahir", semua data dasarnya sudah terisi.
+Constructor is like a **birth certificate** — when an object is "born", all its basic data is already filled in.
 
-| Objek | Lahir dengan nilai default |
-|-------|---------------------------|
+| Object | Born with default values |
+|--------|-------------------------|
 | `Robot` | battery=100, voltage=24.5, mode="READY", pose=(0,0) |
-| `std::string` | `""` (string kosong) |
-| `std::vector` | kosong (`size() == 0`) |
+| `std::string` | `""` (empty string) |
+| `std::vector` | empty (`size() == 0`) |
 
-Tanpa constructor → objek lahir dengan data **tidak terdefinisi** (sampah).
+Without a constructor → the object is born with **undefined** data (garbage).
 
-## Latihan
+## Exercises
 
-1. Hapus constructor → compile → lihat error: `no appropriate default constructor available`
-2. Ganti `Robot()` menjadi `void Robot()` → lihat error: `return type specification for constructor invalid`
-3. Tambahkan parameter: `Robot(int level) : battery(level)` → panggil `Robot robot(50);`
-4. Gunakan member initializer list vs assignment — apa bedanya?
+1. Remove the constructor → compile → see the error: `no appropriate default constructor available`
+2. Change `Robot()` to `void Robot()` → see the error: `return type specification for constructor invalid`
+3. Add a parameter: `Robot(int level) : battery(level)` → call `Robot robot(50);`
+4. Use member initializer list vs assignment — what's the difference?

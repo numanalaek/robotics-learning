@@ -1,13 +1,13 @@
 // ============================================================
 // Program 11d: class vs struct
-// Deskripsi : Membandingkan struct dan class secara langsung.
-//             Satu-satunya perbedaan: struct default public,
-//             class default private.
-// Konsep    : - struct Robot  -> semua member public (default)
-//             - class Robot   -> semua member private (default)
-//               sehingga perlu ditambahkan public: eksplisit
-//             - Keduanya identik dalam fitur (bisa punya
-//               constructor, method, dll.)
+// Description: Comparing struct and class directly.
+//             The only difference: struct defaults to public,
+//             class defaults to private.
+// Concepts  : - struct Robot  -> all members public (default)
+//             - class Robot   -> all members private (default)
+//               so explicit public: must be added
+//             - Both are identical in features (can have
+//               constructors, methods, etc.)
 // ============================================================
 
 #include <iostream>
@@ -22,7 +22,7 @@ struct RobotStruct
     double voltage;
 };
 
-// --- CLASS (default: private, perlu public:) ---
+// --- CLASS (default: private, needs public:) ---
 class RobotClass
 {
 public:
@@ -34,14 +34,14 @@ public:
 
 int main()
 {
-    // Struct — semua member bisa diakses langsung
+    // Struct — all members can be accessed directly
     RobotStruct robot1;
     robot1.id = 1;
     robot1.name = "NUIN-AMR-01";
     robot1.battery = 85;
     robot1.voltage = 24.5;
 
-    // Class — member bisa diakses karena public:
+    // Class — members can be accessed because of public:
     RobotClass robot2;
     robot2.id = 2;
     robot2.name = "NUIN-AMR-02";

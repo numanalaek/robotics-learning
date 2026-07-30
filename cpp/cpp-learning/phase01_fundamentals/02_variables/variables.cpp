@@ -1,13 +1,13 @@
 // ============================================================
-// Program 02: Variabel dan Tipe Data
-// Deskripsi : Mendeklarasikan dan menampilkan berbagai tipe data
-//             yang umum digunakan dalam pemrograman robot.
-// Konsep    : - Berbagai tipe data: int, double, float, bool,
+// Program 02: Variables and Data Types
+// Description: Declaring and displaying various data types
+//             commonly used in robot programming.
+// Concepts  : - Various data types: int, double, float, bool,
 //               char, std::string
-//             - constexpr untuk konstanta waktu kompilasi
-//             - auto untuk deduksi tipe otomatis
-//             - std::setw untuk merapikan tampilan
-//             - Ternary operator (?:) untuk kondisi sederhana
+//             - constexpr for compile-time constants
+//             - auto for automatic type deduction
+//             - std::setw for formatting output
+//             - Ternary operator (?:) for simple conditions
 // ============================================================
 
 #include <iostream>
@@ -16,33 +16,33 @@
 
 int main()
 {
-    // ----- DEKLARASI VARIABEL DENGAN BERBAGAI TIPE DATA -----
-    std::string robot_name = "NUIN-AMR-01";  // string: teks
-    int robot_id = 1;                         // int: bilangan bulat
-    int battery = 100;                        // int: persentase baterai
-    double voltage = 24.6;                    // double: desimal presisi ganda
-    float speed = 1.25f;                      // float: desimal presisi tunggal
+    // ----- DECLARING VARIABLES WITH VARIOUS DATA TYPES -----
+    std::string robot_name = "NUIN-AMR-01";  // string: text
+    int robot_id = 1;                         // int: integer
+    int battery = 100;                        // int: battery percentage
+    double voltage = 24.6;                    // double: double precision decimal
+    float speed = 1.25f;                      // float: single precision decimal
     bool obstacle = false;                    // bool: true/false
-    char command = 'W';                       // char: satu karakter
+    char command = 'W';                       // char: single character
 
-    // constexpr: nilai tetap yang sudah diketahui saat kompilasi
+    // constexpr: fixed value known at compile time
     constexpr int wheel_count = 2;
     constexpr double MAX_PAYLOAD = 500.0;
 
-    // auto: compiler menentukan tipe secara otomatis
+    // auto: compiler determines type automatically
     const auto software_version = std::string("v1.0.0");
 
-    // Ternary operator: if singkat dalam satu baris
+    // Ternary operator: inline if in one line
     auto obstacle_str = obstacle ? "Yes" : "No";
 
-    // ----- CETAK INFORMASI ROBOT -----
+    // ----- PRINT ROBOT INFORMATION -----
     std::cout << "==============================" << '\n';
     std::cout << "NUIN Autonomous Mobile Robot" << '\n';
     std::cout << "==============================" << '\n';
     std::cout << '\n';
 
-    // std::left: rata kiri, std::fixed: format desimal tetap
-    // std::setw(18): atur lebar kolom 18 karakter
+    // std::left: left align, std::fixed: fixed decimal format
+    // std::setw(18): set column width to 18 characters
     std::cout << std::left;
     std::cout << std::fixed;
     std::cout << std::setw(18) << "Robot Name" << ": " << robot_name << '\n';

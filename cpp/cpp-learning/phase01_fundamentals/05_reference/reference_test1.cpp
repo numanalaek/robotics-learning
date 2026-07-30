@@ -1,52 +1,52 @@
 // ============================================================
-// Program 05e: Perbandingan Pass by Value vs Pass by Reference
-// Deskripsi : Membandingkan langsung perbedaan antara
-//             pass by value dan pass by reference.
-// Konsep    : - Pass by value: copy, nilai asli TIDAK berubah
-//             - Pass by reference: alias, nilai asli BERUBAH
-//             - Alamat memori berbeda (value) vs sama (reference)
-//             - Dengan reference, fungsi memodifikasi variabel asli
+// Program 05e: Comparison of Pass by Value vs Pass by Reference
+// Description: Directly compares the differences between
+//             pass by value and pass by reference.
+// Concepts  : - Pass by value: copy, original value does NOT change
+//             - Pass by reference: alias, original value CHANGES
+//             - Different memory address (value) vs same (reference)
+//             - With reference, the function modifies the original variable
 // ============================================================
 
 #include <iostream>
 
-// Pass by value: battery adalah COPY, alamat berbeda
+// Pass by value: battery is a COPY, different address
 void decreaseByValue(int battery)
 {
-    std::cout << "  [decreaseByValue] &battery (dalam fungsi) = " << &battery << "\n";
+    std::cout << "  [decreaseByValue] &battery (in function) = " << &battery << "\n";
     battery -= 10;
-    std::cout << "  [decreaseByValue] battery di dalam fungsi = " << battery << "\n";
+    std::cout << "  [decreaseByValue] battery in function = " << battery << "\n";
 }
 
-// Pass by reference: battery adalah REFERENCE, alamat SAMA
+// Pass by reference: battery is a REFERENCE, same address
 void decreaseByReference(int &battery)
 {
-    std::cout << "  [decreaseByReference] &battery (dalam fungsi) = " << &battery << "\n";
+    std::cout << "  [decreaseByReference] &battery (in function) = " << &battery << "\n";
     battery -= 10;
-    std::cout << "  [decreaseByReference] battery di dalam fungsi = " << battery << "\n";
+    std::cout << "  [decreaseByReference] battery in function = " << battery << "\n";
 }
 
 int main()
 {
-    std::cout << "=== Perbedaan Pass by Value vs Pass by Reference ===\n\n";
+    std::cout << "=== Difference between Pass by Value vs Pass by Reference ===\n\n";
 
     // ----- PASS BY VALUE -----
     int battery1 = 100;
     std::cout << "1) Pass by Value:\n";
-    std::cout << "  &battery1 (di main) = " << &battery1 << "\n";
-    std::cout << "  Sebelum panggil fungsi: battery = " << battery1 << "\n";
+    std::cout << "  &battery1 (in main) = " << &battery1 << "\n";
+    std::cout << "  Before calling function: battery = " << battery1 << "\n";
     decreaseByValue(battery1);
-    std::cout << "  Setelah panggil fungsi: battery = " << battery1 << "\n";
-    std::cout << "  -> Nilai TIDAK berubah (alamat berbeda -> copy).\n\n";
+    std::cout << "  After calling function: battery = " << battery1 << "\n";
+    std::cout << "  -> Value does NOT change (different address -> copy).\n\n";
 
     // ----- PASS BY REFERENCE -----
     int battery2 = 100;
     std::cout << "2) Pass by Reference:\n";
-    std::cout << "  &battery2 (di main) = " << &battery2 << "\n";
-    std::cout << "  Sebelum panggil fungsi: battery = " << battery2 << "\n";
+    std::cout << "  &battery2 (in main) = " << &battery2 << "\n";
+    std::cout << "  Before calling function: battery = " << battery2 << "\n";
     decreaseByReference(battery2);
-    std::cout << "  Setelah panggil fungsi: battery = " << battery2 << "\n";
-    std::cout << "  -> Nilai BERUBAH (alamat sama -> variabel asli).\n";
+    std::cout << "  After calling function: battery = " << battery2 << "\n";
+    std::cout << "  -> Value CHANGES (same address -> original variable).\n";
 
     return 0;
 }

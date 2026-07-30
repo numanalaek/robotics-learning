@@ -3,62 +3,62 @@
 // ============================================================
 // STRUCT COMPOSITION + ENCAPSULATION
 // ============================================================
-// struct: mengelompokkan data yang berkaitan menjadi satu kesatuan
-// (mirip class, tapi default access-nya public)
+// struct: groups related data into a single unit
+// (similar to class, but default access is public)
 
-// Battery — menyimpan status baterai robot
+// Battery — stores robot battery status
 struct Battery
 {
-    int percent;    // persentase baterai (0–100)
-    double voltage; // tegangan baterai dalam Volt
+    int percent;    // battery percentage (0–100)
+    double voltage; // battery voltage in Volts
 };
 
-// Velocity — menyimpan kecepatan robot (linear & angular)
+// Velocity — stores robot velocity (linear & angular)
 struct Velocity
 {
-    double linear;  // kecepatan linear (m/s)
-    double angular; // kecepatan angular (rad/s)
+    double linear;  // linear velocity (m/s)
+    double angular; // angular velocity (rad/s)
 };
 
 // ============================================================
-// CLASS ROBOT — menyembunyikan detail internal (encapsulation)
+// CLASS ROBOT — hides internal details (encapsulation)
 // ============================================================
-// private:   data member — tidak bisa diakses langsung dari luar
-// public:    member function — antarmuka ke dunia luar
-// trailing underscore (_) pada nama member membedakannya dari
-// parameter constructor (gaya ROS 2 / C++ modern)
+// private:   data members — cannot be accessed directly from outside
+// public:    member functions — interface to the outside world
+// trailing underscore (_) on member names distinguishes them from
+// constructor parameters (ROS 2 / modern C++ style)
 class Robot
 {
 private:
-    Battery battery_;    // data baterai (struct)
-    Velocity velocity_;  // data kecepatan (struct)
-    bool emergency_;     // status darurat
+    Battery battery_;    // battery data (struct)
+    Velocity velocity_;  // velocity data (struct)
+    bool emergency_;     // emergency status
 
 public:
-    // Default constructor — semua data diisi nilai default
+    // Default constructor — all data filled with default values
     Robot()
         : battery_{100, 12.5},    // battery 100%, 12.5V
-          velocity_{0.0, 0.0},    // diam
-          emergency_(false)       // tidak darurat
+          velocity_{0.0, 0.0},    // stationary
+          emergency_(false)       // not emergency
     {
     }
 
-    // Parameterized constructor — menerima struct langsung (const reference)
-    //   const Battery& battery  → parameter (tanpa _)
-    //   battery_                → data member (dengan _)
-    // Dengan konvensi _ , nama parameter bisa sama dengan nama member
-    // tanpa menimbulkan ambiguity.
+    // Parameterized constructor — receives struct directly (const reference)
+    //   const Battery& battery  → parameter (without _)
+    //   battery_                → data member (with _)
+    // With the _ convention, parameter names can be the same as member names
+    // without causing ambiguity.
     Robot(const Battery &battery, const Velocity &velocity, bool emergency)
-        : battery_(battery),     // copy dari parameter ke member
+        : battery_(battery),     // copy from parameter to member
           velocity_(velocity),
           emergency_(emergency)
     {
     }
 
-    // const member function — tidak mengubah data member
+    // const member function — does not modify data members
     void printStatus() const
     {
-        // Akses data member lewat dot operator (.)
+        // Access data member via dot operator (.)
         std::cout
             << "Battery : " << battery_.percent << "% @ " << battery_.voltage << " V\n"
             << "Velocity: " << velocity_.linear << " m/s linear, " << velocity_.angular << " rad/s angular\n"
@@ -67,22 +67,22 @@ public:
 };
 
 // ============================================================
-// MAIN — entry point program
+// MAIN — program entry point
 // ============================================================
 int main()
 {
-    // Membuat object Robot menggunakan parameterized constructor.
-    // Aggregate initialization {} membuat temporary Battery dan Velocity
+    // Creating Robot object using parameterized constructor.
+    // Aggregate initialization {} creates temporary Battery and Velocity
     //   {100, 24.5}  → Battery{percent=100, voltage=24.5}
     //   {0.0, 0.0}   → Velocity{linear=0.0, angular=0.0}
     // false          → emergency=false
-    // Robot 1: AGV 24V, diam
+    // Robot 1: AGV 24V, stationary
     Robot robot1({100, 24.5}, {0.0, 0.0}, false);
 
-    // Robot 2: Forklift AGV 48V, bergerak 1.5 m/s
+    // Robot 2: Forklift AGV 48V, moving at 1.5 m/s
     Robot robot2({85, 48.0}, {1.5, 0.0}, false);
 
-    // Memanggil public member function untuk melihat status
+    // Calling public member function to view status
     std::cout << "=== Robot 1 ===\n";
     robot1.printStatus();
 

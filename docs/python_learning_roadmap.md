@@ -6,7 +6,7 @@ Robotics Software Engineer Edition
 ## OVERVIEW
 
 ===========
-Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Engineer — dari fundamental hingga siap menggunakan **rclpy** (ROS 2) dan membangun software robot yang maintainable.
+Structured roadmap to master **Python** as a Robotics Software Engineer — from fundamentals to being ready to use **rclpy** (ROS 2) and build maintainable robot software.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -26,7 +26,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 1: PYTHON FUNDAMENTALS
 
-**Tujuan:** Menguasai sintaks Python secara mendalam tanpa menghafal.
+**Goal:** Master Python syntax in depth without memorization.
 
 **Program Structure**
 
@@ -98,7 +98,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 2: PYTHON DATA STRUCTURES
 >
-> **Paling penting** — fondasi utama Python.
+> **Most important** — the main Python foundation.
 
 **List**
 
@@ -193,7 +193,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 4: MODERN PYTHON
 >
-> **Ini yang membedakan** programmer biasa dengan Python Engineer.
+> **This is what differentiates** a regular programmer from a Python Engineer.
 
 **Dataclass**
 
@@ -261,7 +261,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 6: PROJECT STRUCTURE
 >
-> **Sering dilewati pemula**, tetapi sangat penting untuk proyek robotika.
+> **Often skipped by beginners**, but very important for robotics projects.
 
 - [ ] Module & Package
 - [ ] `__init__.py`
@@ -290,7 +290,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 8: CONCURRENCY
 >
-> **Robot hampir selalu** menjalankan beberapa tugas secara bersamaan.
+> **Robots almost always** run multiple tasks simultaneously.
 
 - [ ] threading (Lock, Queue)
 - [ ] multiprocessing
@@ -316,7 +316,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 10: PYTHON FOR ROBOTICS
 >
-> **Sekarang** mulai masuk dunia robot.
+> **Now** start entering the robotics world.
 
 **Architecture**
 
@@ -369,7 +369,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 12: INDUSTRY TOOLS
 >
-> **Tidak diajarkan** dalam kursus Python biasa, tapi vital di proyek nyata.
+> **Not taught** in regular Python courses, but vital in real projects.
 
 **Version Control**
 
@@ -402,7 +402,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 13: ROBOTICS SOFTWARE ARCHITECTURE
 >
-> **Pembeda kemampuan** — dari programmer biasa ke Robotics Software Engineer.
+> **Skill differentiator** — from regular programmer to Robotics Software Engineer.
 
 **Layered Architecture**
 
@@ -453,7 +453,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 14: ROBOTICS ALGORITHMS
 >
-> **Mengerti algoritma** yang dijalankan robot.
+> **Understand the algorithms** that the robot runs.
 
 **Mathematics**
 
@@ -492,7 +492,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 15: COMMUNICATION & DISTRIBUTED SYSTEMS
 >
-> **Robot modern bukan** satu komputer.
+> **Modern robots are not** a single computer.
 
 **Networking**
 
@@ -524,7 +524,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 16: ROBOTICS SYSTEM ENGINEERING
 >
-> **Mengerti keseluruhan** sistem robot.
+> **Understand the entire** robot system.
 
 **Hardware**
 
@@ -555,7 +555,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 17: PRODUCTION SOFTWARE ENGINEERING
 >
-> **Membuat software** siap pakai industri.
+> **Building software** ready for industrial use.
 
 **Build**
 
@@ -586,7 +586,7 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### PHASE 18: ADVANCED ROBOTICS
 >
-> **Siap membangun** robot komersial skala penuh.
+> **Ready to build** full-scale commercial robots.
 
 **ROS 2 Advanced**
 
@@ -626,45 +626,45 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 
 ### CORE
 
-- [ ] Menguasai Modern Python (3.12+) — Sintaks, Data Structures, OOP
-- [ ] Menguasai Modern Python Features — Dataclass, Generators, Decorators
-- [ ] Mampu menulis Clean Code & menerapkan Design Patterns
-- [ ] Mampu menggunakan Standard Library secara efektif
-- [ ] Mampu Debug & Test (pytest, mypy, ruff)
+- [ ] Master Modern Python (3.12+) — Syntax, Data Structures, OOP
+- [ ] Master Modern Python Features — Dataclass, Generators, Decorators
+- [ ] Able to write Clean Code & apply Design Patterns
+- [ ] Able to use the Standard Library effectively
+- [ ] Able to Debug & Test (pytest, mypy, ruff)
 
 ### ROBOTICS
 
-- [ ] Dapat membaca project Python skala besar
-- [ ] Dapat membuat package modular (publish ke PyPI)
-- [ ] Mampu membangun Robot Architecture (HAL, Layers, FSM)
-- [ ] Paham Robotics Algorithms (Kinematics, Navigation, Control)
-- [ ] Paham Communication Protocols (Serial, TCP/UDP, CAN, MQTT)
+- [ ] Able to read large-scale Python projects
+- [ ] Able to create modular packages (publish to PyPI)
+- [ ] Able to build Robot Architecture (HAL, Layers, FSM)
+- [ ] Understand Robotics Algorithms (Kinematics, Navigation, Control)
+- [ ] Understand Communication Protocols (Serial, TCP/UDP, CAN, MQTT)
 
 ### ROS 2 & PRODUCTION
 
-- [ ] Siap menggunakan ROS 2 (rclpy) — Node, Pub/Sub, Service, Action
-- [ ] Mampu merancang arsitektur software robot dari nol
-- [ ] Mampu membangun software robot yang maintainable
-- [ ] Paham DevOps (Docker, CI/CD) untuk robot
-- [ ] Siap berkolaborasi dalam tim engineering
+- [ ] Ready to use ROS 2 (rclpy) — Node, Pub/Sub, Service, Action
+- [ ] Able to design robot software architecture from scratch
+- [ ] Able to build maintainable robot software
+- [ ] Understand DevOps (Docker, CI/CD) for robotics
+- [ ] Ready to collaborate in engineering teams
 
 ---
 
-## RECOMMENDED LEARNING PATH (12 BULAN)
+## RECOMMENDED LEARNING PATH (12 MONTHS)
 
 ========================================
 
-| Bulan | Fokus Utama                     | Output Target                       |
+| Month | Main Focus                      | Output Target                       |
 |-------|----------------------------------|--------------------------------------|
-| 1     | Phase 1-2: Fundamentals + DS     | Script Python bersih, paham built-in |
+| 1     | Phase 1-2: Fundamentals + DS     | Clean Python scripts, understand built-ins |
 | 2     | Phase 3-4: OOP + Modern Python   | Mini project: OOP Robot Class       |
-| 3     | Phase 5-7: Std Lib + Testing     | Package Python + pytest suite        |
+| 3     | Phase 5-7: Std Lib + Testing     | Python package + pytest suite        |
 | 4     | Phase 8-9: Concurrency + SE      | Async robot controller + Clean Arch  |
-| 5     | Phase 10: Python for Robotics    | Robot simulator sederhana (Python)   |
-| 6     | Phase 11: ROS 2 Preparation      | ROS 2 Node dengan rclpy              |
+| 5     | Phase 10: Python for Robotics    | Simple robot simulator (Python)      |
+| 6     | Phase 11: ROS 2 Preparation      | ROS 2 Node with rclpy                |
 | 7     | Phase 12: Industry Tools         | Package publish + CI/CD pipeline     |
 | 8     | Phase 13: Robotics Architecture  | Robot HAL + FSM project              |
-| 9     | Phase 14-15: Algorithms + Comm   | Navigation stack prototype            |
+| 9     | Phase 14-15: Algorithms + Comm   | Navigation stack prototype           |
 | 10    | Phase 16: System Engineering     | Embedded ROS 2 bridge                |
 | 11    | Phase 17-18: Production + Adv    | Docker + Fleet + Security            |
 | 12    | **Capstone Project**             | **Robot end-to-end (Python stack)** |
@@ -700,16 +700,16 @@ Roadmap terstruktur untuk menguasai **Python** sebagai Robotics Software Enginee
 ## NOTES & PERSONAL REFLECTION
 
 ===============================
-> *Catatan pribadi, blockers, insights, link referensi penting, dll.*
+> *Personal notes, blockers, insights, important reference links, etc.*
 
 ```
-Tanggal: YYYY-MM-DD
-Catatan:
+Date: YYYY-MM-DD
+Notes:
 - ...
 - ...
 
-Tanggal: YYYY-MM-DD
-Catatan:
+Date: YYYY-MM-DD
+Notes:
 - ...
 ```
 

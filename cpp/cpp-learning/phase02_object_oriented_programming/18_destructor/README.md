@@ -1,15 +1,15 @@
 # 18. Destructor dalam C++
 
-## Empat Hal Penting tentang Destructor
+## Four Important Things About Destructor
 
-| # | Aturan | Contoh |
-|---|--------|--------|
-| 1 | Dipanggil **otomatis** saat objek **keluar dari scope** | `{ Robot r; }` → `~Robot()` jalan saat `}` |
-| 2 | Nama **sama persis** dengan nama class, diawali `~` | `~Robot()` |
-| 3 | **Tidak punya return type** dan **tidak boleh overload** | `~Robot();` ✅ | `~Robot(int);` ❌ |
-| 4 | **Membersihkan resource** (memory, file, mutex, dll) | `delete[] data;` di dalam `~Robot()` |
+| # | Rule | Example |
+|---|------|--------|
+| 1 | Called **automatically** when an object **goes out of scope** | `{ Robot r; }` → `~Robot()` runs at `}` |
+| 2 | Name is **exactly the same** as the class name, prefixed with `~` | `~Robot()` |
+| 3 | **Has no return type** and **cannot be overloaded** | `~Robot();` ✅ | `~Robot(int);` ❌ |
+| 4 | **Cleans up resources** (memory, file, mutex, etc.) | `delete[] data;` inside `~Robot()` |
 
-## Kode
+## Code
 
 ```cpp
 #include <iostream>
@@ -51,16 +51,16 @@ Destructor
 Destructor
 ```
 
-### Penjelasan urutan output:
+### Output order explanation:
 
-| Langkah | Kode | Output | Keterangan |
-|---------|------|--------|------------|
-| 1 | `Robot robot1;` | `Constructor` | robot1 dibuat di scope `main()` |
-| 2 | `Robot robot2;` | `Constructor` | robot2 dibuat di scope blok `{ }` |
-| 3 | `}` | `Destructor` | **robot2 dihancurkan** saat keluar scope blok |
-| 4 | `Robot robot3;` | `Constructor` | robot3 dibuat di scope `main()` |
-| 5 | `return 0;` | `Destructor` | robot3 dihancurkan (urutan terbalik: robot3 dulu) |
-| 6 | `return 0;` | `Destructor` | robot1 dihancurkan |
+| Step | Code | Output | Description |
+|------|------|--------|-------------|
+| 1 | `Robot robot1;` | `Constructor` | robot1 created in `main()` scope |
+| 2 | `Robot robot2;` | `Constructor` | robot2 created in block `{ }` scope |
+| 3 | `}` | `Destructor` | **robot2 destroyed** when leaving block scope |
+| 4 | `Robot robot3;` | `Constructor` | robot3 created in `main()` scope |
+| 5 | `return 0;` | `Destructor` | robot3 destroyed (reverse order: robot3 first) |
+| 6 | `return 0;` | `Destructor` | robot1 destroyed |
 
 ## Command Line
 
@@ -77,7 +77,7 @@ g++ -std=c++11 -o destructor destructor.cpp && ./destructor
 
 ## Lifetime & Scope
 
-Destructor membuktikan aturan fundamental **lifetime** di C++:
+Destructor proves the fundamental **lifetime** rule in C++:
 
 ```
 {                            // ← masuk scope
@@ -86,23 +86,23 @@ Destructor membuktikan aturan fundamental **lifetime** di C++:
 }                            // ← keluar scope → Destructor → r "mati"
 ```
 
-Variabel lokal hidup dari titik deklarasi hingga akhir scope `{ }`-nya. Destructor **pasti dipanggil**, bahkan jika ada `return`, `break`, atau exception — inilah jaminan RAII.
+Local variables live from the point of declaration to the end of their `{ }` scope. The destructor **is guaranteed to be called**, even if there is a `return`, `break`, or exception — this is the RAII guarantee.
 
-## Analogi
+## Analogy
 
-Destructor seperti **akta kematian** — saat objek "mati", semua resource-anya dibereskan.
+Destructor is like a **death certificate** — when an object "dies", all its resources are cleaned up.
 
-| Objek | Lahir | Mati |
+| Object | Born | Dies |
 |-------|-------|------|
 | `Robot robot1` | `Constructor` | `Destructor` (akhir main) |
 | `Robot robot2` | `Constructor` | `Destructor` (akhir scope `{ }`) |
 | `Robot robot3` | `Constructor` | `Destructor` (akhir main) |
 
-Tanpa destructor → resource bocor (memory leak, file tidak ditutup, mutex tidak di-unlock).
+Without a destructor → resources leak (memory leak, file not closed, mutex not unlocked).
 
-## Latihan
+## Exercises
 
-1. Hapus destructor → compile → tidak ada error (compiler bikin default). Apakah output berubah?
-2. Tambahkan `Robot robot4;` di akhir scope `main()` — prediksi output sebelum menjalankan.
-3. Bungkus `robot3` dalam scope blok sendiri → apa yang terjadi pada urutan output?
-4. Tambahkan `static Robot robot_static;` — kapan destructor static dipanggil?
+1. Remove the destructor → compile → no error (compiler creates default). Does the output change?
+2. Add `Robot robot4;` at the end of `main()` scope — predict the output before running.
+3. Wrap `robot3` in its own block scope → what happens to the output order?
+4. Add `static Robot robot_static;` — when is the static destructor called?

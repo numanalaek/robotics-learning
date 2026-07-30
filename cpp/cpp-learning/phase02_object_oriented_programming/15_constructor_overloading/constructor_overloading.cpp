@@ -6,23 +6,23 @@
 //   ./constructor_overloading
 // ============================================================
 
-#include <iostream>   // untuk std::cout
-#include <string>     // untuk std::string
+#include <iostream>   // for std::cout
+#include <string>     // for std::string
 
 // ============================================================
-// Class Robot — memiliki 4 constructor dengan parameter berbeda
+// Class Robot — has 4 constructors with different parameters
 // ============================================================
 class Robot
 {
 private:
-    int battery;          // member variable: level battery
+    int battery;          // member variable: battery level
     double voltage;       // member variable: voltage
-    std::string mode;     // member variable: mode operasi
+    std::string mode;     // member variable: operating mode
 
 public:
-    // --- Constructor 1: tanpa parameter ---
-    // Digunakan saat: Robot robot1;
-    // Semua nilai menggunakan default
+    // --- Constructor 1: no parameters ---
+    // Used when: Robot robot1;
+    // All values use defaults
     Robot()
         : battery(100),     // battery = 100%
           voltage(24.5),    // voltage = 24.5 V
@@ -31,39 +31,39 @@ public:
     }
 
     // --- Constructor 2: 1 parameter (int) ---
-    // Digunakan saat: Robot robot2(80);
-    // battery diatur dari argumen, sisanya default
+    // Used when: Robot robot2(80);
+    // battery is set from argument, rest are default
     Robot(int battery_)
-        : battery(battery_),  // battery = nilai argumen
+        : battery(battery_),  // battery = argument value
           voltage(24.5),      // voltage = default
           mode("READY")       // mode = default
     {
     }
 
-    // --- Constructor 3: 2 parameter (int, double) ---
-    // Digunakan saat: Robot robot3(75, 24.1);
-    // battery & voltage diatur, mode default
+    // --- Constructor 3: 2 parameters (int, double) ---
+    // Used when: Robot robot3(75, 24.1);
+    // battery & voltage are set, mode is default
     Robot(int battery_,
           double voltage_)
-        : battery(battery_),   // battery = nilai argumen
-          voltage(voltage_),   // voltage = nilai argumen
+        : battery(battery_),   // battery = argument value
+          voltage(voltage_),   // voltage = argument value
           mode("READY")        // mode = default
     {
     }
 
-    // --- Constructor 4: 3 parameter (int, double, string) ---
-    // Digunakan saat: Robot robot4(60, 23.8, "AUTO");
-    // Semua member diatur dari argumen
+    // --- Constructor 4: 3 parameters (int, double, string) ---
+    // Used when: Robot robot4(60, 23.8, "AUTO");
+    // All members are set from arguments
     Robot(int battery_,
           double voltage_,
           const std::string &mode_)
-        : battery(battery_),   // battery = nilai argumen
-          voltage(voltage_),   // voltage = nilai argumen
-          mode(mode_)          // mode = nilai argumen
+        : battery(battery_),   // battery = argument value
+          voltage(voltage_),   // voltage = argument value
+          mode(mode_)          // mode = argument value
     {
     }
 
-    // Menampilkan status robot
+    // Display robot status
     void printStatus() const
     {
         std::cout
@@ -74,17 +74,17 @@ public:
 };
 
 // ============================================================
-// main() — membuktikan compiler memilih constructor yg tepat
+// main() — proves the compiler selects the correct constructor
 // ============================================================
 int main()
 {
-    // Membuat 4 object, masing-masing dengan constructor berbeda
+    // Creating 4 objects, each with a different constructor
     Robot robot1;                  // memanggil Robot()
     Robot robot2(80);              // memanggil Robot(int)
     Robot robot3(75, 24.1);        // memanggil Robot(int, double)
     Robot robot4(60, 23.8, "AUTO");// memanggil Robot(int, double, string)
 
-    // Cetak status semua robot
+    // Print all robot statuses
     robot1.printStatus();
     robot2.printStatus();
     robot3.printStatus();

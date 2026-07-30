@@ -1,10 +1,10 @@
 # 14. Parameterized Constructor
 
-**Parameterized Constructor** adalah constructor yang menerima parameter sehingga nilai awal data member suatu objek dapat diinisialisasi secara langsung saat objek dibuat.
+**Parameterized Constructor** is a constructor that accepts parameters so that the initial values of an object's data members can be initialized directly when the object is created.
 
-## Contoh 1: `parameterized_constructor.cpp`
+## Example 1: `parameterized_constructor.cpp`
 
-Mendefinisikan kelas `Robot` dengan constructor berparameter untuk menginisialisasi `battery`, `voltage`, dan `mode`.
+Defines a `Robot` class with a parameterized constructor to initialize `battery`, `voltage`, and `mode`.
 
 ```cpp
 Robot robot(85, 24.3, "AUTO");
@@ -18,9 +18,9 @@ Voltage : 24.3 V
 Mode    : AUTO
 ```
 
-## Contoh 2: `parameterized_constructor_test1.cpp`
+## Example 2: `parameterized_constructor_test1.cpp`
 
-Mendemonstrasikan pembuatan **beberapa objek** dengan nilai yang berbeda menggunakan parameterized constructor. Setiap objek `Robot` memiliki `id`, `battery`, dan `mode` yang berbeda.
+Demonstrates creating **multiple objects** with different values using a parameterized constructor. Each `Robot` object has a different `id`, `battery`, and `mode`.
 
 ```cpp
 Robot robot1(1, 95, "AUTO");
@@ -34,8 +34,8 @@ Robot 1 | Battery 95% | AUTO
 Robot 2 | Battery 60% | MANUAL
 ```
 
-## Poin Penting
+## Key Points
 
-- Parameterized constructor memungkinkan inisialisasi **berbeda** untuk tiap objek.
-- Menggunakan **initializer list** (`: member(value)`) lebih efisien daripada assignment di dalam body constructor.
-- Dengan parameterized constructor, kita tidak perlu memanggil setter terpisah setelah objek dibuat.
+- Parameterized constructor allows **different** initialization for each object.
+- Using **initializer list** (`: member(value)`) is more efficient than assignment inside the constructor body.
+- With a parameterized constructor, we don't need to call separate setters after the object is created.

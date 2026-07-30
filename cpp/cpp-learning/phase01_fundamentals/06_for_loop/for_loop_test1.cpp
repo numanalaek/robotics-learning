@@ -1,18 +1,18 @@
 // ============================================================
-// Program 06b: For Loop Dasar
-// Deskripsi : For loop paling sederhana - mencetak langkah
-//             robot sebanyak 5 kali.
-// Konsep    : - for (inisialisasi; kondisi; increment)
-//             - int i = 0: mulai dari 0
-//             - i < 5: selama i kurang dari 5
-//             - i++: setiap iterasi i bertambah 1
+// Program 06b: Basic For Loop
+// Description: Simplest for loop - prints robot steps
+//             5 times.
+// Concepts  : - for (initialization; condition; increment)
+//             - int i = 0: start from 0
+//             - i < 5: while i is less than 5
+//             - i++: each iteration i increases by 1
 // ============================================================
 
 #include <iostream>
 
 int main()
 {
-    // Loop dari i=0 hingga i<5 (0,1,2,3,4 = 5 iterasi)
+    // Loop from i=0 to i<5 (0,1,2,3,4 = 5 iterations)
     for (int i = 0; i < 5; i++)
     {
         std::cout << "Robot Move Step : " << i << '\n';

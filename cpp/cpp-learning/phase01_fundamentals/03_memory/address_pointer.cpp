@@ -1,12 +1,12 @@
 // ============================================================
-// Program 03b: Pointer Dasar
-// Deskripsi : Memperkenalkan konsep pointer - variabel yang
-//             menyimpan alamat memori variabel lain.
-// Konsep    : - Pointer: variabel yang berisi alamat, bukan nilai
-//             - int *ptr = &battery: ptr menyimpan alamat battery
-//             - *ptr (dereference): mengakses nilai di alamat tsb
-//             - Dengan pointer, kita bisa mengubah nilai variabel
-//               asli secara tidak langsung
+// Program 03b: Basic Pointer
+// Description: Introduces the concept of pointers - variables
+//             that store the memory address of other variables.
+// Concepts  : - Pointer: a variable that holds an address, not a value
+//             - int *ptr = &battery: ptr stores battery's address
+//             - *ptr (dereference): accesses the value at that address
+//             - With pointers, we can change the original variable's
+//               value indirectly
 // ============================================================
 
 #include <iostream>
@@ -15,21 +15,21 @@ int main()
 {
     int battery = 100;
 
-    // Tampilkan nilai dan alamat battery
+    // Display battery's value and address
     std::cout << "battery : " << battery << '\n';
     std::cout << "&battery : " << &battery << '\n';
 
-    // Deklarasi pointer yang menunjuk ke alamat battery
+    // Declare a pointer that points to battery's address
     int *ptr = &battery;
 
-    // ptr berisi alamat, *ptr berisi nilai di alamat tersebut
+    // ptr holds the address, *ptr holds the value at that address
     std::cout << "ptr : " << ptr << '\n';
     std::cout << "*ptr : " << *ptr << '\n';
 
-    // Ubah nilai battery melalui pointer (dereference)
+    // Change battery's value through the pointer (dereference)
     *ptr = 50;
 
-    // Nilai battery berubah karena *ptr mengakses memori yang sama
+    // Battery's value changes because *ptr accesses the same memory
     std::cout << battery << '\n';
 
     return 0;

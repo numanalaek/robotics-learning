@@ -1,11 +1,11 @@
 // ============================================================
-// Program 11e: class Test — Latihan Object
-// Deskripsi : Latihan membuat class Robot dengan data member
-//             dan mengaksesnya melalui object.
-// Konsep    : - class adalah blueprint / tipe data
-//             - Object adalah instance nyata dari class
-//             - Setiap object punya salinan data member sendiri
-//             - Member diakses dengan operator titik (.)
+// Program 11e: class Test — Object Exercise
+// Description: Exercise creating a Robot class with data members
+//             and accessing them through an object.
+// Concepts  : - class is a blueprint / data type
+//             - Object is a real instance of a class
+//             - Each object has its own copy of data members
+//             - Members are accessed with dot operator (.)
 // ============================================================
 
 #include <iostream>
@@ -42,7 +42,7 @@ int main()
     std::cout << "  Battery : " << robot2.battery << "%\n";
     std::cout << "  Voltage : " << robot2.voltage << " V\n\n";
 
-    // Membuktikan setiap object punya data sendiri
+    // Proving each object has its own data
     std::cout << "Setelah robot1 baterai dikurangi 10:\n";
     robot1.battery = robot1.battery - 10;
     std::cout << "  robot1 battery : " << robot1.battery << "%\n";

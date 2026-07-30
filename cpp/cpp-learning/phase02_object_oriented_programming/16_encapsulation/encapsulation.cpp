@@ -1,24 +1,24 @@
 #include <iostream>
 
 // ============================================================
-// ENCAPSULATION — menyembunyikan data member dari akses langsung
+// ENCAPSULATION — hiding data members from direct access
 // ============================================================
 
 class Robot
 {
-    // private: data member hanya bisa diakses dari dalam class
+    // private: data members can only be accessed from within the class
 private:
     int battery;
 
-    // public: member function sebagai jembatan ke dunia luar
+    // public: member function as a bridge to the outside world
 public:
-    // Constructor — menginisialisasi battery dengan nilai awal 100
+    // Constructor — initializes battery with initial value 100
     Robot()
         : battery(100)
     {
     }
 
-    // const member function — tidak mengubah data member
+    // const member function — does not modify data members
     void printStatus() const
     {
         std::cout
@@ -30,15 +30,15 @@ public:
 
 int main()
 {
-    // Membuat object Robot — constructor akan memanggil Robot()
+    // Creating Robot object — constructor will call Robot()
     Robot robot;
 
-    // Jika baris berikut di-uncomment, akan error:
+    // If the following line is uncommented, it will error:
     //   'int Robot::battery' is private within this context
-    // karena battery bersifat private dan tidak bisa diakses dari luar class.
+    // because battery is private and cannot be accessed from outside the class.
     // robot.battery = 50;
 
-    // Satu-satunya cara membaca battery adalah lewat public member function
+    // The only way to read battery is via public member function
     robot.printStatus();
 
     return 0;

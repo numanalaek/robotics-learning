@@ -1,40 +1,40 @@
-// import library iostream untuk input/output standar (cin, cout)
+// import iostream library for standard input/output (cin, cout)
 #include <iostream>
-// import library string untuk tipe data std::string
+// import string library for std::string data type
 #include <string>
 
-// mendefinisikan kelas Robot
+// defines the Robot class
 class Robot
 {
-    // bagian private: hanya dapat diakses dari dalam kelas
+    // private section: can only be accessed from within the class
 private:
-    int id;           // menyimpan ID unik robot
-    int battery;      // menyimpan persentase baterai (0-100)
-    std::string mode; // menyimpan mode operasi robot
+    int id;           // stores unique robot ID
+    int battery;      // stores battery percentage (0-100)
+    std::string mode; // stores robot operating mode
 
-    // bagian public: dapat diakses dari luar kelas
+    // public section: can be accessed from outside the class
 public:
     // --- PARAMETERIZED CONSTRUCTOR ---
-    // nama parameter menggunakan prefix "robot_" untuk membedakan
-    // dari nama data member (meskipun tidak wajib, bisa berbeda)
+    // parameter name uses "robot_" prefix to distinguish
+    // from data member names (though not required, can be different)
     Robot(
         int robot_id,
         int robot_battery,
         const std::string &robot_mode)
-        // initializer list: menginisialisasi data member dengan nilai parameter
+        // initializer list: initializes data members with parameter values
         : id(robot_id),
           battery(robot_battery),
           mode(robot_mode)
     {
-        // body constructor kosong karena inisialisasi sudah
-        // ditangani oleh initializer list
+        // constructor body is empty because initialization is already
+        // handled by the initializer list
     }
 
-    // method untuk menampilkan status robot dalam satu baris
-    // const => method ini tidak mengubah data member
+    // method to display robot status in one line
+    // const => this method does not modify data members
     void printStatus() const
     {
-        // menampilkan id, battery, dan mode dengan format terstruktur
+        // displays id, battery, and mode with structured format
         std::cout
             << "Robot " << id
             << " | Battery "
@@ -45,25 +45,25 @@ public:
     }
 };
 
-// fungsi utama program
+// main function of the program
 int main()
 {
-    // --- MEMBUAT MULTIPLE OBJECT DENGAN PARAMETERIZED CONSTRUCTOR ---
-    // setiap objek dapat memiliki nilai inisialisasi yang berbeda
+    // --- CREATING MULTIPLE OBJECTS WITH PARAMETERIZED CONSTRUCTOR ---
+    // each object can have different initialization values
 
-    // membuat robot pertama dengan ID 1, baterai 95%, mode AUTO
+    // creates first robot with ID 1, battery 95%, mode AUTO
     Robot robot1(
         1,
         95,
         "AUTO");
 
-    // membuat robot kedua dengan ID 2, baterai 60%, mode MANUAL
+    // creates second robot with ID 2, battery 60%, mode MANUAL
     Robot robot2(
         2,
         60,
         "MANUAL");
 
-    // memanggil method printStatus() untuk masing-masing robot
+    // calls the printStatus() method for each robot
     robot1.printStatus();
     robot2.printStatus();
 

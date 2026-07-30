@@ -1,38 +1,38 @@
-// import library iostream untuk input/output standar (cin, cout)
+// import iostream library for standard input/output (cin, cout)
 #include <iostream>
-// import library string untuk tipe data std::string
+// import string library for std::string data type
 #include <string>
 
-// mendefinisikan kelas Robot
+// defines the Robot class
 class Robot
 {
-// bagian private: hanya dapat diakses dari dalam kelas
+// private section: can only be accessed from within the class
 private:
-    int battery;          // menyimpan persentase baterai (0-100)
-    double voltage;       // menyimpan tegangan dalam volt
-    std::string mode;     // menyimpan mode operasi robot
+    int battery;          // stores battery percentage (0-100)
+    double voltage;       // stores voltage in volts
+    std::string mode;     // stores robot operating mode
 
-// bagian public: dapat diakses dari luar kelas
+// public section: can be accessed from outside the class
 public:
     // --- PARAMETERIZED CONSTRUCTOR ---
-    // constructor dengan 3 parameter untuk menginisialisasi data member
+    // constructor with 3 parameters to initialize data members
     Robot(int battery_,
           double voltage_,
           const std::string &mode_)
-        // initializer list: cara efisien menginisialisasi data member
+        // initializer list: efficient way to initialize data members
         : battery(battery_),
           voltage(voltage_),
           mode(mode_)
     {
-        // body constructor kosong karena inisialisasi sudah dilakukan
-        // oleh initializer list di atas
+        // constructor body is empty because initialization was already done
+        // by the initializer list above
     }
 
-    // method untuk mencetak status robot
-    // const => method ini tidak mengubah data member
+    // method to print robot status
+    // const => this method does not modify data members
     void printStatus() const
     {
-        // menampilkan nilai battery, voltage, dan mode ke layar
+        // displays battery, voltage, and mode values to screen
         std::cout
             << "Battery : " << battery << "%\n"
             << "Voltage : " << voltage << " V\n"
@@ -40,17 +40,17 @@ public:
     }
 };
 
-// fungsi utama program
+// main function of the program
 int main()
 {
-    // membuat objek Robot dengan parameterized constructor
-    // nilai 85, 24.3, "AUTO" dikirim ke constructor sebagai argumen
+    // creates a Robot object with parameterized constructor
+    // values 85, 24.3, "AUTO" are sent to the constructor as arguments
     Robot robot(
         85,       // battery = 85%
         24.3,     // voltage = 24.3 V
         "AUTO");  // mode = "AUTO"
 
-    // memanggil method printStatus() untuk menampilkan data robot
+    // calls the printStatus() method to display robot data
     robot.printStatus();
 
     return 0;

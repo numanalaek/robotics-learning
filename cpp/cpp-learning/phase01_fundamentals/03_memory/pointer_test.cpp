@@ -1,11 +1,11 @@
 // ============================================================
-// Program 03c: Pointer - Mengubah Nilai
-// Deskripsi : Mendemonstrasikan bagaimana pointer digunakan
-//             untuk mengubah nilai variabel beberapa kali.
-// Konsep    : - Pointer ptr selalu menyimpan alamat yang sama
-//             - *ptr = nilai_baru mengubah isi variabel asli
-//             - battery, *ptr, dan &battery menunjukkan hubungan
-//               antara variabel, pointer, dan alamat memori
+// Program 03c: Pointer - Changing Values
+// Description: Demonstrates how pointers are used to modify
+//             variable values multiple times.
+// Concepts  : - Pointer ptr always stores the same address
+//             - *ptr = new_value changes the original variable's content
+//             - battery, *ptr, and &battery show the relationship
+//               between variable, pointer, and memory address
 // ============================================================
 
 #include <iostream>
@@ -14,16 +14,16 @@ int main()
 {
     int battery = 100;
 
-    // Pointer ptr menunjuk ke alamat battery
+    // Pointer ptr points to battery's address
     int *ptr = &battery;
 
-    // Tampilkan kondisi awal
+    // Display initial state
     std::cout << "battery : " << battery << '\n';
     std::cout << "ptr : " << ptr << '\n';
     std::cout << "*ptr : " << *ptr << '\n';
     std::cout << "&battery : " << &battery << '\n';
 
-    // Ubah battery menjadi 50 melalui pointer
+    // Change battery to 50 through pointer
     std::cout << "\nChange the value of battery using pointer\n";
     *ptr = 50;
 
@@ -32,7 +32,7 @@ int main()
     std::cout << "*ptr : " << *ptr << '\n';
     std::cout << "&battery : " << &battery << '\n';
 
-    // Ubah battery menjadi 80 melalui pointer
+    // Change battery to 80 through pointer
     std::cout << "\nChange the value of battery using pointer\n";
     *ptr = 80;
 

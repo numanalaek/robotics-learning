@@ -36,7 +36,7 @@ public:
     {
     }
 
-    // --- Getter (by value — tipe kecil) -------------------------
+    // --- Getter (by value — small type) -------------------------
     Battery getBattery() const
     {
         return battery_;
@@ -47,33 +47,33 @@ public:
         return velocity_;
     }
 
-    // --- Setter (by const reference — struct lengkap) -----------
+    // --- Setter (by const reference — complete struct) -----------
 
-    // Setter menerima struct utuh, bukan parameter individual.
-    // Validasi dilakukan SEBELUM assignment.
+    // Setter receives the whole struct, not individual parameters.
+    // Validation is done BEFORE assignment.
     void setBattery(const Battery &battery)
     {
-        // Validasi: percent 0–100
+        // Validation: percent 0–100
         if (battery.percent < 0 || battery.percent > 100)
         {
             throw std::out_of_range{"Battery percent must be 0–100"};
         }
-        // Validasi: voltage > 0
+        // Validation: voltage > 0
         if (battery.voltage <= 0.0)
         {
             throw std::out_of_range{"Voltage must be > 0"};
         }
-        battery_ = battery; // aman → simpan
+        battery_ = battery; // safe → store
     }
 
     void setVelocity(const Velocity &velocity)
     {
-        // Validasi: linear >= 0
+        // Validation: linear >= 0
         if (velocity.linear < 0.0)
         {
             throw std::out_of_range{"Linear velocity must not be negative"};
         }
-        // Validasi: angular dalam rentang
+        // Validation: angular within range
         if (velocity.angular < -10.0 || velocity.angular > 10.0)
         {
             throw std::out_of_range{"Angular velocity must be in range -10.0 to 10.0 rad/s"};
@@ -89,18 +89,18 @@ int main()
     Robot robot;
 
     // Set via braced-init-list (C++11)
-    // → mirip seperti menerima object struct dari ROS 2 message
+    // → similar to receiving a struct object from a ROS 2 message
     robot.setBattery({85, 23.8});
     robot.setVelocity({1.2, -2.5});
 
-    // Get → const untuk snapshot
+    // Get → const for snapshot
     const Battery battery = robot.getBattery();
     const Velocity velocity = robot.getVelocity();
 
     std::cout << "Battery : " << battery.percent << "% @ " << battery.voltage << " V\n";
     std::cout << "Velocity: linear=" << velocity.linear << " m/s, angular=" << velocity.angular << " rad/s\n";
 
-    // --- Uji validasi: nilai invalid -----------------------------
+    // --- Validation test: invalid values -----------------------------
 
     try
     {

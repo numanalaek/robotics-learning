@@ -38,8 +38,8 @@ class Robot:
         print(f"Robot   : {self.name}")
         print(f"State   : {self.state.name}")
         print(f"Battery : {self.battery}%")
-        print(f"Posisi  : ({self.x}, {self.y})")
-        print(f"Arah    : {self.direction.name}")
+        print(f"Position: ({self.x}, {self.y})")
+        print(f"Facing  : {self.direction.name}")
 
     def can_move(self):
         return self.state != RobotState.FAULT and self.battery > 0
@@ -102,7 +102,7 @@ robot = Robot("nuin-amr-01", warehouse)
 
 while True:
     robot.status()
-    cmd = input("\nPerintah [w/s/q] | belok [a/d] | charge : ").strip().lower()
+    cmd = input("\nCommand [w/s/q] | turn [a/d] | charge : ").strip().lower()
 
     if cmd == "w":
         robot.move_forward()
@@ -115,7 +115,7 @@ while True:
     elif cmd == "charge":
         robot.charge()
     elif cmd == "q":
-        print("Program selesai.")
+        print("Program finished.")
         break
     else:
-        print("Perintah tidak dikenal!")
+        print("Unknown command!")

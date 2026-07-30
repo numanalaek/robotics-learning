@@ -4,4 +4,4 @@ while battery > 0:
     print(f"Battery: {battery}%")
     battery -= 10
 
-print("Robot perlu charging")
+print("Robot needs charging")

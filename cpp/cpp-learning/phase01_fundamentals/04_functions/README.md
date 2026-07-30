@@ -1,17 +1,17 @@
 # 04 — Functions
 
-Implementasi fungsi untuk mengendalikan robot bergerak di bidang 2D.
+Function implementation to control a robot moving on a 2D plane.
 
-## Empat Hal Penting tentang Fungsi
+## Four Important Things about Functions
 
-| # | Konsep | Contoh |
+| # | Concept | Example |
 |---|--------|--------|
-| 1 | Fungsi memecah program menjadi **sub-program** kecil | `void moveForward(int &x, int &y);` |
-| 2 | **Pass by reference** (`&`) mengubah variabel asli | `int &battery` — battery di main berubah |
-| 3 | **Pass by value** (tanpa `&`) hanya menerima salinan | `int battery` — copy, asli tidak berubah |
-| 4 | Fungsi bisa punya **parameter** dan **return value** | `int add(int a, int b) { return a + b; }` |
+| 1 | Functions break a program into small **sub-programs** | `void moveForward(int &x, int &y);` |
+| 2 | **Pass by reference** (`&`) modifies the original variable | `int &battery` — battery in main changes |
+| 3 | **Pass by value** (without `&`) only receives a copy | `int battery` — copy, original unchanged |
+| 4 | Functions can have **parameters** and **return values** | `int add(int a, int b) { return a + b; }` |
 
-## Kode — `robot_control.cpp`
+## Code — `robot_control.cpp`
 
 ```cpp
 #include <iostream>
@@ -129,20 +129,20 @@ Masukkan perintah (w: maju, s: mundur, a: kiri, d: kanan, q: keluar): Program se
 g++ robot_control.cpp -o robot_control && ./robot_control
 ```
 
-## Analogi
+## Analogy
 
-Fungsi adalah seperti **sub-rutin dalam kontrol robot**.
+Functions are like **subroutines in robot control**.
 
-| Fungsi | Analogi |
+| Function | Analogy |
 |--------|---------|
-| `printHeader()` | Menampilkan logo di startup |
-| `moveForward()` | Eksekusi perintah "maju" |
-| `consumeBattery()` | Kurangi daya setiap gerakan |
-| `printStatus()` | Update dashboard HMI |
+| `printHeader()` | Display logo at startup |
+| `moveForward()` | Execute "move forward" command |
+| `consumeBattery()` | Reduce power with each movement |
+| `printStatus()` | Update HMI dashboard |
 
-## Latihan
+## Exercises
 
-1. Tambah fungsi `stop()` — set kecepatan jadi 0.
-2. Ubah `consumeBattery` kurangi 2% per langkah (bukan 1%).
-3. Tambah parameter `int speed` ke `moveForward` — makin cepat makin boros baterai.
-4. Buat fungsi `turnAround()` — belok 180 derajat (panggil `turnLeft` 2 kali).
+1. Add a `stop()` function — set speed to 0.
+2. Change `consumeBattery` to reduce 2% per step (instead of 1%).
+3. Add parameter `int speed` to `moveForward` — faster speed drains more battery.
+4. Create a `turnAround()` function — turn 180 degrees (call `turnLeft` twice).

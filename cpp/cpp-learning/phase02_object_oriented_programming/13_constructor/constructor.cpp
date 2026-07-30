@@ -1,13 +1,13 @@
 // ============================================================
 // Program 12: Constructor
-// Deskripsi : Mendemonstrasikan constructor — fungsi khusus
-//             yang otomatis dipanggil saat objek dibuat.
-// Konsep    : - Constructor dipanggil otomatis
-//             - Nama constructor = nama class
-//             - Tidak punya return type (bukan void)
-//             - Digunakan untuk inisialisasi data member
+// Description: Demonstrates constructor — a special function
+//             that is automatically called when an object is created.
+// Concepts  : - Constructor is called automatically
+//             - Constructor name = class name
+//             - Has no return type (not void)
+//             - Used for initializing data members
 //             - Member initializer list (: battery(100), ...)
-//             - struct untuk mengelompokkan data (Pose)
+//             - struct for grouping data (Pose)
 // ============================================================
 //
 // Compile  : g++ -std=c++11 -o constructor constructor.cpp

@@ -1,17 +1,17 @@
 # 07 — Range-based For Loop
 
-Range-based `for` loop (C++11) untuk iterasi array yang lebih sederhana dan aman.
+Range-based `for` loop (C++11) for simpler and safer array iteration.
 
-## Empat Hal Penting tentang Range-based For
+## Four Important Things about Range-based For
 
-| # | Konsep | Contoh |
+| # | Concept | Example |
 |---|--------|--------|
-| 1 | Iterasi otomatis tanpa **indeks** | `for (int x : arr)` |
-| 2 | `T x : arr` — `x` adalah **copy** (aman, tapi boros) | `for (int sensor : sensors)` |
-| 3 | `T &x : arr` — `x` adalah **reference** (bisa ubah asli) | `for (int &sensor : sensors)` |
-| 4 | `const T &x : arr` — efisien + aman (baca saja) | `for (const int &sensor : sensors)` |
+| 1 | Automatic iteration without **index** | `for (int x : arr)` |
+| 2 | `T x : arr` — `x` is a **copy** (safe, but wasteful) | `for (int sensor : sensors)` |
+| 3 | `T &x : arr` — `x` is a **reference** (can modify original) | `for (int &sensor : sensors)` |
+| 4 | `const T &x : arr` — efficient + safe (read-only) | `for (const int &sensor : sensors)` |
 
-## Kode — `range_for.cpp`
+## Code — `range_for.cpp`
 
 ```cpp
 #include <iostream>
@@ -67,7 +67,7 @@ LOW CELL
 
 ```cpp
 for (int sensor : sensors) {
-    sensor = 0;  // Tidak mengubah array asli
+    sensor = 0;  // Does NOT change the original array
 }
 ```
 
@@ -75,7 +75,7 @@ for (int sensor : sensors) {
 
 ```cpp
 for (int &sensor : sensors) {
-    sensor = 0;  // MENGUBAH array asli
+    sensor = 0;  // MODIFIES the original array
 }
 ```
 
@@ -83,20 +83,20 @@ for (int &sensor : sensors) {
 
 ```cpp
 for (const int &sensor : sensors) {
-    std::cout << sensor;  // Baca saja, tidak bisa ubah
+    std::cout << sensor;  // Read only, cannot modify
 }
 ```
 
-## Perbandingan Index-based vs Range-based
+## Index-based vs Range-based Comparison
 
-| Aspek | Index-based `for` | Range-based `for` |
+| Aspect | Index-based `for` | Range-based `for` |
 |-------|-------------------|-------------------|
-| Sintaks | `for (int i=0; i<N; i++)` | `for (int x : arr)` |
-| Butuh indeks | Ya | Tidak |
-| Akses elemen | `arr[i]` | Langsung `x` |
-| Ubah elemen | `arr[i] = n` | `T &x : arr` |
-| Akses index i | `i` | Tidak bisa |
-| Loop mundur | `i--` | Tidak bisa |
+| Syntax | `for (int i=0; i<N; i++)` | `for (int x : arr)` |
+| Needs index | Yes | No |
+| Element access | `arr[i]` | Directly `x` |
+| Modify element | `arr[i] = n` | `T &x : arr` |
+| Access index i | `i` | Cannot |
+| Reverse loop | `i--` | Cannot |
 
 ## Command Line
 
@@ -108,17 +108,17 @@ g++ range_for_test4.cpp -o range_for_test4 && ./range_for_test4  # reference
 g++ range_for_test5.cpp -o range_for_test5 && ./range_for_test5  # const ref
 ```
 
-## Analogi
+## Analogy
 
-| Varian | Analogi |
+| Variant | Analogy |
 |--------|---------|
-| `for (T x : arr)` | Fotokopi lembar data — coretan tidak merusak asli |
-| `for (T &x : arr)` | Memegang komponen asli — perubahan merusak asli |
-| `for (const T &x : arr)` | Membaca display — tidak bisa disentuh, tapi tanpa fotokopi |
+| `for (T x : arr)` | Photocopy of a data sheet — scribbles don't damage the original |
+| `for (T &x : arr)` | Holding the original component — changes damage the original |
+| `for (const T &x : arr)` | Reading a display — cannot be touched, but without photocopy |
 
-## Latihan
+## Exercises
 
-1. Di `range_for_test3.cpp`, buktikan bahwa `sensor` adalah copy (array asli tidak berubah).
-2. Ubah `range_for_test4.cpp` — pakai `int &sensor` dan set semua ke 99. Apakah array berubah?
-3. Compile `range_for_test5.cpp` — coba tambah `sensor = 0;` di dalam loop. Apa error-nya?
-4. Buat loop range-based untuk array `double` — tipe apa yang cocok untuk `const &`?
+1. In `range_for_test3.cpp`, prove that `sensor` is a copy (original array doesn't change).
+2. Modify `range_for_test4.cpp` — use `int &sensor` and set all to 99. Does the array change?
+3. Compile `range_for_test5.cpp` — try adding `sensor = 0;` inside the loop. What error do you get?
+4. Create a range-based loop for a `double` array — what type is suitable for `const &`?

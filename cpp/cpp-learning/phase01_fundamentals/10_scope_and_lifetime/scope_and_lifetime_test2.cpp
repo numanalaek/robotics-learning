@@ -1,13 +1,13 @@
 // ============================================================
 // Program 10c: Block Scope
-// Deskripsi : Menunjukkan bahwa variabel yang dideklarasikan
-//             di dalam { } (block scope) tidak bisa diakses
-//             dari luar block tersebut.
-// Konsep    : - battery = 100 (local main, bisa diakses dari
-//               dalam block maupun luar block)
-//             - voltage = 24 (block scope, hanya di dalam { })
-//             - Coba uncomment baris std::cout << voltage
-//               di luar block untuk melihat error kompilasi
+// Description: Shows that variables declared inside
+//             { } (block scope) cannot be accessed
+//             from outside the block.
+// Concepts  : - battery = 100 (local to main, accessible from
+//               both inside and outside the block)
+//             - voltage = 24 (block scope, only inside { })
+//             - Try uncommenting the std::cout << voltage line
+//               outside the block to see a compilation error
 // ============================================================
 
 #include <iostream>
